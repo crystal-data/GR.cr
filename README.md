@@ -1,5 +1,5 @@
 # gr-crystal
-Crystal API for GR framework
+Crystal binding for GR framework
 
 A (still incomplete) interface to GR framework from Crystal
 
@@ -21,3 +21,23 @@ Download grsample.cr and
 
 should show simple plot.
 
+## Usage
+
+Essentially the same as that for C binging. Difference:
+
+* All size+pointer arguments to C array is replaced by one Crystal
+  array.
+* C char* is replaced by Crysral Sring
+
+### Example of API
+
+ void gr_polyline(int, double *, double *)
+
+is called as
+
+
+  GR.polyline(Array(Float64), Array(Float64))
+
+## Todo
+
+All source and documents should be generate automatically...
