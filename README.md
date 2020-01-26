@@ -10,7 +10,7 @@ You need to place grlib.cr
 
 You also need to install GR in the standard way.
 
-grlib.cr assumes that  @[Link("GR")] works. That means all necessary
+grlib.cr assumes that  `@[Link("GR")]` works. That means all necessary
 libraries from GR must be in the search pass of your ld. 
 
 ## Getting started
@@ -31,12 +31,13 @@ Essentially the same as that for C binging. Difference:
 
 ### Example of API
 
- void gr_polyline(int, double *, double *)
+    void gr_polyline(int, double *, double *)
+
 
 is called as
 
 
-  GR.polyline(Array(Float64), Array(Float64))
+    GR.polyline(Array(Float64), Array(Float64))
 
 ## Todo
 
