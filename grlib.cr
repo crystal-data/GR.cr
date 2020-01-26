@@ -1,8 +1,9 @@
 #
 # grlib.cr
+# Copyright 2020- Jun Makino
 #
-
-@[Link("GR")]
+#@[Link("GR")]
+@[Link(ldflags: "-L `echo $GRDIR`/lib -lGR")]
 lib LibGR
   fun gr_polyline(n: Int32, x: Float64*, x: Float64*) : Int32
   fun gr_axes(x_tick: Float64, y_tick: Float64, x_org: Float64, y_org: Float64,
