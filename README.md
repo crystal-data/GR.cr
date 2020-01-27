@@ -48,11 +48,11 @@ is called as
 
 [polyline plot](./grsample.cr)
 
-[polyline sample output](./images/grsample-sample.jpg)
+![polyline sample output](./images/grsample-sample.jpg)
 
 [contour plot](./grcontour.cr)
 
-[contour sample output](./images/grcontour-sample.jpg)
+![contour sample output](./images/grcontour-sample.jpg)
 
 
 ## Todo
