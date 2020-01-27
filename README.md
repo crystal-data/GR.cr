@@ -44,6 +44,17 @@ is called as
 
     GR.polyline(Array(Float64), Array(Float64))
 
+## Examples
+
+[polyline plot](./grsample.cr)
+
+[polyline sample output](./images/grsample-sample.jpg)
+
+[contour plot](./grcontour.cr)
+
+[contour sample output](./images/grcontour-sample.jpg)
+
+
 ## Todo
 
 All source and documents should be generate automatically...

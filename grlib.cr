@@ -56,7 +56,34 @@ lib LibGR
                 x6: Float64)
   fun gr_titles3d(c: UInt8*, c0: UInt8*, c1: UInt8*)
   fun gr_surface(i: Int32, i1: Int32, xa: Float64*, xb: Float64*, xc: Float64*,
-                                          i2: Int32)
+                 i2: Int32)
+  fun gr_contour(i: Int32, i1: Int32, i2: Int32, xa: Float64*, xb: Float64*,
+                 xc: Float64*, xd: Float64*, i4: Int32)
+  fun gr_contourf(i: Int32, i1: Int32, i2: Int32, xa: Float64*, xb: Float64*,
+                   xc: Float64*, xd: Float64*, i4: Int32)
+  fun gr_tricontour(i: Int32, xa: Float64*, xb: Float64*, xc: Float64*,
+                    i1: Int32, xd: Float64*)
+  fun gr_hexbin(i: Int32, xa: Float64*, xb: Float64*, i1: Int32)
+  fun gr_setcolormap(i: Int32)
+  fun gr_inqcolormap(ia: Int32*)
+  fun gr_setcolormapfromrgb(i: Int32, xa: Float64*, xb: Float64*, xc: Float64*,
+                            xd: Float64*)
+  fun gr_colorbar()
+  fun gr_inqcolor(i: Int32, ia: Int32 *)
+  fun gr_inqcolorfromrgb(x: Float64, x1: Float64, x2: Float64)
+  fun gr_hsvtorgb(x: Float64 , x1: Float64 , x2: Float64 , xa: Float64*,
+                 xb: Float64*, xc: Float64*)
+  fun gr_tick(x: Float64, x1: Float64)
+  fun gr_validaterange(x: Float64, x1: Float64)
+  fun gr_adjustlimits(xa: Float64*, xb: Float64*)
+  fun gr_adjustrange(xa: Float64*, xb: Float64*)
+  fun gr_beginprint(c: UInt8*)
+  fun gr_beginprintext(c: UInt8*, c1: UInt8*, c2: UInt8*, c3: UInt8*)
+  fun gr_endprint()
+  fun gr_ndctowc(xa: Float64*, xb: Float64*)
+  fun gr_wctondc(xa: Float64*, xb: Float64*)
+  fun gr_wc3towc(xa: Float64*, xb: Float64*, xc: Float64*)
+
   fun gr_drawrect(x: Float64, x1: Float64, x2: Float64, x3: Float64)
   fun gr_fillrect(x: Float64, x1: Float64, x2: Float64, x3: Float64)
   fun gr_drawarc(x: Float64, x1: Float64, x2: Float64, x3: Float64, x4: Float64, x5: Float64)
@@ -107,8 +134,8 @@ module GR
     LibGR.gr_polyline([x.size,y.size].min, to_carray(x), to_carray(y))
   end
 
-  def polymarker(i, xa, xb)
-    LibGR.gr_polymarker(i, xa, xb)
+  def polymarker(x,y)
+    LibGR.gr_polymarker([x.size,y.size].min, to_carray(x), to_carray(y))
   end
   def text(x, x1, c)
     LibGR.gr_text(x, x1, to_cchar(c))
@@ -116,11 +143,11 @@ module GR
   def mathtex(x, x1, c)
     LibGR.gr_mathtex(x, x1, to_cchar(c))
   end
-  def fillarea(i, xa, xb)
-    LibGR.gr_fillarea(i, xa, xb)
+  def fillarea(x,y)
+    LibGR.gr_fillarea([x.size,y.size].min, to_carray(x), to_carray(y))
   end
-  def spline(i, xa, xb, i1, i2)
-    LibGR.gr_spline(i, xa, xb, i1, i2)
+  def spline(x, y, i1, i2)
+    LibGR.gr_spline([x.size,y.size].min, to_carray(x), to_carray(y), i1, i2)
   end
   def setlinetype(i)
     LibGR.gr_setlinetype(i)
@@ -215,27 +242,100 @@ module GR
   def grid(x, x1, x2, x3, i, i1)
     LibGR.gr_grid(x, x1, x2, x3, i, i1)
   end
-  def verrorbars(i, xa, xb, xc, xd)
-    LibGR.gr_verrorbars(i, xa, xb, xc, xd)
+  def verrorbars(xa, xb, xc, xd)
+    LibGR.gr_verrorbars([xa.size, xb.size, xc.size, xd.size].min,
+                        to_carray(xa), to_carray(xb), to_carray(xc), to_carray(xd))
   end
-  def herrorbars(i, xa, xb, xc, xd)
-    LibGR.gr_herrorbars(i, xa, xb, xc, xd)
+  def herrorbars(xa, xb, xc, xd)
+    LibGR.gr_herrorbars([xa.size, xb.size, xc.size, xd.size].min,
+                        to_carray(xa), to_carray(xb), to_carray(xc), to_carray(xd))
+
   end
-  def polyline3d(i, xa, xb, xc)
-    LibGR.gr_polyline3d(i, xa, xb, xc)
+  def polyline3d(xa, xb, xc)
+    LibGR.gr_polyline3d([xa.size, xb.size, xc.size].min,
+                        to_carray(xa), to_carray(xb), to_carray(xc))
   end
-  def polymarker3d(i, xa, xb, xc)
-    LibGR.gr_polymarker3d(i, xa, xb, xc)
+  def polymarker3d(xa, xb, xc)
+    LibGR.gr_polymarker3d([xa.size, xb.size, xc.size].min,
+                        to_carray(xa), to_carray(xb), to_carray(xc))
   end
   def axes3d(x, x1, x2, x3, x4, x5, i, i1, i2,  x6)
     LibGR.gr_axes3d(x, x1, x2, x3, x4, x5, i, i1, i2,  x6)
   end
   def titles3d(c, c0, c1)
-    LibGR.gr_titles3d(c, c0, c1)
+    LibGR.gr_titles3d(to_cchar(c), to_cchar(c0), to_cchar(c1))
   end
-  def surface(i, i1, xa, xb, xc, i2)
-    LibGR.gr_surface(i, i1, xa, xb, xc, i2)
+  def surface(xa, xb, xc, i2)
+    LibGR.gr_surface(xa.size, xb.size, to_carray(xa), to_carray(xb), to_carray(xc), i2)
   end
+  def contour(xa, xb, xc, xd, i4)
+    LibGR.gr_contour(xa.size, xb.size, xc.size,to_carray(xa), to_carray(xb),
+                     to_carray(xc),to_carray(xd),  i4)
+  end
+  def contourf(xa, xb, xc, xd, i4)
+    LibGR.gr_contourf(xa.size, xb.size, xc.size,to_carray(xa), to_carray(xb),
+                     to_carray(xc),to_carray(xd),  i4)
+  end
+  def tricontour(i, xa, xb, xc, i1, xd)
+    LibGR.gr_tricontour(i, xa, xb, xc, i1, xd)
+  end
+  def hexbin(i, xa, xb, i1)
+    LibGR.gr_hexbin(i, xa, xb, i1)
+  end
+
+  def setcolormap(i)
+    LibGR.gr_setcolormap(i)
+  end
+  def inqcolormap(ia)
+    LibGR.gr_inqcolormap(ia)
+  end
+  def setcolormapfromrgb(i, xa, xb, xc, xd)
+    LibGR.gr_setcolormapfromrgb(i, xa, xb, xc, xd)
+  end
+  def colorbar()
+    LibGR.gr_colorbar()
+  end
+  def inqcolor(i, ia)
+    LibGR.gr_inqcolor(i, ia)
+  end
+  def inqcolorfromrgb(x, x1, x2)
+    LibGR.gr_inqcolorfromrgb(x, x1, x2)
+  end
+  def hsvtorgb(x , x1 , x2 , xa, xb, xc)
+    LibGR.gr_hsvtorgb(x , x1 , x2 , xa, xb, xc)
+  end
+  def tick(x, x1)
+    LibGR.gr_tick(x, x1)
+  end
+  def validaterange(x, x1)
+    LibGR.gr_validaterange(x, x1)
+  end
+  def adjustlimits(xa, xb)
+    LibGR.gr_adjustlimits(xa, xb)
+  end
+  def adjustrange(xa, xb)
+    LibGR.gr_adjustrange(xa, xb)
+  end
+  def beginprint(c)
+    LibGR.gr_beginprint(c)
+  end
+  def beginprintext(c, c1, c2, c3)
+    LibGR.gr_beginprintext(c, c1, c2, c3)
+  end
+  def endprint()
+    LibGR.gr_endprint()
+  end
+  def ndctowc(xa, xb)
+    LibGR.gr_ndctowc(xa, xb)
+  end
+  def wctondc(xa, xb)
+    LibGR.gr_wctondc(xa, xb)
+  end
+  def wc3towc(xa, xb, xc)
+    LibGR.gr_wc3towc(xa, xb, xc)
+  end
+
+  
   def drawrect(x, x1, x2, x3)
     LibGR.gr_drawrect(x, x1, x2, x3)
   end
