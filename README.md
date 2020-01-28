@@ -54,6 +54,10 @@ is called as
 
 ![contour sample output](./images/grcontour-sample.jpg)
 
+[3d contour plot](./grcontour3d.cr)
+
+![contour sample output](./images/grcontour3d-sample.jpg)
+
 
 ## Todo
 
