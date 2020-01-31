@@ -358,3 +358,5 @@ module GR
     LibGR.gr_drawarrow(x, x1, x2, x3)
   end
 end
+
+ENV["GKS_WSTYPE"]= "x11" if  ENV["GKS_WSTYPE"]?==nil
