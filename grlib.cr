@@ -5,6 +5,16 @@
 #@[Link("GR")]
 @[Link(ldflags: "-L `echo $GRDIR`/lib -lGR -Wl,-rpath,`echo $GRDIR`/lib")]
 lib LibGR
+  fun gr_initgr()
+  fun gr_opengks()
+  fun gr_closegks()
+  fun gr_openws(i0: Int32, c: UInt8*, i1: Int32)
+  fun gr_closews(i: Int32)
+  fun gr_activatews(i: Int32)
+  fun gr_deactivatews(i: Int32)
+  fun gr_configurews()
+  fun gr_clearws()
+  fun gr_updatews()
   fun gr_polyline(n: Int32, x: Float64*, x: Float64*) : Int32
   fun gr_axes(x_tick: Float64, y_tick: Float64, x_org: Float64, y_org: Float64,
         major_x: Int32, major_y: Int32, tick_size: Float64) : Int32
@@ -129,6 +139,36 @@ module GR
     #    (s.size+1).times{|i|p cp[i]}
     cp[s.size]=0
     cp
+  end
+  def initgr()
+    LibGR.gr_initgr()
+  end
+  def opengks()
+    LibGR.gr_opengks()
+  end
+  def closegks()
+    LibGR.gr_closegks()
+  end
+  def openws(i0, c, i1)
+    LibGR.gr_openws(i0,c,i1)
+  end
+  def closews(i)
+    LibGR.gr_closews(i)
+  end
+  def activatews(i)
+    LibGR.gr_activatews(i)
+  end
+  def deactivatews(i)
+    LibGR.gr_deactivatews(i)
+  end
+  def configurews()
+    LibGR.gr_configurews()
+  end
+  def clearws()
+    LibGR.gr_clearws()
+  end
+  def updatews()
+    LibGR.gr_updatews()
   end
   def polyline(x,y)
     LibGR.gr_polyline([x.size,y.size].min, to_carray(x), to_carray(y))
