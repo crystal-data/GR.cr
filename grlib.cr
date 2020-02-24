@@ -150,7 +150,7 @@ module GR
     LibGR.gr_closegks()
   end
   def openws(i0, c, i1)
-    LibGR.gr_openws(i0,c,i1)
+    LibGR.gr_openws(i0,to_cchar(c),i1)
   end
   def closews(i)
     LibGR.gr_closews(i)
