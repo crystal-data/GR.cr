@@ -6,7 +6,7 @@
 require "./grlib.cr"
 include Math
 include GR
-ENV["GKS_WSTYPE"]= "mp4"
+ENV["GKS_WSTYPE"]= "mp4" # you can also use gif or mov
 setwindow(0,1,0,1)
 setviewport(0.1, 0.9,0.1, 0.9)
 n=50
@@ -17,9 +17,6 @@ h=Array(Float64).new(11){|i| i*0.2-1}
 z = Array(Float64).new
 n.times{|i| 
   n.times{|j|
-    # xd=x[i]-0.5
-    # yd=y[j]-0.5
-    # z.push exp(-(xd*xd+yd*yd)*10)
     z.push (sin(x[i]*PI*2)*sin(y[j]*PI)+1)/2
   }
 }
