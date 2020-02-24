@@ -58,6 +58,10 @@ is called as
 
 ![contour sample output](./images/grcontour3d-sample.jpg)
 
+[3d animation](./gr3drotate.cr)
+
+![3d animation sample output](./images/gr3drotate.mp4)
+
 
 ## Todo
 
