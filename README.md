@@ -60,7 +60,7 @@ is called as
 
 [3d animation](./gr3drotate.cr)
 
-![3d animation sample output](./images/gr3drotate.mp4)
+![3d animation sample output](./images/gr3drotate.gif)
 
 
 ## Todo
