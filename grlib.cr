@@ -122,7 +122,11 @@ module GR
   end
   def box(x_tick=(GRparms.winmax[0]-GRparms.winmin[0])*0.25,
           y_tick=(GRparms.winmax[1]-GRparms.winmin[1])*0.25,
-          x_org=GRparms.winmin[0], y_org=GRparms.winmin[0], major_x=2, major_y=2, tick_size=0.01)
+          x_org=GRparms.winmin[0], y_org=GRparms.winmin[1], major_x=1, major_y=1, tick_size=0.01,xlog=false, ylog=false)
+    scalearg=0
+    scalearg += 1 if xlog
+    scalearg += 2 if ylog
+    LibGR.gr_setscale(scalearg)
     LibGR.gr_axes(x_tick, y_tick, x_org, y_org, major_x, major_y, tick_size)
     LibGR.gr_setcharheight(0.00001)
     LibGR.gr_axes(x_tick, y_tick, GRparms.winmax[0], GRparms.winmax[1], major_x, major_y,
