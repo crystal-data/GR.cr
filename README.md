@@ -62,6 +62,15 @@ is called as
 
 ![3d animation sample output](./images/gr3drotate.gif)
 
+[log-log plot](./grloglogsample.cr)
+
+![log-log plot sample output](./images/grloglogsample.jpg)
+
+[semilog plot](./grsemilogsample.cr)
+
+![semilog plot sample output](./images/grsemilogsample.jpg)
+
+
 
 ## Todo
 
