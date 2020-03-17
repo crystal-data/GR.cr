@@ -13,8 +13,8 @@ A (still incomplete) interface to GR framework from Crystal
 
    ```yaml
    dependencies:
-     clop-crystal:
-       github: your-github-user/clop-crystal
+     grlib:
+       github: jmakino/gr-crystal
    ```
 
 2. Run `shards install`
