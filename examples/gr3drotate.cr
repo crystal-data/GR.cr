@@ -1,9 +1,9 @@
 #
-# gr3drorate.cf
+# gr3drorate.cr
 #
 #  sample to make mp4 file 
 
-require "./grlib.cr"
+require "grlib"
 include Math
 include GR
 #ENV["GKS_WSTYPE"]= "mp4" # to make mp4 file. You can also use gif or mov

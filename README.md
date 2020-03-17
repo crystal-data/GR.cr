@@ -22,9 +22,9 @@ A (still incomplete) interface to GR framework from Crystal
 
 ## Getting started
 
-Download grsample.cr and
+At your project directory (where you ran shards install), try
 
-   crystal grsample.cr
+   crystal lib/grlib/examples/grsample.cr
 
 should show a simple plot.
 
@@ -55,27 +55,27 @@ is called as
 
 ## Examples
 
-[polyline plot](./grsample.cr)
+[polyline plot](./src/grsample.cr)
 
 ![polyline sample output](./images/grsample-sample.jpg)
 
-[contour plot](./grcontour.cr)
+[contour plot](./src/grcontour.cr)
 
 ![contour sample output](./images/grcontour-sample.jpg)
 
-[3d contour plot](./grcontour3d.cr)
+[3d contour plot](./src/grcontour3d.cr)
 
 ![contour sample output](./images/grcontour3d-sample.jpg)
 
-[3d animation](./gr3drotate.cr)
+[3d animation](./src/gr3drotate.cr)
 
 ![3d animation sample output](./images/gr3drotate.gif)
 
-[log-log plot](./grloglogsample.cr)
+[log-log plot](./src/grloglogsample.cr)
 
 ![log-log plot sample output](./images/grloglogsample.jpg)
 
-[semilog plot](./grsemilogsample.cr)
+[semilog plot](./src/grsemilogsample.cr)
 
 ![semilog plot sample output](./images/grsemilogsample.jpg)
 

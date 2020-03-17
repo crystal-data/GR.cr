@@ -1,4 +1,4 @@
-require "./grlib.cr"
+require "grlib"
 include Math
 include GR
 setwindow(0,1,0,1)

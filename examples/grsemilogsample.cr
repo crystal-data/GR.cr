@@ -1,4 +1,4 @@
-require "./grlib.cr"
+require "grlib"
 include GR
 setwindow(0,1,0.01,1)
 setscale(2)

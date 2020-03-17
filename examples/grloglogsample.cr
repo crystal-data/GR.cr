@@ -1,7 +1,7 @@
 #
 # sample for log-log plot
 #
-require "./grlib.cr"
+require "grlib"
 include GR
 setwindow(0.1,1,0.01,1)  # range should be in original values
 setscale(3)              # 1: log x, 2: log y (and thus 3: both)
