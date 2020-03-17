@@ -6,10 +6,19 @@ A (still incomplete) interface to GR framework from Crystal
 
 ## Installation
 
-You need to place grlib.cr in your Crystal's require search path.
 
-You also need to install GR in the standard way and set the
-enviromental variable GRDIR point to the installed directory.
+0. You need to install GR in the standard way and set the enviromental variable GRDIR point to the installed directory.
+
+1. Add the dependency to your `shard.yml`:
+
+   ```yaml
+   dependencies:
+     clop-crystal:
+       github: your-github-user/clop-crystal
+   ```
+
+2. Run `shards install`
+
 
 ## Getting started
 
