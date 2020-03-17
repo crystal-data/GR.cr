@@ -55,27 +55,27 @@ is called as
 
 ## Examples
 
-[polyline plot](./src/grsample.cr)
+[polyline plot](./examples/grsample.cr)
 
 ![polyline sample output](./images/grsample-sample.jpg)
 
-[contour plot](./src/grcontour.cr)
+[contour plot](./examples/grcontour.cr)
 
 ![contour sample output](./images/grcontour-sample.jpg)
 
-[3d contour plot](./src/grcontour3d.cr)
+[3d contour plot](./examples/grcontour3d.cr)
 
 ![contour sample output](./images/grcontour3d-sample.jpg)
 
-[3d animation](./src/gr3drotate.cr)
+[3d animation](./examples/gr3drotate.cr)
 
 ![3d animation sample output](./images/gr3drotate.gif)
 
-[log-log plot](./src/grloglogsample.cr)
+[log-log plot](./examples/grloglogsample.cr)
 
 ![log-log plot sample output](./images/grloglogsample.jpg)
 
-[semilog plot](./src/grsemilogsample.cr)
+[semilog plot](./examples/grsemilogsample.cr)
 
 ![semilog plot sample output](./images/grsemilogsample.jpg)
 
