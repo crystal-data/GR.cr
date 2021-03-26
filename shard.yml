@@ -3,7 +3,8 @@ version: 0.1.0
 
 authors:
   - Jun Makino <makino@localhost.localdomain>
+  - kojix2 <2xijok@gmail.com>
 
-crystal: 0.33.0
+crystal: 1.0.0
 
 license: MIT

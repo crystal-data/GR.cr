@@ -1,6 +1,6 @@
 # GR.cr
 
-Crystal binding for GR framework
+Crystal bindings to GR framework
 
 ## Installation
 

@@ -2,8 +2,7 @@
 # grlib.cr
 # Copyright 2020- Jun Makino
 #
-#@[Link("GR")]
-@[Link(ldflags: "-L `echo $GRDIR`/lib -lGR -Wl,-rpath,`echo $GRDIR`/lib")]
+@[Link("GR")]
 lib LibGR
   fun gr_initgr()
   fun gr_opengks()
