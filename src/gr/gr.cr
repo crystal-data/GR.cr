@@ -1,3 +1,5 @@
+require "./gr/libgr.cr"
+
 module GR
   module GR
     extend self
