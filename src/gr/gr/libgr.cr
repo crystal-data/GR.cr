@@ -97,6 +97,8 @@ module GR
       fun gr_setarrowstyle(i : Int32)
       fun gr_setarrowsize(x : Float64)
       fun gr_drawarrow(x : Float64, x1 : Float64, x2 : Float64, x3 : Float64)
+
+      fun gr_shadepoints(i1 : Int32, x1 : Float64*, x2 : Float64*, i2 : Int32, i3 : Int32, i4 : Int32)
     end
   end
 end
