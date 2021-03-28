@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "../src/gr/grm"
-LibGRM = GR::GRM::LibGRM
+GRM = GR::GRM#::LibGRM
 
 n = 1000
 x = [] of Float64
@@ -18,13 +18,13 @@ plot_types = %w[line hexbin polar shade stem step contour contourf tricont
                hist barplot polar_histogram pie]
 
 plot_types.each do |type|
-  LibGRM.grm_clear
-  args = LibGRM.grm_args_new
-  LibGRM.grm_args_push(args, "x", "nD", n, x)
-  LibGRM.grm_args_push(args, "y", "nD", n, y)
-  LibGRM.grm_args_push(args, "z", "nD", n, z)
-  LibGRM.grm_args_push(args, "kind", "s", type)
-  LibGRM.grm_args_push(args, "title", "s", type)
-  LibGRM.grm_plot(args)
+  GRM.clear
+  args = GRM.args_new
+  GRM.args_push(args, "x", "nD", n, x)
+  GRM.args_push(args, "y", "nD", n, y)
+  GRM.args_push(args, "z", "nD", n, z)
+  GRM.args_push(args, "kind", "s", type)
+  GRM.args_push(args, "title", "s", type)
+  GRM.plot(args)
   sleep 2
 end
