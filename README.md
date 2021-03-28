@@ -1,6 +1,8 @@
 # GR.cr
 
-Crystal bindings to GR framework
+[Crystal](https://github.com/crystal-lang/crystal) bindings to [GR framework](https://github.com/sciapp/gr)
+
+GR.cr has been forked from [gr-crystal](https://github.com/jmakino/gr-crystal) by [Jun Makino](https://github.com/jmakino)
 
 ## Installation
 
