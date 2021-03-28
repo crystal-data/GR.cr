@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require "../src/gr/grm"
 GRM = GR::GRM#::LibGRM
 
