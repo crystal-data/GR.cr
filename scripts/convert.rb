@@ -4,15 +4,17 @@ require 'json'
 
 paths = [
   File.expand_path('gr.json', __dir__)
-  # File.expand_path('gr3.json', __dir__),
-  # File.expand_path('grm.json', __dir__)
+  File.expand_path('gr3.json', __dir__),
+  File.expand_path('grm.json', __dir__)
 ]
 
 hash = {
   ':int' => 'Int32',
   ':unsigned-int' => 'UInt32',
+  ':float' => 'Float32',
   ':double' => 'Float64',
-  ':char' => 'UInt8'
+  ':char' => 'UInt8',
+  ':void' => 'Void'
 }
 
 b = []
