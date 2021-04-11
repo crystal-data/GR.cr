@@ -10,8 +10,9 @@ paths = [
 
 hash = {
   ':int' => 'Int32',
+  ':unsigned-int' => 'UInt32',
   ':double' => 'Float64',
-  ':char' => 'Uint8'
+  ':char' => 'UInt8'
 }
 
 b = []
@@ -25,11 +26,13 @@ paths.each do |path|
     print '('
     f['parameters'].each_with_index do |prm, idx|
       idx.zero? || print(', ')
-      print "a#{idx}"
-      print ' : '
       if prm['type']['tag'] == ':pointer'
-        b << prm['type']['tag'] if hash[prm['type']['type']['tag']].nil?
-        print hash[prm['type']['type']['tag']]
+        if prm['type']['type']['tag'] == 'pointer'
+          print hash[prm['type']['type']['type']['tag']]
+          print '*'
+        else
+          print hash[prm['type']['type']['tag']]
+        end
         print '*'
       else
         print hash[prm['type']['tag']]
