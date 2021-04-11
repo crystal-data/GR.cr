@@ -98,5 +98,12 @@ end
 
 ## Usage
 
+## Development
+
+Use [c2ffi](https://github.com/rpav/c2ffi) to generate bindings.
+
+* Run `script/c2ffi.cr` to generate json files from C headers.
+* Run `script/convert.rb gr.json > gr.txt` to generate bindings.
+
 ## Acknowledgements
 
