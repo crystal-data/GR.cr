@@ -18,7 +18,9 @@ TYPE_TABLE = {
   ':unsigned-long-long' => 'ULongLong',
   ':char' => 'UInt8',
   'size_t' => 'SizeT',
-  ':void' => 'Void'
+  ':void' => 'Void',
+  #
+  'grm_args_t' => 'GRMArgs'
 }.freeze
 
 @unknown = []
