@@ -1,2 +1,1 @@
-require "../src/gr/gr3"
-LibGR3 = GR::GR::LibGR3
+require "../src/gr3"

@@ -59,6 +59,7 @@ funcs.each do |f|
       str << crystal_type(prm['type']['tag'], f['name'])
     end
   end
+  str << ', ...' if f['variadic'] == true
   str << ') : '
   if f['return-type']['tag'] == ':pointer'
     str << crystal_type(f['return-type']['type']['tag'], f[:name])

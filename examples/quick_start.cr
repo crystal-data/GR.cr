@@ -1,5 +1,4 @@
-require "../src/gr/grm"
-GRM = GR::GRM#::LibGRM
+require "../src/grm"
 
 n = 1000
 x = [] of Float64

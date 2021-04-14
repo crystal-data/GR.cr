@@ -1,5 +1,5 @@
-require "../src/gr/gr"
-LibGR = GR::GR::LibGR
+require "../src/gr"
+LibGR = GR::LibGR
 
 n = 100_000_000
 x0 = 0.0; y0 = 0.0
