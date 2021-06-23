@@ -6,6 +6,7 @@ GR.cr has been forked from [gr-crystal](https://github.com/jmakino/gr-crystal) b
 
 :construction: Under development
 
+
 ## Installation
 
 ### GR Installation
@@ -100,6 +101,10 @@ Use [c2ffi](https://github.com/rpav/c2ffi) to generate bindings.
 
 * Run `script/c2ffi.cr` to generate json files from C headers.
 * Run `script/convert.rb gr.json > gr.txt` to generate bindings.
+
+This project is looking for committers. 
+If you are interested in becoming a committer, please make a few pull requests. 
+Also, if you want to be a maintainer/owner of the project, please contact us.
 
 ## Acknowledgements
 
