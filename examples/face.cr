@@ -23,7 +23,7 @@ LibGR.gr_setspace(-80, 200, 45, 70)
 
 LibGR.gr_setcharheight(14.0 / 500)
 LibGR.gr_axes3d(1, 0, 20, -2, -7, -80, 2, 0, 2, -0.01)
-LibGR.gr_axes3d(0, 1,  0, 12, -7, -80, 0, 2, 0,  0.01)
+LibGR.gr_axes3d(0, 1, 0, 12, -7, -80, 0, 2, 0, 0.01)
 
 LibGR.gr_surface(x.size, y.size, x, y, z, 3)
 LibGR.gr_surface(x.size, y.size, x, y, z, 1)

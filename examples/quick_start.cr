@@ -11,8 +11,8 @@ n.times do |i|
 end
 
 plot_types = %w[line hexbin polar shade stem step contour contourf tricont
-               trisurf surface wireframe plot3 scatter scatter3 quiver
-               hist barplot polar_histogram pie]
+  trisurf surface wireframe plot3 scatter scatter3 quiver
+  hist barplot polar_histogram pie]
 
 plot_types.each do |type|
   GRM.clear
