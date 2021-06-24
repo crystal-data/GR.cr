@@ -38,9 +38,9 @@ module GR3
     fun gr3_setviewmatrix(Float32*) : Void
     fun gr3_getprojectiontype : Int32
     fun gr3_setprojectiontype(Int32) : Void
-    # fun gr3_triangulate(UShort*, UShort, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64, **) : UInt32
-    # fun gr3_triangulateindexed(UShort*, UShort, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64, UInt32*, **, **, UInt32*, UInt32**) : Void
-    fun gr3_createisosurfacemesh(Int32*, UShort*, UShort, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64) : Int32
+    # fun gr3_triangulate(LibC::UShort*, LibC::UShort, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64, **) : UInt32
+    # fun gr3_triangulateindexed(LibC::UShort*, LibC::UShort, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64, UInt32*, **, **, UInt32*, UInt32**) : Void
+    fun gr3_createisosurfacemesh(Int32*, LibC::UShort*, LibC::UShort, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64) : Int32
     fun gr3_createsurfacemesh(Int32*, Int32, Int32, Float32*, Float32*, Float32*, Int32) : Int32
     fun gr3_drawmesh_grlike(Int32, Int32, Float32*, Float32*, Float32*, Float32*, Float32*) : Void
     fun gr3_drawsurface(Int32) : Void
@@ -49,12 +49,12 @@ module GR3
     fun gr3_createtubemesh(Int32*, Int32, Float32*, Float32*, Float32*, Int32, Int32) : Int32
     fun gr3_drawspins(Int32, Float32*, Float32*, Float32*, Float32, Float32, Float32, Float32) : Void
     # fun gr3_drawmolecule(Int32, Float32*, Float32*, Float32*, Float32, , Float32) : Void
-    fun gr3_createxslicemesh(Int32*, UShort*, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64) : Void
-    fun gr3_createyslicemesh(Int32*, UShort*, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64) : Void
-    fun gr3_createzslicemesh(Int32*, UShort*, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64) : Void
-    fun gr3_drawxslicemesh(UShort*, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64) : Void
-    fun gr3_drawyslicemesh(UShort*, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64) : Void
-    fun gr3_drawzslicemesh(UShort*, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64) : Void
+    fun gr3_createxslicemesh(Int32*, LibC::UShort*, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64) : Void
+    fun gr3_createyslicemesh(Int32*, LibC::UShort*, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64) : Void
+    fun gr3_createzslicemesh(Int32*, LibC::UShort*, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64) : Void
+    fun gr3_drawxslicemesh(LibC::UShort*, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64) : Void
+    fun gr3_drawyslicemesh(LibC::UShort*, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64) : Void
+    fun gr3_drawzslicemesh(LibC::UShort*, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64) : Void
     fun gr3_drawtrianglesurface(Int32, Float32*) : Void
     fun gr_volume(Int32, Int32, Int32, Float64*, Int32, Float64*, Float64*) : Void
     fun gr3_setorthographicprojection(Float32, Float32, Float32, Float32, Float32, Float32) : Void
