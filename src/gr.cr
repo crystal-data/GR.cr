@@ -34,10 +34,6 @@ module GR
     end
   end
 
-  def axes(x_tick, y_tick, x_org, y_org, major_x, major_y, tick_size)
-    LibGR.gr_axes(x_tick, y_tick, x_org, y_org, major_x, major_y, tick_size)
-  end
-
   def box(x_tick = (GRparms.winmax[0] - GRparms.winmin[0]) * 0.25,
           y_tick = (GRparms.winmax[1] - GRparms.winmin[1]) * 0.25,
           x_org = GRparms.winmin[0], y_org = GRparms.winmin[1], major_x = 1, major_y = 1, tick_size = 0.01, xlog = false, ylog = false)
@@ -67,99 +63,100 @@ module GR
   end
 
   # Forwardable methods
-  # [Automatic definitions in GR.rb] - [those containing char*]
+  # curl -sl https://raw.githubusercontent.com/sciapp/gr/v0.57.2/lib/gr/gr.h | grep -v '^#' | grep DLLEXPORT | grep -v '*' | grep -v '\[' | cut -f2 -d_ | sed 's/(.*//g'
   {% for name in %w[
-    initgr
-    opengks
-    closegks
-    closews
-    activatews
-    deactivatews
-    configurews
-    clearws
-    updatews
-    text
-    setlinetype
-    setlinewidth
-    setlinecolorind
-    setmarkertype
-    setmarkersize
-    setmarkercolorind
-    settextfontprec
-    settextcolorind
-    settextpath
-    settextalign
-    setfillintstyle
-    setfillstyle
-    setfillcolorind
-    setcolorrep
-    setwindow
-    setviewport
-    selntran
-    setclip
-    setwswindow
-    setwsviewport
-    createseg
-    copysegws
-    redrawsegws
-    setsegtran
-    closeseg
-    emergencyclosegks
-    updategks
-    setspace
-    setscale
-    axes
-    axeslbl
-    grid
-    grid3d
-    axes3d
-    colorbar
-    inqcolorfromrgb
-    tick
-    validaterange
-    endprint
-    drawrect
-    fillrect
-    drawarc
-    fillarc
-    setarrowstyle
-    setarrowsize
-    drawarrow
-    setshadow
-    settransparency
-    endgraphics
-    beginselection
-    endselection
-    moveselection
-    resizeselection
-    precision
-    setregenflags
-    inqregenflags
-    savestate
-    restorestate
-    selectcontext
-    destroycontext
-    shade
-    findboundary
-    setresamplemethod
-    setborderwidth
-    setbordercolorind
-    selectclipxform
-    setprojectiontype
-    setperspectiveprojection
-    settransformationparameters
-    setorthographicprojection
-    camerainteraction
-    setwindow3d
-    setscalefactors3d
-    setspace3d
-    settextencoding] %}
-
+                   initgr
+                   opengks
+                   closegks
+                   closews
+                   activatews
+                   deactivatews
+                   configurews
+                   clearws
+                   updatews
+                   setlinetype
+                   setlinewidth
+                   setlinecolorind
+                   setmarkertype
+                   setmarkersize
+                   setmarkercolorind
+                   settextfontprec
+                   setcharexpan
+                   setcharspace
+                   settextcolorind
+                   setcharheight
+                   setcharup
+                   settextpath
+                   settextalign
+                   setfillintstyle
+                   setfillstyle
+                   setfillcolorind
+                   setcolorrep
+                   setwindow
+                   setviewport
+                   selntran
+                   setclip
+                   setwswindow
+                   setwsviewport
+                   createseg
+                   copysegws
+                   redrawsegws
+                   setsegtran
+                   closeseg
+                   emergencyclosegks
+                   updategks
+                   setspace
+                   setscale
+                   axes
+                   axeslbl
+                   grid
+                   grid3d
+                   axes3d
+                   setcolormap
+                   colorbar
+                   inqcolorfromrgb
+                   tick
+                   validaterange
+                   endprint
+                   drawrect
+                   fillrect
+                   drawarc
+                   fillarc
+                   setarrowstyle
+                   setarrowsize
+                   drawarrow
+                   setshadow
+                   settransparency
+                   endgraphics
+                   beginselection
+                   endselection
+                   moveselection
+                   resizeselection
+                   precision
+                   setregenflags
+                   inqregenflags
+                   savestate
+                   restorestate
+                   selectcontext
+                   destroycontext
+                   setresamplemethod
+                   setborderwidth
+                   setbordercolorind
+                   selectclipxform
+                   setprojectiontype
+                   setperspectiveprojection
+                   settransformationparameters
+                   setorthographicprojection
+                   camerainteraction
+                   setwindow3d
+                   setscalefactors3d
+                   setspace3d
+                   settextencoding
+                 ] %}
     def {{name.id}}(*args)
       LibGR.gr_{{name.id}}(*args)
     end
   {% end %}
-
 
   def openws(i0, c, i1)
     LibGR.gr_openws(i0, to_cchar(c), i1)
