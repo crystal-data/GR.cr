@@ -1,13 +1,11 @@
-#
-# gr3drorate.cr
-#
-#  sample to make mp4 file
+require "../../src/gr"
 
-require "grlib"
 include Math
 include GR
+
 # ENV["GKS_WSTYPE"]= "mp4" # to make mp4 file. You can also use gif or mov
 ENV["GKS_DOUBLE_BUF"] = "true" if ENV["GKS_DOUBLE_BUF"]? == nil
+
 setwindow(0, 1, 0, 1)
 setviewport(0.1, 0.9, 0.1, 0.9)
 n = 50
@@ -28,5 +26,5 @@ n.times { |i|
   surface(x, y, z, 4)
   contour(x, y, h, z, 3)
   updatews()
-  sleep 0.05 if ENV["GKS_WSTYPE"] == "x11"
+  sleep 0.05
 }
