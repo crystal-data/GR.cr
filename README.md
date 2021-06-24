@@ -32,15 +32,16 @@ CentOS
 ```sh
 (. /etc/os-release && sudo dnf install -y https://packages.red-data-tools.org/centos/${VERSION_ID}/red-data-tools-release-latest.noarch.rpm)
 sudo dnf install -
+```
 
-#### GR.cr
+### GR.cr installation
 
 Add the dependency to your `shard.yml`:
 
 ```yaml
 dependencies:
   grlib:
-    github: jmakino/gr-crystal
+    github: kojix2/GR.cr
 ```
 
 Run `shards install`
