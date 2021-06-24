@@ -11,13 +11,8 @@ TYPE_TABLE = {
   ':unsigned-int' => 'UInt32',
   ':float' => 'Float32',
   ':double' => 'Float64',
-  ':unsigned-short' => 'UShort',
-  ':long' => 'Long',
-  ':unsigned-long' => 'ULong',
-  ':long-long' => 'LongLong',
-  ':unsigned-long-long' => 'ULongLong',
+  ':unsigned-short' => 'LibC::UShort',
   ':char' => 'UInt8',
-  'size_t' => 'SizeT',
   ':void' => 'Void',
   #
   'grm_args_t' => 'GRMArgs'
