@@ -45,7 +45,12 @@ dependencies:
 
 Run `shards install`
 
+NOTE: The `GRDIR` environment variable cannot be used to specify the location of the GR library. 
+
 ## API Overview (Plan)
+
+* `libGR`, `libGR3`, `libGRM` : call native functions directory.
+* `GR`, `GR3`, `GRM` : call module function customized for Crystal.
 
 ```
   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
@@ -95,6 +100,8 @@ end
 
 ## Usage
 
+Please see the example directory.
+
 ## Development
 
 Use [c2ffi](https://github.com/rpav/c2ffi) to generate bindings.
@@ -108,3 +115,5 @@ Also, if you want to be a maintainer/owner of the project, please contact us.
 
 ## Acknowledgements
 
+
+We would like to thank Josef Heinen, the creator of [GR](https://github.com/sciapp/gr) and [GR.jl](https://github.com/jheinen/GR.jl), Florian Rhiem, the creator of [python-gr](https://github.com/sciapp/python-gr), and all [GR](https://github.com/sciapp/gr) developers.
