@@ -10,7 +10,7 @@ module GRM
                    clear
                  ] %}
     def {{name.id}}(*args)
-      LibGRM.grm_{{name.id}}(*args)
+      LibGRM.{{name.id}}(*args)
     end
   {% end %}
 end
