@@ -103,16 +103,13 @@ Please see the example directory.
 
 ## Development
 
-Use [c2ffi](https://github.com/rpav/c2ffi) to generate bindings.
+GR.cr is a library under development, so even small improvements like fixing typos are welcome! Please feel free to send us your PR.
 
-* Run `script/c2ffi.cr` to generate json files from C headers.
-* Run `script/convert.rb gr.json > gr.txt` to generate bindings.
-
-This project is looking for committers. 
-If you are interested in becoming a committer, please make a few pull requests. 
-Also, if you want to be a maintainer/owner of the project, please contact us.
+* Report bugs
+* Fix bugs and submit pull requests
+* Write, clarify, or fix documentation
+* Suggest or add new features
 
 ## Acknowledgements
-
 
 We would like to thank Josef Heinen, the creator of [GR](https://github.com/sciapp/gr) and [GR.jl](https://github.com/jheinen/GR.jl), Florian Rhiem, the creator of [python-gr](https://github.com/sciapp/python-gr), and all [GR](https://github.com/sciapp/gr) developers.
