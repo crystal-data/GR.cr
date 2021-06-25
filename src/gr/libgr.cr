@@ -1,200 +1,196 @@
 module GR
   @[Link("GR")]
   lib LibGR
-    fun gr_initgr : Void
-    fun gr_opengks : Void
-    fun gr_closegks : Void
-    fun gr_inqdspsize(Float64*, Float64*, Int32*, Int32*) : Void
-    fun gr_openws(Int32, UInt8*, Int32) : Void
-    fun gr_closews(Int32) : Void
-    fun gr_activatews(Int32) : Void
-    fun gr_deactivatews(Int32) : Void
-    fun gr_configurews : Void
-    fun gr_clearws : Void
-    fun gr_updatews : Void
-    fun gr_polyline(Int32, Float64*, Float64*) : Void
-    fun gr_polymarker(Int32, Float64*, Float64*) : Void
-    fun gr_text(Float64, Float64, UInt8*) : Void
-    fun gr_inqtext(Float64, Float64, UInt8*, Float64*, Float64*) : Void
-    fun gr_fillarea(Int32, Float64*, Float64*) : Void
-    fun gr_cellarray(Float64, Float64, Float64, Float64, Int32, Int32, Int32, Int32, Int32, Int32, Int32*) : Void
-    fun gr_nonuniformcellarray(Float64*, Float64*, Int32, Int32, Int32, Int32, Int32, Int32, Int32*) : Void
-    fun gr_polarcellarray(Float64, Float64, Float64, Float64, Float64, Float64, Int32, Int32, Int32, Int32, Int32, Int32, Int32*) : Void
-    fun gr_nonuniformpolarcellarray(Float64, Float64, Float64*, Float64*, Int32, Int32, Int32, Int32, Int32, Int32, Int32*) : Void
-    fun gr_gdp(Int32, Float64*, Float64*, Int32, Int32, Int32*) : Void
-    fun gr_spline(Int32, Float64*, Float64*, Int32, Int32) : Void
-    fun gr_gridit(Int32, Float64*, Float64*, Float64*, Int32, Int32, Float64*, Float64*, Float64*) : Void
-    fun gr_setlinetype(Int32) : Void
-    fun gr_inqlinetype(Int32*) : Void
-    fun gr_setlinewidth(Float64) : Void
-    fun gr_inqlinewidth(Float64*) : Void
-    fun gr_setlinecolorind(Int32) : Void
-    fun gr_inqlinecolorind(Int32*) : Void
-    fun gr_setmarkertype(Int32) : Void
-    fun gr_inqmarkertype(Int32*) : Void
-    fun gr_setmarkersize(Float64) : Void
-    fun gr_inqmarkersize(Float64*) : Void
-    fun gr_setmarkercolorind(Int32) : Void
-    fun gr_inqmarkercolorind(Int32*) : Void
-    fun gr_settextfontprec(Int32, Int32) : Void
-    fun gr_setcharexpan(Float64) : Void
-    fun gr_setcharspace(Float64) : Void
-    fun gr_settextcolorind(Int32) : Void
-    fun gr_inqtextcolorind(Int32*) : Void
-    fun gr_setcharheight(Float64) : Void
-    fun gr_inqcharheight(Float64*) : Void
-    fun gr_setcharup(Float64, Float64) : Void
-    fun gr_settextpath(Int32) : Void
-    fun gr_settextalign(Int32, Int32) : Void
-    fun gr_setfillintstyle(Int32) : Void
-    fun gr_inqfillintstyle(Int32*) : Void
-    fun gr_setfillstyle(Int32) : Void
-    fun gr_inqfillstyle(Int32*) : Void
-    fun gr_setfillcolorind(Int32) : Void
-    fun gr_inqfillcolorind(Int32*) : Void
-    fun gr_setcolorrep(Int32, Float64, Float64, Float64) : Void
-    fun gr_setwindow(Float64, Float64, Float64, Float64) : Void
-    fun gr_inqwindow(Float64*, Float64*, Float64*, Float64*) : Void
-    fun gr_setviewport(Float64, Float64, Float64, Float64) : Void
-    fun gr_inqviewport(Float64*, Float64*, Float64*, Float64*) : Void
-    fun gr_selntran(Int32) : Void
-    fun gr_setclip(Int32) : Void
-    fun gr_setwswindow(Float64, Float64, Float64, Float64) : Void
-    fun gr_setwsviewport(Float64, Float64, Float64, Float64) : Void
-    fun gr_createseg(Int32) : Void
-    fun gr_copysegws(Int32) : Void
-    fun gr_redrawsegws : Void
-    fun gr_setsegtran(Int32, Float64, Float64, Float64, Float64, Float64, Float64, Float64) : Void
-    fun gr_closeseg : Void
-    fun gr_emergencyclosegks : Void
-    fun gr_updategks : Void
-    fun gr_setspace(Float64, Float64, Int32, Int32) : Int32
-    fun gr_inqspace(Float64*, Float64*, Int32*, Int32*) : Void
-    fun gr_setscale(Int32) : Int32
-    fun gr_inqscale(Int32*) : Void
-    fun gr_textext(Float64, Float64, UInt8*) : Int32
-    fun gr_inqtextext(Float64, Float64, UInt8*, Float64*, Float64*) : Void
-    fun gr_axes(Float64, Float64, Float64, Float64, Int32, Int32, Float64) : Void
-    # fun gr_axeslbl(Float64, Float64, Float64, Float64, Int32, Int32, Float64, , ) : Void
-    fun gr_grid(Float64, Float64, Float64, Float64, Int32, Int32) : Void
-    fun gr_grid3d(Float64, Float64, Float64, Float64, Float64, Float64, Int32, Int32, Int32) : Void
-    fun gr_verrorbars(Int32, Float64*, Float64*, Float64*, Float64*) : Void
-    fun gr_herrorbars(Int32, Float64*, Float64*, Float64*, Float64*) : Void
-    fun gr_polyline3d(Int32, Float64*, Float64*, Float64*) : Void
-    fun gr_polymarker3d(Int32, Float64*, Float64*, Float64*) : Void
-    fun gr_axes3d(Float64, Float64, Float64, Float64, Float64, Float64, Int32, Int32, Int32, Float64) : Void
-    fun gr_titles3d(UInt8*, UInt8*, UInt8*) : Void
-    fun gr_surface(Int32, Int32, Float64*, Float64*, Float64*, Int32) : Void
-    fun gr_contour(Int32, Int32, Int32, Float64*, Float64*, Float64*, Float64*, Int32) : Void
-    fun gr_contourf(Int32, Int32, Int32, Float64*, Float64*, Float64*, Float64*, Int32) : Void
-    fun gr_tricontour(Int32, Float64*, Float64*, Float64*, Int32, Float64*) : Void
-    fun gr_hexbin(Int32, Float64*, Float64*, Int32) : Int32
-    fun gr_setcolormap(Int32) : Void
-    fun gr_inqcolormap(Int32*) : Void
-    fun gr_setcolormapfromrgb(Int32, Float64*, Float64*, Float64*, Float64*) : Void
-    fun gr_inqcolormapinds(Int32*, Int32*) : Void
-    fun gr_colorbar : Void
-    fun gr_inqcolor(Int32, Int32*) : Void
-    fun gr_inqcolorfromrgb(Float64, Float64, Float64) : Int32
-    fun gr_hsvtorgb(Float64, Float64, Float64, Float64*, Float64*, Float64*) : Void
-    fun gr_tick(Float64, Float64) : Float64
-    fun gr_validaterange(Float64, Float64) : Int32
-    fun gr_adjustlimits(Float64*, Float64*) : Void
-    fun gr_adjustrange(Float64*, Float64*) : Void
-    fun gr_beginprint(UInt8*) : Void
-    fun gr_beginprintext(UInt8*, UInt8*, UInt8*, UInt8*) : Void
-    fun gr_endprint : Void
-    fun gr_ndctowc(Float64*, Float64*) : Void
-    fun gr_wctondc(Float64*, Float64*) : Void
-    fun gr_wc3towc(Float64*, Float64*, Float64*) : Void
-    fun gr_drawrect(Float64, Float64, Float64, Float64) : Void
-    fun gr_fillrect(Float64, Float64, Float64, Float64) : Void
-    fun gr_drawarc(Float64, Float64, Float64, Float64, Float64, Float64) : Void
-    fun gr_fillarc(Float64, Float64, Float64, Float64, Float64, Float64) : Void
-    # fun gr_drawpath(Int32, *, *, Int32) : Void
-    fun gr_setarrowstyle(Int32) : Void
-    fun gr_setarrowsize(Float64) : Void
-    fun gr_drawarrow(Float64, Float64, Float64, Float64) : Void
-    fun gr_readimage(UInt8*, Int32*, Int32*, Int32**) : Int32
-    fun gr_drawimage(Float64, Float64, Float64, Float64, Int32, Int32, Int32*, Int32) : Void
-    fun gr_importgraphics(UInt8*) : Int32
-    fun gr_setshadow(Float64, Float64, Float64) : Void
-    fun gr_settransparency(Float64) : Void
-    # fun gr_setcoordxform() : Void
-    fun gr_begingraphics(UInt8*) : Void
-    fun gr_endgraphics : Void
-    fun gr_getgraphics : UInt8*
-    fun gr_drawgraphics(UInt8*) : Int32
-    fun gr_mathtex(Float64, Float64, UInt8*) : Void
-    fun gr_inqmathtex(Float64, Float64, UInt8*, Float64*, Float64*) : Void
-    fun gr_beginselection(Int32, Int32) : Void
-    fun gr_endselection : Void
-    fun gr_moveselection(Float64, Float64) : Void
-    fun gr_resizeselection(Int32, Float64, Float64) : Void
-    fun gr_inqbbox(Float64*, Float64*, Float64*, Float64*) : Void
-    fun gr_precision : Float64
-    fun gr_setregenflags(Int32) : Void
-    fun gr_inqregenflags : Int32
-    fun gr_savestate : Void
-    fun gr_restorestate : Void
-    fun gr_selectcontext(Int32) : Void
-    fun gr_destroycontext(Int32) : Void
-    fun gr_uselinespec(UInt8*) : Int32
-    fun gr_delaunay(Int32, Float64*, Float64*, Int32*, Int32**) : Void
-    fun gr_reducepoints(Int32, Float64*, Float64*, Int32, Float64*, Float64*) : Void
-    fun gr_trisurface(Int32, Float64*, Float64*, Float64*) : Void
-    fun gr_gradient(Int32, Int32, Float64*, Float64*, Float64*, Float64*, Float64*) : Void
-    fun gr_quiver(Int32, Int32, Float64*, Float64*, Float64*, Float64*, Int32) : Void
-    fun gr_interp2(Int32, Int32, Float64*, Float64*, Float64*, Int32, Int32, Float64*, Float64*, Float64*, Int32, Float64) : Void
-    fun gr_version : UInt8*
-    fun gr_shade(Int32, Float64*, Float64*, Int32, Int32, Float64*, Int32, Int32, Int32*) : Void
-    fun gr_shadepoints(Int32, Float64*, Float64*, Int32, Int32, Int32) : Void
-    fun gr_shadelines(Int32, Float64*, Float64*, Int32, Int32, Int32) : Void
-    fun gr_panzoom(Float64, Float64, Float64, Float64, Float64*, Float64*, Float64*, Float64*) : Void
-    # fun gr_findboundary(Int32, Float64*, Float64*, Float64, , Int32, Int32*) : Int32
-    fun gr_setresamplemethod(UInt32) : Void
-    fun gr_inqresamplemethod(UInt32*) : Void
-    fun gr_path(Int32, Float64*, Float64*, UInt8*) : Void
-    fun gr_setborderwidth(Float64) : Void
-    fun gr_inqborderwidth(Float64*) : Void
-    fun gr_setbordercolorind(Int32) : Void
-    fun gr_inqbordercolorind(Int32*) : Void
-    fun gr_selectclipxform(Int32) : Void
-    fun gr_inqclipxform(Int32*) : Void
-    fun gr_setprojectiontype(Int32) : Void
-    fun gr_inqprojectiontype(Int32*) : Void
-    fun gr_setperspectiveprojection(Float64, Float64, Float64) : Void
-    fun gr_inqperspectiveprojection(Float64*, Float64*, Float64*) : Void
-    fun gr_settransformationparameters(Float64, Float64, Float64, Float64, Float64, Float64, Float64, Float64, Float64) : Void
-    fun gr_inqtransformationparameters(Float64*, Float64*, Float64*, Float64*, Float64*, Float64*, Float64*, Float64*, Float64*) : Void
-    fun gr_setorthographicprojection(Float64, Float64, Float64, Float64, Float64, Float64) : Void
-    fun gr_inqorthographicprojection(Float64*, Float64*, Float64*, Float64*, Float64*, Float64*) : Void
-    fun gr_camerainteraction(Float64, Float64, Float64, Float64) : Void
-    fun gr_setwindow3d(Float64, Float64, Float64, Float64, Float64, Float64) : Void
-    fun gr_inqwindow3d(Float64*, Float64*, Float64*, Float64*, Float64*, Float64*) : Void
-    fun gr_setscalefactors3d(Float64, Float64, Float64) : Void
-    fun gr_inqscalefactors3d(Float64*, Float64*, Float64*) : Void
-    fun gr_setspace3d(Float64, Float64, Float64, Float64) : Void
-    fun gr_text3d(Float64, Float64, Float64, UInt8*, Int32) : Void
-    fun gr_inqtext3d(Float64, Float64, Float64, UInt8*, Int32, Float64*, Float64*) : Void
-    fun gr_settextencoding(Int32) : Void
-    fun gr_inqtextencoding(Int32*) : Void
-    fun gr_loadfont(UInt8*, Int32*) : Void
-    # fun gr_setcallback() : Void
-    fun gr_setthreadnumber(Int32) : Void
-    fun gr_setpicturesizeforvolume(Int32, Int32) : Void
-    fun gr_setvolumebordercalculation(Int32) : Void
-    fun gr_inqvolumeflags(Int32*, Int32*, Int32*, Int32*) : Void
-    fun gr_cpubasedvolume(Int32, Int32, Int32, Float64*, Int32, Float64*, Float64*, Float64*, Float64*) : Void
+    fun initgr = gr_initgr
+    fun opengks = gr_opengks
+    fun closegks = gr_closegks
+    fun inqdspsize = gr_inqdspsize(x0 : LibC::Double*, x1 : LibC::Double*, x2 : LibC::Int*, x3 : LibC::Int*)
+    fun openws = gr_openws(x0 : LibC::Int, x1 : LibC::Char*, x2 : LibC::Int)
+    fun closews = gr_closews(x0 : LibC::Int)
+    fun activatews = gr_activatews(x0 : LibC::Int)
+    fun deactivatews = gr_deactivatews(x0 : LibC::Int)
+    fun configurews = gr_configurews
+    fun clearws = gr_clearws
+    fun updatews = gr_updatews
+    fun polyline = gr_polyline(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*)
+    fun polymarker = gr_polymarker(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*)
+    fun text = gr_text(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Char*)
+    fun inqtext = gr_inqtext(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Char*, x3 : LibC::Double*, x4 : LibC::Double*)
+    fun fillarea = gr_fillarea(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*)
+    fun cellarray = gr_cellarray(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double, x4 : LibC::Int, x5 : LibC::Int, x6 : LibC::Int, x7 : LibC::Int, x8 : LibC::Int, x9 : LibC::Int, x10 : LibC::Int*)
+    fun nonuniformcellarray = gr_nonuniformcellarray(x0 : LibC::Double*, x1 : LibC::Double*, x2 : LibC::Int, x3 : LibC::Int, x4 : LibC::Int, x5 : LibC::Int, x6 : LibC::Int, x7 : LibC::Int, x8 : LibC::Int*)
+    fun polarcellarray = gr_polarcellarray(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double, x4 : LibC::Double, x5 : LibC::Double, x6 : LibC::Int, x7 : LibC::Int, x8 : LibC::Int, x9 : LibC::Int, x10 : LibC::Int, x11 : LibC::Int, x12 : LibC::Int*)
+    fun nonuniformpolarcellarray = gr_nonuniformpolarcellarray(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double*, x3 : LibC::Double*, x4 : LibC::Int, x5 : LibC::Int, x6 : LibC::Int, x7 : LibC::Int, x8 : LibC::Int, x9 : LibC::Int, x10 : LibC::Int*)
+    fun gdp = gr_gdp(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Int, x4 : LibC::Int, x5 : LibC::Int*)
+    fun spline = gr_spline(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Int, x4 : LibC::Int)
+    fun gridit = gr_gridit(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Double*, x4 : LibC::Int, x5 : LibC::Int, x6 : LibC::Double*, x7 : LibC::Double*, x8 : LibC::Double*)
+    fun setlinetype = gr_setlinetype(x0 : LibC::Int)
+    fun inqlinetype = gr_inqlinetype(x0 : LibC::Int*)
+    fun setlinewidth = gr_setlinewidth(x0 : LibC::Double)
+    fun inqlinewidth = gr_inqlinewidth(x0 : LibC::Double*)
+    fun setlinecolorind = gr_setlinecolorind(x0 : LibC::Int)
+    fun inqlinecolorind = gr_inqlinecolorind(x0 : LibC::Int*)
+    fun setmarkertype = gr_setmarkertype(x0 : LibC::Int)
+    fun inqmarkertype = gr_inqmarkertype(x0 : LibC::Int*)
+    fun setmarkersize = gr_setmarkersize(x0 : LibC::Double)
+    fun inqmarkersize = gr_inqmarkersize(x0 : LibC::Double*)
+    fun setmarkercolorind = gr_setmarkercolorind(x0 : LibC::Int)
+    fun inqmarkercolorind = gr_inqmarkercolorind(x0 : LibC::Int*)
+    fun settextfontprec = gr_settextfontprec(x0 : LibC::Int, x1 : LibC::Int)
+    fun setcharexpan = gr_setcharexpan(x0 : LibC::Double)
+    fun setcharspace = gr_setcharspace(x0 : LibC::Double)
+    fun settextcolorind = gr_settextcolorind(x0 : LibC::Int)
+    fun inqtextcolorind = gr_inqtextcolorind(x0 : LibC::Int*)
+    fun setcharheight = gr_setcharheight(x0 : LibC::Double)
+    fun inqcharheight = gr_inqcharheight(x0 : LibC::Double*)
+    fun setcharup = gr_setcharup(x0 : LibC::Double, x1 : LibC::Double)
+    fun settextpath = gr_settextpath(x0 : LibC::Int)
+    fun settextalign = gr_settextalign(x0 : LibC::Int, x1 : LibC::Int)
+    fun setfillintstyle = gr_setfillintstyle(x0 : LibC::Int)
+    fun inqfillintstyle = gr_inqfillintstyle(x0 : LibC::Int*)
+    fun setfillstyle = gr_setfillstyle(x0 : LibC::Int)
+    fun inqfillstyle = gr_inqfillstyle(x0 : LibC::Int*)
+    fun setfillcolorind = gr_setfillcolorind(x0 : LibC::Int)
+    fun inqfillcolorind = gr_inqfillcolorind(x0 : LibC::Int*)
+    fun setcolorrep = gr_setcolorrep(x0 : LibC::Int, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double)
+    fun setwindow = gr_setwindow(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double)
+    fun inqwindow = gr_inqwindow(x0 : LibC::Double*, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Double*)
+    fun setviewport = gr_setviewport(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double)
+    fun inqviewport = gr_inqviewport(x0 : LibC::Double*, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Double*)
+    fun selntran = gr_selntran(x0 : LibC::Int)
+    fun setclip = gr_setclip(x0 : LibC::Int)
+    fun setwswindow = gr_setwswindow(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double)
+    fun setwsviewport = gr_setwsviewport(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double)
+    fun createseg = gr_createseg(x0 : LibC::Int)
+    fun copysegws = gr_copysegws(x0 : LibC::Int)
+    fun redrawsegws = gr_redrawsegws
+    fun setsegtran = gr_setsegtran(x0 : LibC::Int, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double, x4 : LibC::Double, x5 : LibC::Double, x6 : LibC::Double, x7 : LibC::Double)
+    fun closeseg = gr_closeseg
+    fun emergencyclosegks = gr_emergencyclosegks
+    fun updategks = gr_updategks
+    fun setspace = gr_setspace(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Int, x3 : LibC::Int) : LibC::Int
+    fun inqspace = gr_inqspace(x0 : LibC::Double*, x1 : LibC::Double*, x2 : LibC::Int*, x3 : LibC::Int*)
+    fun setscale = gr_setscale(x0 : LibC::Int) : LibC::Int
+    fun inqscale = gr_inqscale(x0 : LibC::Int*)
+    fun textext = gr_textext(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Char*) : LibC::Int
+    fun inqtextext = gr_inqtextext(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Char*, x3 : LibC::Double*, x4 : LibC::Double*)
+    fun axes = gr_axes(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double, x4 : LibC::Int, x5 : LibC::Int, x6 : LibC::Double)
+    fun axeslbl = gr_axeslbl(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double, x4 : LibC::Int, x5 : LibC::Int, x6 : LibC::Double, x7 : (LibC::Double, LibC::Double, LibC::Char*, LibC::Double -> Void), x8 : (LibC::Double, LibC::Double, LibC::Char*, LibC::Double -> Void))
+    fun grid = gr_grid(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double, x4 : LibC::Int, x5 : LibC::Int)
+    fun grid3d = gr_grid3d(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double, x4 : LibC::Double, x5 : LibC::Double, x6 : LibC::Int, x7 : LibC::Int, x8 : LibC::Int)
+    fun verrorbars = gr_verrorbars(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Double*, x4 : LibC::Double*)
+    fun herrorbars = gr_herrorbars(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Double*, x4 : LibC::Double*)
+    fun polyline3d = gr_polyline3d(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Double*)
+    fun polymarker3d = gr_polymarker3d(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Double*)
+    fun axes3d = gr_axes3d(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double, x4 : LibC::Double, x5 : LibC::Double, x6 : LibC::Int, x7 : LibC::Int, x8 : LibC::Int, x9 : LibC::Double)
+    fun titles3d = gr_titles3d(x0 : LibC::Char*, x1 : LibC::Char*, x2 : LibC::Char*)
+    fun surface = gr_surface(x0 : LibC::Int, x1 : LibC::Int, x2 : LibC::Double*, x3 : LibC::Double*, x4 : LibC::Double*, x5 : LibC::Int)
+    fun contour = gr_contour(x0 : LibC::Int, x1 : LibC::Int, x2 : LibC::Int, x3 : LibC::Double*, x4 : LibC::Double*, x5 : LibC::Double*, x6 : LibC::Double*, x7 : LibC::Int)
+    fun contourf = gr_contourf(x0 : LibC::Int, x1 : LibC::Int, x2 : LibC::Int, x3 : LibC::Double*, x4 : LibC::Double*, x5 : LibC::Double*, x6 : LibC::Double*, x7 : LibC::Int)
+    fun tricontour = gr_tricontour(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Double*, x4 : LibC::Int, x5 : LibC::Double*)
+    fun hexbin = gr_hexbin(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Int) : LibC::Int
+    fun setcolormap = gr_setcolormap(x0 : LibC::Int)
+    fun inqcolormap = gr_inqcolormap(x0 : LibC::Int*)
+    fun setcolormapfromrgb = gr_setcolormapfromrgb(n : LibC::Int, r : LibC::Double*, g : LibC::Double*, b : LibC::Double*, x : LibC::Double*)
+    fun inqcolormapinds = gr_inqcolormapinds(x0 : LibC::Int*, x1 : LibC::Int*)
+    fun colorbar = gr_colorbar
+    fun inqcolor = gr_inqcolor(x0 : LibC::Int, x1 : LibC::Int*)
+    fun inqcolorfromrgb = gr_inqcolorfromrgb(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double) : LibC::Int
+    fun hsvtorgb = gr_hsvtorgb(h : LibC::Double, s : LibC::Double, v : LibC::Double, r : LibC::Double*, g : LibC::Double*, b : LibC::Double*)
+    fun tick = gr_tick(x0 : LibC::Double, x1 : LibC::Double) : LibC::Double
+    fun validaterange = gr_validaterange(x0 : LibC::Double, x1 : LibC::Double) : LibC::Int
+    fun adjustlimits = gr_adjustlimits(x0 : LibC::Double*, x1 : LibC::Double*)
+    fun adjustrange = gr_adjustrange(x0 : LibC::Double*, x1 : LibC::Double*)
+    fun beginprint = gr_beginprint(x0 : LibC::Char*)
+    fun beginprintext = gr_beginprintext(x0 : LibC::Char*, x1 : LibC::Char*, x2 : LibC::Char*, x3 : LibC::Char*)
+    fun endprint = gr_endprint
+    fun ndctowc = gr_ndctowc(x0 : LibC::Double*, x1 : LibC::Double*)
+    fun wctondc = gr_wctondc(x0 : LibC::Double*, x1 : LibC::Double*)
+    fun wc3towc = gr_wc3towc(x0 : LibC::Double*, x1 : LibC::Double*, x2 : LibC::Double*)
+    fun drawrect = gr_drawrect(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double)
+    fun fillrect = gr_fillrect(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double)
+    fun drawarc = gr_drawarc(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double, x4 : LibC::Double, x5 : LibC::Double)
+    fun fillarc = gr_fillarc(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double, x4 : LibC::Double, x5 : LibC::Double)
+    fun drawpath = gr_drawpath(x0 : LibC::Int, x1 : VertexT*, x2 : UInt8*, x3 : LibC::Int)
 
-    # Unknown types
-    # [":function-pointer", "vertex_t", ":unsigned-char", ":array"]
-    # gr_axeslbl, :function-pointer
-    # gr_axeslbl, :function-pointer
-    # gr_drawpath, vertex_t
-    # gr_drawpath, :unsigned-char
-    # gr_setcoordxform, :array
-    # gr_findboundary, :function-pointer
-    # gr_setcallback, :function-pointer
+    struct VertexT
+      x : LibC::Double
+      y : LibC::Double
+    end
+
+    fun setarrowstyle = gr_setarrowstyle(x0 : LibC::Int)
+    fun setarrowsize = gr_setarrowsize(x0 : LibC::Double)
+    fun drawarrow = gr_drawarrow(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double)
+    fun readimage = gr_readimage(x0 : LibC::Char*, x1 : LibC::Int*, x2 : LibC::Int*, x3 : LibC::Int**) : LibC::Int
+    fun drawimage = gr_drawimage(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double, x4 : LibC::Int, x5 : LibC::Int, x6 : LibC::Int*, x7 : LibC::Int)
+    fun importgraphics = gr_importgraphics(x0 : LibC::Char*) : LibC::Int
+    fun setshadow = gr_setshadow(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double)
+    fun settransparency = gr_settransparency(x0 : LibC::Double)
+    fun setcoordxform = gr_setcoordxform(x0 : LibC::Double[2][3])
+    fun begingraphics = gr_begingraphics(x0 : LibC::Char*)
+    fun endgraphics = gr_endgraphics
+    fun getgraphics = gr_getgraphics : LibC::Char*
+    fun drawgraphics = gr_drawgraphics(x0 : LibC::Char*) : LibC::Int
+    fun mathtex = gr_mathtex(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Char*)
+    fun inqmathtex = gr_inqmathtex(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Char*, x3 : LibC::Double*, x4 : LibC::Double*)
+    fun beginselection = gr_beginselection(x0 : LibC::Int, x1 : LibC::Int)
+    fun endselection = gr_endselection
+    fun moveselection = gr_moveselection(x0 : LibC::Double, x1 : LibC::Double)
+    fun resizeselection = gr_resizeselection(x0 : LibC::Int, x1 : LibC::Double, x2 : LibC::Double)
+    fun inqbbox = gr_inqbbox(x0 : LibC::Double*, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Double*)
+    fun precision = gr_precision : LibC::Double
+    fun setregenflags = gr_setregenflags(x0 : LibC::Int)
+    fun inqregenflags = gr_inqregenflags : LibC::Int
+    fun savestate = gr_savestate
+    fun restorestate = gr_restorestate
+    fun selectcontext = gr_selectcontext(x0 : LibC::Int)
+    fun destroycontext = gr_destroycontext(x0 : LibC::Int)
+    fun uselinespec = gr_uselinespec(x0 : LibC::Char*) : LibC::Int
+    fun delaunay = gr_delaunay(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Int*, x4 : LibC::Int**)
+    fun reducepoints = gr_reducepoints(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Int, x4 : LibC::Double*, x5 : LibC::Double*)
+    fun trisurface = gr_trisurface(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Double*)
+    fun gradient = gr_gradient(x0 : LibC::Int, x1 : LibC::Int, x2 : LibC::Double*, x3 : LibC::Double*, x4 : LibC::Double*, x5 : LibC::Double*, x6 : LibC::Double*)
+    fun quiver = gr_quiver(x0 : LibC::Int, x1 : LibC::Int, x2 : LibC::Double*, x3 : LibC::Double*, x4 : LibC::Double*, x5 : LibC::Double*, x6 : LibC::Int)
+    fun interp2 = gr_interp2(nx : LibC::Int, ny : LibC::Int, x : LibC::Double*, y : LibC::Double*, z : LibC::Double*, nxq : LibC::Int, nyq : LibC::Int, xq : LibC::Double*, yq : LibC::Double*, zq : LibC::Double*, method : LibC::Int, extrapval : LibC::Double)
+    fun version = gr_version : LibC::Char*
+    fun shade = gr_shade(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Int, x4 : LibC::Int, x5 : LibC::Double*, x6 : LibC::Int, x7 : LibC::Int, x8 : LibC::Int*)
+    fun shadepoints = gr_shadepoints(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Int, x4 : LibC::Int, x5 : LibC::Int)
+    fun shadelines = gr_shadelines(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Int, x4 : LibC::Int, x5 : LibC::Int)
+    fun panzoom = gr_panzoom(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double, x4 : LibC::Double*, x5 : LibC::Double*, x6 : LibC::Double*, x7 : LibC::Double*)
+    fun findboundary = gr_findboundary(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Double, x4 : (LibC::Double, LibC::Double -> LibC::Double), x5 : LibC::Int, x6 : LibC::Int*) : LibC::Int
+    fun setresamplemethod = gr_setresamplemethod(x0 : LibC::UInt)
+    fun inqresamplemethod = gr_inqresamplemethod(x0 : LibC::UInt*)
+    fun path = gr_path(x0 : LibC::Int, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Char*)
+    fun setborderwidth = gr_setborderwidth(x0 : LibC::Double)
+    fun inqborderwidth = gr_inqborderwidth(x0 : LibC::Double*)
+    fun setbordercolorind = gr_setbordercolorind(x0 : LibC::Int)
+    fun inqbordercolorind = gr_inqbordercolorind(x0 : LibC::Int*)
+    fun selectclipxform = gr_selectclipxform(x0 : LibC::Int)
+    fun inqclipxform = gr_inqclipxform(x0 : LibC::Int*)
+    fun setprojectiontype = gr_setprojectiontype(x0 : LibC::Int)
+    fun inqprojectiontype = gr_inqprojectiontype(x0 : LibC::Int*)
+    fun setperspectiveprojection = gr_setperspectiveprojection(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double)
+    fun inqperspectiveprojection = gr_inqperspectiveprojection(x0 : LibC::Double*, x1 : LibC::Double*, x2 : LibC::Double*)
+    fun settransformationparameters = gr_settransformationparameters(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double, x4 : LibC::Double, x5 : LibC::Double, x6 : LibC::Double, x7 : LibC::Double, x8 : LibC::Double)
+    fun inqtransformationparameters = gr_inqtransformationparameters(x0 : LibC::Double*, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Double*, x4 : LibC::Double*, x5 : LibC::Double*, x6 : LibC::Double*, x7 : LibC::Double*, x8 : LibC::Double*)
+    fun setorthographicprojection = gr_setorthographicprojection(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double, x4 : LibC::Double, x5 : LibC::Double)
+    fun inqorthographicprojection = gr_inqorthographicprojection(x0 : LibC::Double*, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Double*, x4 : LibC::Double*, x5 : LibC::Double*)
+    fun camerainteraction = gr_camerainteraction(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double)
+    fun setwindow3d = gr_setwindow3d(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double, x4 : LibC::Double, x5 : LibC::Double)
+    fun inqwindow3d = gr_inqwindow3d(x0 : LibC::Double*, x1 : LibC::Double*, x2 : LibC::Double*, x3 : LibC::Double*, x4 : LibC::Double*, x5 : LibC::Double*)
+    fun setscalefactors3d = gr_setscalefactors3d(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double)
+    fun inqscalefactors3d = gr_inqscalefactors3d(x0 : LibC::Double*, x1 : LibC::Double*, x2 : LibC::Double*)
+    fun setspace3d = gr_setspace3d(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Double)
+    fun text3d = gr_text3d(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Char*, axis : LibC::Int)
+    fun inqtext3d = gr_inqtext3d(x0 : LibC::Double, x1 : LibC::Double, x2 : LibC::Double, x3 : LibC::Char*, axis : LibC::Int, x5 : LibC::Double*, x6 : LibC::Double*)
+    fun settextencoding = gr_settextencoding(x0 : LibC::Int)
+    fun inqtextencoding = gr_inqtextencoding(x0 : LibC::Int*)
+    fun loadfont = gr_loadfont(x0 : LibC::Char*, x1 : LibC::Int*)
+    fun setcallback = gr_setcallback(x0 : (LibC::Char* -> LibC::Char*))
+    fun setthreadnumber = gr_setthreadnumber(x0 : LibC::Int)
+    fun setpicturesizeforvolume = gr_setpicturesizeforvolume(x0 : LibC::Int, x1 : LibC::Int)
+    fun setvolumebordercalculation = gr_setvolumebordercalculation(x0 : LibC::Int)
+    fun inqvolumeflags = gr_inqvolumeflags(x0 : LibC::Int*, x1 : LibC::Int*, x2 : LibC::Int*, x3 : LibC::Int*)
+    fun cpubasedvolume = gr_cpubasedvolume(x0 : LibC::Int, x1 : LibC::Int, x2 : LibC::Int, x3 : LibC::Double*, x4 : LibC::Int, x5 : LibC::Double*, x6 : LibC::Double*, x7 : LibC::Double*, x8 : LibC::Double*)
   end
 end

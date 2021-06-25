@@ -24,7 +24,7 @@ module GR3
                    setorthographicprojection
                  ] %}
     def {{name.id}}(*args)
-      LibGR.gr3_{{name.id}}(*args)
+      LibGR.{{name.id}}(*args)
     end
   {% end %}
 end
