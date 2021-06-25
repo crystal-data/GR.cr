@@ -10,9 +10,8 @@ n.times do |i|
   z << Math.sin(x[i]) * x[i]
 end
 
-plot_types = %w[line hexbin polar shade stem step contour contourf tricont
-  trisurf surface wireframe plot3 scatter scatter3 quiver
-  hist barplot polar_histogram pie]
+plot_types = %w[line hexbin polar shade stem step contour
+  trisurf plot3 scatter scatter3]
 
 plot_types.each do |type|
   GRM.clear
