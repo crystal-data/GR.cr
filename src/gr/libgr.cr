@@ -1,5 +1,5 @@
 module GR
-  @[Link("GR")]
+  @[Link(ldflags: "-L `if [ -z $GRDIR ]; then pkg-config gr --variable=libdir ; else echo $GRDIR/lib ; fi` -lGR -Wl,-rpath,`if [ -z $GRDIR ]; then pkg-config gr --variable=libdir ; else echo $GRDIR/lib ; fi`")]
   lib LibGR
     fun initgr = gr_initgr
     fun opengks = gr_opengks
