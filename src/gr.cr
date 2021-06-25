@@ -242,4 +242,9 @@ module GR
     LibGR.gr_contourf(xa.size, xb.size, xc.size, to_carray(xa), to_carray(xb),
       to_carray(xc), to_carray(xd), i4)
   end
+
+  def shadepoints(xa, xb, a, b, c)
+    raise "size error" if xa.size != xb.size # fixme
+    LibGR.gr_shadepoints(xa.size, xa, xb, a, b, c) # should use dims and xform?
+  end
 end

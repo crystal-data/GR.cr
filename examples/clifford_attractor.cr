@@ -1,5 +1,4 @@
 require "../src/gr"
-LibGR = GR::LibGR
 
 n = 100_000_000
 x0 = 0.0; y0 = 0.0
@@ -15,10 +14,10 @@ n.times do |i|
   θ += dθ
 end
 
-LibGR.gr_setviewport(0, 1, 0, 1)
-LibGR.gr_setwindow(-3, 3, -3, 3)
-LibGR.gr_setcolormap(8)
-LibGR.gr_shadepoints(n, x, y, 5, 480, 480)
-LibGR.gr_updatews
+GR.setviewport(0, 1, 0, 1)
+GR.setwindow(-3, 3, -3, 3)
+GR.setcolormap(8)
+GR.shadepoints(x, y, 5, 480, 480) # NOTE: use dims: xform: ?
+GR.updatews
 
 c = gets
