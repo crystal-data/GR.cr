@@ -3,13 +3,13 @@ module GR3
   lib LibGR3
     fun gr3_init(Int32*) : Int32
     fun gr3_free(Void*) : Void
-    fun gr3_terminate : Void
+    fun gr3_terminate() : Void
     fun gr3_geterror(Int32, Int32*, UInt8**) : Int32
-    fun gr3_getrenderpathstring : UInt8*
+    fun gr3_getrenderpathstring() : UInt8*
     fun gr3_geterrorstring(Int32) : UInt8*
     # fun gr3_setlogcallback() : Void
-    fun gr3_clear : Int32
-    fun gr3_usecurrentframebuffer : Void
+    fun gr3_clear() : Int32
+    fun gr3_usecurrentframebuffer() : Void
     fun gr3_useframebuffer(UInt32) : Void
     fun gr3_setquality(Int32) : Int32
     fun gr3_getimage(Int32, Int32, Int32, UInt8*) : Int32
@@ -36,7 +36,7 @@ module GR3
     fun gr3_selectid(Int32, Int32, Int32, Int32, Int32*) : Int32
     fun gr3_getviewmatrix(Float32*) : Void
     fun gr3_setviewmatrix(Float32*) : Void
-    fun gr3_getprojectiontype : Int32
+    fun gr3_getprojectiontype() : Int32
     fun gr3_setprojectiontype(Int32) : Void
     # fun gr3_triangulate(LibC::UShort*, LibC::UShort, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64, **) : UInt32
     # fun gr3_triangulateindexed(LibC::UShort*, LibC::UShort, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, Float64, Float64, Float64, Float64, Float64, Float64, UInt32*, **, **, UInt32*, UInt32**) : Void
@@ -58,5 +58,13 @@ module GR3
     fun gr3_drawtrianglesurface(Int32, Float32*) : Void
     fun gr_volume(Int32, Int32, Int32, Float64*, Int32, Float64*, Float64*) : Void
     fun gr3_setorthographicprojection(Float32, Float32, Float32, Float32, Float32, Float32) : Void
+    
+    # Unknown types
+    # [":function-pointer", "gr3_triangle_t", "gr3_coord_t", ":array"]
+    # gr3_setlogcallback, :function-pointer
+    # gr3_triangulate, gr3_triangle_t
+    # gr3_triangulateindexed, gr3_coord_t
+    # gr3_triangulateindexed, gr3_coord_t
+    # gr3_drawmolecule, :array
   end
 end

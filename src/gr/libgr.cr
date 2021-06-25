@@ -92,6 +92,7 @@ module GR
     fun gr_setcolormap(Int32) : Void
     fun gr_inqcolormap(Int32*) : Void
     fun gr_setcolormapfromrgb(Int32, Float64*, Float64*, Float64*, Float64*) : Void
+    fun gr_inqcolormapinds(Int32*, Int32*) : Void
     fun gr_colorbar : Void
     fun gr_inqcolor(Int32, Int32*) : Void
     fun gr_inqcolorfromrgb(Float64, Float64, Float64) : Int32
@@ -180,5 +181,20 @@ module GR
     fun gr_inqtextencoding(Int32*) : Void
     fun gr_loadfont(UInt8*, Int32*) : Void
     # fun gr_setcallback() : Void
+    fun gr_setthreadnumber(Int32) : Void
+    fun gr_setpicturesizeforvolume(Int32, Int32) : Void
+    fun gr_setvolumebordercalculation(Int32) : Void
+    fun gr_inqvolumeflags(Int32*, Int32*, Int32*, Int32*) : Void
+    fun gr_cpubasedvolume(Int32, Int32, Int32, Float64*, Int32, Float64*, Float64*, Float64*, Float64*) : Void
+
+    # Unknown types
+    # [":function-pointer", "vertex_t", ":unsigned-char", ":array"]
+    # gr_axeslbl, :function-pointer
+    # gr_axeslbl, :function-pointer
+    # gr_drawpath, vertex_t
+    # gr_drawpath, :unsigned-char
+    # gr_setcoordxform, :array
+    # gr_findboundary, :function-pointer
+    # gr_setcallback, :function-pointer
   end
 end
