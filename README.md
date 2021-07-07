@@ -46,8 +46,6 @@ dependencies:
 
 Run `shards install`
 
-NOTE: The `GRDIR` environment variable cannot be used to specify the location of the GR library. 
-
 ## API Overview (Plan)
 
 * `libGR`, `libGR3`, `libGRM` : call native functions directory.
