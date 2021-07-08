@@ -1,17 +1,27 @@
 # GR.cr
 
+<a href="https://github.com/red-data-tools/GR.rb"><img alt="GR.rb" src="https://user-images.githubusercontent.com/5798442/124949370-76312280-e04c-11eb-8e1e-e3a092284584.png" width="366" height="300" align="right"></a>
+
+:construction: Under development :construction:
+
 [Crystal](https://github.com/crystal-lang/crystal) bindings to [GR framework](https://github.com/sciapp/gr)
 
 GR.cr has been forked from [gr-crystal](https://github.com/jmakino/gr-crystal) by [Jun Makino](https://github.com/jmakino)
-
-:construction: Under development
-
 
 ## Installation
 
 ### GR Installation
 
-#### Linux - APT
+#### 1. Linux, Mac, Windows: Official release
+
+Download [official release](https://github.com/sciapp/gr/releases).
+Set `GRDIR` to specify GR directory.
+
+```sh
+export GRDIR="your/path/to/gr"
+```
+
+#### 2. Linux - APT
 
 [packages.red-data-tools.org](https://github.com/red-data-tools/packages.red-data-tools.org) provides `libgr-dev`, `libgr3-dev` and `libgrm-dev`
 
@@ -25,13 +35,19 @@ sudo apt update
 sudo apt install libgrm-dev
 ```
 
-#### Linux - Yum
+#### 3. Linux - Yum
 
 CentOS
 
 ```sh
 (. /etc/os-release && sudo dnf install -y https://packages.red-data-tools.org/centos/${VERSION_ID}/red-data-tools-release-latest.noarch.rpm)
 sudo dnf install -
+```
+
+#### 4. Mac - Homebrew
+
+```sh
+brew install libgr
 ```
 
 ### GR.cr installation
