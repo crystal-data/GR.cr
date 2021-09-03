@@ -12,7 +12,7 @@ GR.cr has been forked from [gr-crystal](https://github.com/jmakino/gr-crystal) b
 
 ### GR Installation
 
-#### 1. Linux, Mac, Windows: Official release
+#### Linux, Mac, Windows - Official release
 
 Download [official release](https://github.com/sciapp/gr/releases).
 Set `GRDIR` to specify GR directory.
@@ -21,7 +21,17 @@ Set `GRDIR` to specify GR directory.
 export GRDIR="your/path/to/gr"
 ```
 
-#### 2. Linux - APT
+#### Linux - OpenSUSE build service
+
+https://software.opensuse.org//download.html?project=science%3Agr-framework&package=gr
+
+```sh
+export GRDIR="/usr/gr"
+```
+
+#### Linux - Red-data-tools
+
+APT
 
 [packages.red-data-tools.org](https://github.com/red-data-tools/packages.red-data-tools.org) provides `libgr-dev`, `libgr3-dev` and `libgrm-dev`
 
@@ -29,13 +39,14 @@ Debian GNU/Linux and Ubuntu
 
 ```sh
 sudo apt install -y -V ca-certificates lsb-release wget
-wget https://packages.red-data-tools.org/$(lsb_release --id --short | tr 'A-Z' 'a-z')/red-data-tools-apt-source-latest-$(lsb_release --codename --short).deb
+wget https://packages.red-data-tools.org/$(lsb_release --id --short | tr 'A-Z' 'a-z'\
+  )/red-data-tools-apt-source-latest-$(lsb_release --codename --short).deb
 sudo apt install -y -V ./red-data-tools-apt-source-latest-$(lsb_release --codename --short).deb
 sudo apt update
 sudo apt install libgrm-dev
 ```
 
-#### 3. Linux - Yum
+Yum
 
 CentOS
 
@@ -44,7 +55,7 @@ CentOS
 sudo dnf install -
 ```
 
-#### 4. Mac - Homebrew
+#### Mac - Homebrew
 
 ```sh
 brew install libgr
