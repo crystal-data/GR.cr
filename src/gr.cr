@@ -174,6 +174,10 @@ module GR
     LibGR.text(x, x1, to_cchar(c))
   end
 
+  def cellarray(xmin, xmax, ymin, ymax, dimx, dimy, color)
+    LibGR.cellarray(xmin, xmax, ymin, ymax, dimx, dimy, 1, 1, dimx, dimy, color)
+  end
+
   def mathtex(x, x1, c)
     LibGR.mathtex(x, x1, to_cchar(c))
   end
@@ -249,7 +253,7 @@ module GR
   end
 
   def shadepoints(xa, xb, a, b, c)
-    raise "size error" if xa.size != xb.size # fixme
+    raise "size error" if xa.size != xb.size    # fixme
     LibGR.shadepoints(xa.size, xa, xb, a, b, c) # should use dims and xform?
   end
 end
