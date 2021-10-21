@@ -178,6 +178,10 @@ module GR
     LibGR.cellarray(xmin, xmax, ymin, ymax, dimx, dimy, 1, 1, dimx, dimy, color)
   end
 
+  def polarcellarray(x_org, y_org, phimin, phimax, rmin, rmax, dimphi, dimr, color)
+    LibGR.polarcellarray(x_org, y_org, phimin, phimax, rmin, rmax, dimphi, dimr, 1, 1, dimphi, dimr, color)
+  end
+
   def mathtex(x, x1, c)
     LibGR.mathtex(x, x1, to_cchar(c))
   end
