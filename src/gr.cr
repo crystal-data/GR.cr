@@ -243,6 +243,11 @@ module GR
       to_carray(xc), to_carray(xd), i4)
   end
 
+  def hexbin(x, y, nbins)
+    n = x.size
+    LibGR.hexbin(n, to_carray(x), to_carray(y), nbins)
+  end
+
   def shadepoints(xa, xb, a, b, c)
     raise "size error" if xa.size != xb.size # fixme
     LibGR.shadepoints(xa.size, xa, xb, a, b, c) # should use dims and xform?
