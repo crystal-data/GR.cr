@@ -260,4 +260,9 @@ module GR
     raise "size error" if xa.size != xb.size    # fixme
     LibGR.shadepoints(xa.size, xa, xb, a, b, c) # should use dims and xform?
   end
+
+  def path(x, y, codes)
+    raise "size error" if x.size != y.size    # fixme
+    LibGR.path(x.size, x, y, codes)
+  end
 end
