@@ -71,7 +71,7 @@ Run `shards install`
 
 ## API Overview (Plan)
 
-* `libGR`, `libGR3`, `libGRM` : call native functions directory.
+* `libGR`, `libGR3`, `libGRM` : call native functions directly.
 * `GR`, `GR3`, `GRM` : call module function customized for Crystal.
 
 ```
