@@ -1,7 +1,9 @@
-require "./gr3/libgr3.cr"
+require "./gr3/libgr3"
+require "./gr_common_utils"
 
 module GR3
   extend self
+  extend GRCommonUtils
 
   # Forwardable methods
   # curl -sl https://raw.githubusercontent.com/sciapp/gr/v0.57.2/lib/gr3/gr3.h | grep -v '^#' | grep GR3API | grep -v '*' | grep -v '\[' | cut -f2 -d_ | sed 's/(.*//g'

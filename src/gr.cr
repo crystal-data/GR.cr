@@ -1,7 +1,9 @@
-require "./gr/libgr.cr"
+require "./gr/libgr"
+require "./gr_common_utils"
 
 module GR
   extend self
+  extend GRCommonUtils
 
   class GRparms
     @@charheight = 0.027
@@ -47,19 +49,6 @@ module GR
     LibGR.axes(x_tick, y_tick, GRparms.winmax[0], GRparms.winmax[1], major_x, major_y,
       -tick_size)
     LibGR.setcharheight(GRparms.charheight.to_f)
-  end
-
-  def to_carray(a)
-    Pointer(Float64).malloc(a.size) { |i| a[i] }
-  end
-
-  def to_cchar(s)
-    cp = Pointer(UInt8).malloc(s.size + 1)
-    i = 0
-    s.each_byte { |c| cp[i] = c; i += 1 }
-    #    (s.size+1).times{|i|p cp[i]}
-    cp[s.size] = 0
-    cp
   end
 
   # Forwardable methods
