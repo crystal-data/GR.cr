@@ -1,9 +1,9 @@
 require "./gr/libgr"
-require "./gr_common_utils"
+require "./gr_common/utils"
 
 module GR
   extend self
-  extend GRCommonUtils
+  extend GRCommon::Utils
 
   class GRparms
     @@charheight = 0.027
