@@ -1,5 +1,5 @@
 module GRCommonUtils
-  def to_carray(a)
+  def float64(a)
     Pointer(Float64).malloc(a.size) { |i| a[i] }
   end
 

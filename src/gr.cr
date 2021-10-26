@@ -152,11 +152,11 @@ module GR
   end
 
   def polyline(x, y)
-    LibGR.polyline([x.size, y.size].min, to_carray(x), to_carray(y))
+    LibGR.polyline([x.size, y.size].min, float64(x), float64(y))
   end
 
   def polymarker(x, y)
-    LibGR.polymarker([x.size, y.size].min, to_carray(x), to_carray(y))
+    LibGR.polymarker([x.size, y.size].min, float64(x), float64(y))
   end
 
   def text(x, x1, c)
@@ -176,11 +176,11 @@ module GR
   end
 
   def fillarea(x, y)
-    LibGR.fillarea([x.size, y.size].min, to_carray(x), to_carray(y))
+    LibGR.fillarea([x.size, y.size].min, float64(x), float64(y))
   end
 
   def spline(x, y, i1, i2)
-    LibGR.spline([x.size, y.size].min, to_carray(x), to_carray(y), i1, i2)
+    LibGR.spline([x.size, y.size].min, float64(x), float64(y), i1, i2)
   end
 
   def setcharheight(x)
@@ -200,22 +200,22 @@ module GR
 
   def verrorbars(xa, xb, xc, xd)
     LibGR.verrorbars([xa.size, xb.size, xc.size, xd.size].min,
-      to_carray(xa), to_carray(xb), to_carray(xc), to_carray(xd))
+      float64(xa), float64(xb), float64(xc), float64(xd))
   end
 
   def herrorbars(xa, xb, xc, xd)
     LibGR.herrorbars([xa.size, xb.size, xc.size, xd.size].min,
-      to_carray(xa), to_carray(xb), to_carray(xc), to_carray(xd))
+      float64(xa), float64(xb), float64(xc), float64(xd))
   end
 
   def polyline3d(xa, xb, xc)
     LibGR.polyline3d([xa.size, xb.size, xc.size].min,
-      to_carray(xa), to_carray(xb), to_carray(xc))
+      float64(xa), float64(xb), float64(xc))
   end
 
   def polymarker3d(xa, xb, xc)
     LibGR.polymarker3d([xa.size, xb.size, xc.size].min,
-      to_carray(xa), to_carray(xb), to_carray(xc))
+      float64(xa), float64(xb), float64(xc))
   end
 
   def axes3d(x, x1, x2, x3, x4, x5, i, i1, i2, x6)
@@ -227,22 +227,22 @@ module GR
   end
 
   def surface(xa, xb, xc, i2)
-    LibGR.surface(xa.size, xb.size, to_carray(xa), to_carray(xb), to_carray(xc), i2)
+    LibGR.surface(xa.size, xb.size, float64(xa), float64(xb), float64(xc), i2)
   end
 
   def contour(xa, xb, xc, xd, i4)
-    LibGR.contour(xa.size, xb.size, xc.size, to_carray(xa), to_carray(xb),
-      to_carray(xc), to_carray(xd), i4)
+    LibGR.contour(xa.size, xb.size, xc.size, float64(xa), float64(xb),
+      float64(xc), float64(xd), i4)
   end
 
   def contourf(xa, xb, xc, xd, i4)
-    LibGR.contourf(xa.size, xb.size, xc.size, to_carray(xa), to_carray(xb),
-      to_carray(xc), to_carray(xd), i4)
+    LibGR.contourf(xa.size, xb.size, xc.size, float64(xa), float64(xb),
+      float64(xc), float64(xd), i4)
   end
 
   def hexbin(x, y, nbins)
     n = x.size
-    LibGR.hexbin(n, to_carray(x), to_carray(y), nbins)
+    LibGR.hexbin(n, float64(x), float64(y), nbins)
   end
 
   def shadepoints(xa, xb, a, b, c)
