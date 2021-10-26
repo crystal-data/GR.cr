@@ -12,5 +12,17 @@ module GRCommon
       cp[s.size] = 0
       cp
     end
+
+    def inquiry_double(&block)
+      ptr = Pointer(Float64).malloc
+      yield(ptr)
+      ptr.value
+    end
+
+    def inquiry_int(&block)
+      ptr = Pointer(Int32).malloc
+      yield(ptr)
+      ptr.value
+    end
   end
 end
