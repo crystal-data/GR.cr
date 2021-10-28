@@ -2,54 +2,8 @@ require "./gr/libgr"
 require "./gr_common/utils"
 
 module GR
+  include GRCommon::Utils
   extend self
-  extend GRCommon::Utils
-
-  class GRparms
-    @@charheight = 0.027
-
-    def self.charheight
-      @@charheight
-    end
-
-    def self.charheight(x)
-      @@charheight = x
-    end
-
-    @@winmax = [1.0, 1.0]
-    @@winmin = [0.0, 0.0]
-
-    def self.winmax
-      @@winmax
-    end
-
-    def self.winmax(x)
-      @@winmax = x
-    end
-
-    def self.winmin
-      @@winmin
-    end
-
-    def self.winmin(x)
-      @@winmin = x
-    end
-  end
-
-  def box(x_tick = (GRparms.winmax[0] - GRparms.winmin[0]) * 0.25,
-          y_tick = (GRparms.winmax[1] - GRparms.winmin[1]) * 0.25,
-          x_org = GRparms.winmin[0], y_org = GRparms.winmin[1], major_x = 1, major_y = 1, tick_size = 0.01, xlog = false, ylog = false)
-    scalearg = 0
-    scalearg += 1 if xlog
-    scalearg += 2 if ylog
-    LibGR.setscale(scalearg)
-    LibGR.setcharheight(GRparms.charheight.to_f)
-    LibGR.axes(x_tick, y_tick, x_org, y_org, major_x, major_y, tick_size)
-    LibGR.setcharheight(0.00001)
-    LibGR.axes(x_tick, y_tick, GRparms.winmax[0], GRparms.winmax[1], major_x, major_y,
-      -tick_size)
-    LibGR.setcharheight(GRparms.charheight.to_f)
-  end
 
   # Forwardable methods
   # curl -sl https://raw.githubusercontent.com/sciapp/gr/v0.57.2/lib/gr/gr.h | grep -v '^#' | grep DLLEXPORT | grep -v '*' | grep -v '\[' | cut -f2 -d_ | sed 's/(.*//g'
@@ -181,17 +135,6 @@ module GR
 
   def spline(x, y, i1, i2)
     LibGR.spline([x.size, y.size].min, float64(x), float64(y), i1, i2)
-  end
-
-  def setcharheight(x)
-    LibGR.setcharheight(x)
-    GRparms.charheight(x)
-  end
-
-  def setwindow(x, x1, x2, x3)
-    LibGR.setwindow(x, x1, x2, x3)
-    GRparms.winmax [x1.to_f, x3.to_f]
-    GRparms.winmin [x.to_f, x2.to_f]
   end
 
   def textext(x, x1, c)

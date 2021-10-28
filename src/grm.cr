@@ -1,4 +1,4 @@
-require "./grm/libgrm.cr"
+require "./grm/libgrm"
 
 module GRM
   extend self

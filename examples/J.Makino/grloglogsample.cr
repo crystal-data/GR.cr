@@ -1,6 +1,7 @@
 # sample for log-log plot
 
 require "../../src/gr"
+require "../../src/gr/makino"
 
 include GR
 

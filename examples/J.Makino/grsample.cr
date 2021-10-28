@@ -1,4 +1,5 @@
 require "../../src/gr"
+require "../../src/gr/makino"
 
 GR.setwindow(0, 1, 0, 1)
 GR.box

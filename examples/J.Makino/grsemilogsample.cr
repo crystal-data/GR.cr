@@ -1,5 +1,5 @@
 require "../../src/gr"
-
+require "../../src/gr/makino"
 include GR
 
 setwindow(0, 1, 0.01, 1)

@@ -1,4 +1,5 @@
 require "../../src/gr"
+require "../../src/gr/makino"
 
 include Math
 include GR
