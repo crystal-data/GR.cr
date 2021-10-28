@@ -20,4 +20,4 @@ GR.setcolormap(8)
 GR.shadepoints(x, y, 5, 480, 480) # NOTE: use dims: xform: ?
 GR.updatews
 
-c = gets
+gets

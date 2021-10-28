@@ -28,4 +28,4 @@ GR.surface(x, y, z, 1)
 
 GR.updatews
 
-c = gets
+gets

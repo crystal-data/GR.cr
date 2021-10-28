@@ -27,4 +27,4 @@ contour(x, y, h, z, 3)
 # colorbar
 updatews
 
-c = gets
+gets

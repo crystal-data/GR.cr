@@ -26,4 +26,4 @@ setviewport(0.9, 0.92, 0.1, 0.9)
 colorbar
 updatews
 
-c = gets
+gets

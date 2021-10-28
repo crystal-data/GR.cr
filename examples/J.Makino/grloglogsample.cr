@@ -16,4 +16,4 @@ mathtex(0.5, 0.06, "x")
 mathtex(0.06, 0.5, "y")
 updatews
 
-c = gets
+gets
