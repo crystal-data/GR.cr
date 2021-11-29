@@ -2,11 +2,9 @@
 
 <a href="https://github.com/red-data-tools/GR.rb"><img alt="GR.rb" src="https://user-images.githubusercontent.com/5798442/124949370-76312280-e04c-11eb-8e1e-e3a092284584.png" width="366" height="300" align="right"></a>
 
-:construction: Under development :construction:
+[Crystal](https://github.com/crystal-lang/crystal) bindings to [GR framework](https://github.com/sciapp/gr).
 
-[Crystal](https://github.com/crystal-lang/crystal) bindings to [GR framework](https://github.com/sciapp/gr)
-
-GR.cr has been forked from [gr-crystal](https://github.com/jmakino/gr-crystal) by [Jun Makino](https://github.com/jmakino)
+GR.cr has been forked from [gr-crystal](https://github.com/jmakino/gr-crystal) by [Jun Makino](https://github.com/jmakino).
 
 ## Installation
 
@@ -23,7 +21,10 @@ export GRDIR="your/path/to/gr"
 
 #### Linux - OpenSUSE build service
 
-https://software.opensuse.org//download.html?project=science%3Agr-framework&package=gr
+* [OpenSUSE build service](https://software.opensuse.org//download.html?project=science%3Agr-framework&package=gr
+)
+
+After installation, please set the following environment variable.
 
 ```sh
 export GRDIR="/usr/gr"
@@ -65,7 +66,9 @@ Run `shards install`
   └──────────────┘  └──────────────┘  └──────────────┘
 ```
 
-## Quick Start\
+GR.cr is still immature, but even in its current state, GRM can be used to create good quality figures. 
+
+## Quick Start
 
 With the GRM module, you can easily display beautiful charts.
 
