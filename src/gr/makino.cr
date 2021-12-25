@@ -39,7 +39,7 @@ module GR
     LibGR.setscale(scalearg)
     LibGR.setcharheight(GRparms.charheight.to_f)
     LibGR.axes(x_tick, y_tick, x_org, y_org, major_x, major_y, tick_size)
-    LibGR.setcharheight(0.00001)
+    LibGR.setcharheight(0.000_01)
     LibGR.axes(x_tick, y_tick, GRparms.winmax[0], GRparms.winmax[1], major_x, major_y,
       -tick_size)
     LibGR.setcharheight(GRparms.charheight.to_f)

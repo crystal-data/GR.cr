@@ -6,7 +6,7 @@ require "../src/gr"
 600.times do |e|
   printf("\r%d", e)
 
-  n = 1000000 # Increasing the value gives a clearer image.
+  n = 1_000_000 # Increasing the value gives a clearer image.
   x0 = 0.0
   y0 = 0.0
 
