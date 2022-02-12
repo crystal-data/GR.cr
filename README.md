@@ -1,5 +1,8 @@
 # GR.cr
 
+[![Join the chat at https://gitter.im/crystal-data/bottle](https://badges.gitter.im/crystal-data/bottle.svg)](https://gitter.im/crystal-data/bottle?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![.github/workflows/ci.yml](https://github.com/crystal-data/GR.cr/actions/workflows/ci.yml/badge.svg)](https://github.com/crystal-data/GR.cr/actions/workflows/ci.yml)
+
 <a href="https://github.com/red-data-tools/GR.rb"><img alt="GR.rb" src="https://user-images.githubusercontent.com/5798442/124949370-76312280-e04c-11eb-8e1e-e3a092284584.png" width="366" height="300" align="right"></a>
 
 [Crystal](https://github.com/crystal-lang/crystal) bindings to [GR framework](https://github.com/sciapp/gr).
