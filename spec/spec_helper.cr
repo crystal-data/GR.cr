@@ -1,2 +1,2 @@
 require "spec"
-require "../src/gr-crystal"
+require "../src/gr"

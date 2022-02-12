@@ -197,4 +197,8 @@ module GR
     raise "size error" if x.size != y.size    # fixme
     LibGR.path(x.size, x, y, codes)
   end
+
+  def version
+    String.new(LibGR.version)
+  end
 end
