@@ -12,7 +12,7 @@ jobs:
         uses: crystal-lang/install-crystal@v1
       - name: Install GR
         run: |
-          wget https://download.opensuse.org/repositories/science:/gr-framework/xUbuntu_21.04/amd64/gr_0.63.1-1_amd64.deb
+          wget https://download.opensuse.org/repositories/science:/gr-framework/xUbuntu_20.04/amd64/gr_0.63.1-1_amd64.deb
           sudo apt-get install -y ./gr_0.63.1-1_amd64.deb
       - name: Install shards
         run: shards install
