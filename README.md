@@ -125,6 +125,10 @@ The author is not familiar with Crystal, so it may be written in an inefficient 
 * Write, clarify, or fix documentation
 * Suggest or add new features
 
+    Do you need commit rights to my repository?
+    Do you want to get admin rights and take over the project?
+    If so, please feel free to contact kojix2.
+
 ## Acknowledgements
 
 We would like to thank Josef Heinen, the creator of [GR](https://github.com/sciapp/gr) and [GR.jl](https://github.com/jheinen/GR.jl), Florian Rhiem, the creator of [python-gr](https://github.com/sciapp/python-gr), and all [GR](https://github.com/sciapp/gr) developers.
