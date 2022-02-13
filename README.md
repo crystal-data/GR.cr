@@ -13,31 +13,17 @@ GR.cr has been forked from [gr-crystal](https://github.com/jmakino/gr-crystal) b
 
 ### GR Installation
 
-#### Linux, Mac, Windows - Official release
+#### [Official release](https://github.com/sciapp/gr/releases) - Linux, Mac, Windows
 
-Download [official release](https://github.com/sciapp/gr/releases).
-Set `GRDIR` to specify GR directory.
+Set `GRDIR` : `export GRDIR="your/path/to/gr"`
 
-```sh
-export GRDIR="your/path/to/gr"
-```
+#### [OpenSUSE build service](https://software.opensuse.org//download.html?project=science%3Agr-framework&package=gr) - Linux
 
-#### Linux - OpenSUSE build service
+Set `GRDIR` : `export GRDIR="/usr/gr"`
 
-* [OpenSUSE build service](https://software.opensuse.org//download.html?project=science%3Agr-framework&package=gr
-)
+#### [Homebrew](https://formulae.brew.sh/formula/libgr) - Mac
 
-After installation, please set the following environment variable.
-
-```sh
-export GRDIR="/usr/gr"
-```
-
-#### Mac - Homebrew
-
-```sh
-brew install libgr
-```
+`brew install libgr`
 
 ### GR.cr installation
 
@@ -51,7 +37,7 @@ dependencies:
 
 Run `shards install`
 
-## API Overview (Plan)
+## API Overview
 
 * `libGR`, `libGR3`, `libGRM` : call native functions directly.
 * `GR`, `GR3`, `GRM` : call module function customized for Crystal.
@@ -61,11 +47,7 @@ Run `shards install`
   │     GRM      │  │      GR      │  │      GR3     │
   │ ┌──────────┐ │  │ ┌──────────┐ │  │ ┌──────────┐ │
   │ │  LibGRM  │ │  │ │  LibGR   │ │  │ │  LibGR3  │ │
-  │ │          │ │  │ │          │ │  │ │          │ │
-  │ │          │ │  │ │          │ │  │ │          │ │
   │ └──────────┘ │  │ └──────────┘ │  │ └──────────┘ │
-  │              │  │              │  │              │
-  │              │  │              │  │              │
   └──────────────┘  └──────────────┘  └──────────────┘
 ```
 
@@ -123,11 +105,13 @@ The author is not familiar with Crystal, so it may be written in an inefficient 
 * Report bugs
 * Fix bugs and submit pull requests
 * Write, clarify, or fix documentation
-* Suggest or add new features
+* Suggest or add new features 
 
-    Do you need commit rights to my repository?
-    Do you want to get admin rights and take over the project?
-    If so, please feel free to contact kojix2.
+```
+Do you need commit rights to my repository?
+Do you want to get admin rights and take over the project?
+If so, please feel free to contact us @kojix2.
+```
 
 ## Acknowledgements
 
