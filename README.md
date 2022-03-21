@@ -31,8 +31,8 @@ Add the dependency to your `shard.yml`:
 
 ```yaml
 dependencies:
-  grlib:
-    github: kojix2/GR.cr
+  gr:
+    github: crystal-data/GR.cr
 ```
 
 Run `shards install`
