@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.2.2">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="gr">
+
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+  <meta name="repository-name" content="gr">
+  <title>gr main</title>
+  <script type="text/javascript">
+  CrystalDocs.base_path = "";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="index.html">
+          gr
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent " data-id="gr/GR" data-name="gr">
+      <a href="GR.html">GR</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gr/GR/GRparms" data-name="gr::grparms">
+      <a href="GR/GRparms.html">GRparms</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="gr/GR3" data-name="gr3">
+      <a href="GR3.html">GR3</a>
+      
+    </li>
+  
+  <li class="parent " data-id="gr/GRCommon" data-name="grcommon">
+      <a href="GRCommon.html">GRCommon</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gr/GRCommon/Utils" data-name="grcommon::utils">
+      <a href="GRCommon/Utils.html">Utils</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="gr/GRM" data-name="grm">
+      <a href="GRM.html">GRM</a>
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1><a id="gr.cr" class="anchor" href="#gr.cr">  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>GR.cr</h1>
+<p><a href="https://gitter.im/crystal-data/bottle?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/crystal-data/bottle.svg" alt="Join the chat at https://gitter.im/crystal-data/bottle" /></a>
+<a href="https://github.com/crystal-data/GR.cr/actions/workflows/ci.yml"><img src="https://github.com/crystal-data/GR.cr/actions/workflows/ci.yml/badge.svg" alt=".github/workflows/ci.yml" /></a></p>
+<p><a href="https://github.com/red-data-tools/GR.rb"><img alt="GR.rb" src="https://user-images.githubusercontent.com/5798442/124949370-76312280-e04c-11eb-8e1e-e3a092284584.png" width="366" height="300" align="right"></a></p>
+<p><a href="https://github.com/crystal-lang/crystal">Crystal</a> bindings to <a href="https://github.com/sciapp/gr">GR framework</a>.</p>
+<p>GR.cr has been forked from <a href="https://github.com/jmakino/gr-crystal">gr-crystal</a> by <a href="https://github.com/jmakino">Jun Makino</a>.</p>
+<h2><a id="installation" class="anchor" href="#installation">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Installation</h2>
+<h3><a id="gr-installation" class="anchor" href="#gr-installation">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>GR Installation</h3>
+<h4><a id="official-release-linux-mac-windows" class="anchor" href="#official-release-linux-mac-windows">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a><a href="https://github.com/sciapp/gr/releases">Official release</a> - Linux, Mac, Windows</h4>
+<p>Set <code>GRDIR</code> : <code>export GRDIR=&quot;your/path/to/gr&quot;</code></p>
+<h4><a id="open-suse-build-service-linux" class="anchor" href="#open-suse-build-service-linux">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a><a href="https://software.opensuse.org//download.html?project=science:gr-framework&amp;package=gr">OpenSUSE build service</a> - Linux</h4>
+<p>Set <code>GRDIR</code> : <code>export GRDIR=&quot;/usr/gr&quot;</code></p>
+<h4><a id="homebrew-mac" class="anchor" href="#homebrew-mac">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a><a href="https://formulae.brew.sh/formula/libgr">Homebrew</a> - Mac</h4>
+<p><code>brew install libgr</code></p>
+<h3><a id="gr.cr-installation" class="anchor" href="#gr.cr-installation">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>GR.cr installation</h3>
+<p>Add the dependency to your <code>shard.yml</code>:</p>
+<pre><code class="language-yaml">dependencies:
+  gr:
+    github: crystal-data/GR.cr</code></pre>
+<p>Run <code>shards install</code></p>
+<h2><a id="api-overview" class="anchor" href="#api-overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>API Overview</h2>
+<ul>
+<li><code>libGR</code>, <code>libGR3</code>, <code>libGRM</code> : call native functions directly.</li>
+<li><code><a href="GR.html">GR</a></code>, <code><a href="GR3.html">GR3</a></code>, <code><a href="GRM.html">GRM</a></code> : call module function customized for Crystal.</li>
+</ul>
+<pre><code class="language-crystal">  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
+  │     <span class="t">GRM</span>      │  │      <span class="t">GR</span>      │  │      <span class="t">GR3</span>     │
+  │ ┌──────────┐ │  │ ┌──────────┐ │  │ ┌──────────┐ │
+  │ │  <span class="t">LibGRM</span>  │ │  │ │  <span class="t">LibGR</span>   │ │  │ │  <span class="t">LibGR3</span>  │ │
+  │ └──────────┘ │  │ └──────────┘ │  │ └──────────┘ │
+  └──────────────┘  └──────────────┘  └──────────────┘</code></pre>
+<p>GR.cr is still immature, but even in its current state, GRM can be used to create good quality figures.</p>
+<h2><a id="quick-start" class="anchor" href="#quick-start">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Quick Start</h2>
+<p>With the GRM module, you can easily display beautiful charts.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;../src/grm&quot;</span>
+
+n <span class="o">=</span> <span class="n">1000</span>
+x <span class="o">=</span> <span class="o">[]</span> <span class="k">of</span> <span class="t">Float64</span>
+y <span class="o">=</span> <span class="o">[]</span> <span class="k">of</span> <span class="t">Float64</span>
+z <span class="o">=</span> <span class="o">[]</span> <span class="k">of</span> <span class="t">Float64</span>
+n.times <span class="k">do</span> <span class="o">|</span>i<span class="o">|</span>
+  x <span class="o">&lt;&lt;</span> i <span class="o">*</span> <span class="n">30.0</span> <span class="o">/</span> n
+  y <span class="o">&lt;&lt;</span> <span class="t">Math</span>.cos(x[i]) <span class="o">*</span> x[i]
+  z <span class="o">&lt;&lt;</span> <span class="t">Math</span>.sin(x[i]) <span class="o">*</span> x[i]
+<span class="k">end</span>
+
+plot_types <span class="o">=</span> <span class="s">%w[line hexbin polar shade stem step contour
+  trisurf plot3 scatter scatter3]</span>
+
+plot_types.each <span class="k">do</span> <span class="o">|</span><span class="k">type</span><span class="o">|</span>
+  <span class="t">GRM</span>.clear
+  args <span class="o">=</span> <span class="t">GRM</span>.args_new
+  <span class="t">GRM</span>.args_push(args, <span class="s">&quot;x&quot;</span>, <span class="s">&quot;nD&quot;</span>, n, x)
+  <span class="t">GRM</span>.args_push(args, <span class="s">&quot;y&quot;</span>, <span class="s">&quot;nD&quot;</span>, n, y)
+  <span class="t">GRM</span>.args_push(args, <span class="s">&quot;z&quot;</span>, <span class="s">&quot;nD&quot;</span>, n, z)
+  <span class="t">GRM</span>.args_push(args, <span class="s">&quot;kind&quot;</span>, <span class="s">&quot;s&quot;</span>, <span class="k">type</span>)
+  <span class="t">GRM</span>.args_push(args, <span class="s">&quot;title&quot;</span>, <span class="s">&quot;s&quot;</span>, <span class="k">type</span>)
+  <span class="t">GRM</span>.plot(args)
+  sleep <span class="n">2</span>
+<span class="k">end</span></code></pre>
+<h2><a id="usage" class="anchor" href="#usage">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Usage</h2>
+<p>Please see the example directory.</p>
+<p>With GR and GR3 modules, you can do more serious visualization.
+However, you may find that GR.cr is not fully implemented.
+In that case, please send me a pull request.</p>
+<h2><a id="development" class="anchor" href="#development">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Development</h2>
+<p>Low-level bindings are automatically generated by <a href="https://github.com/crystal-lang/crystal_lib">crystal_lib</a>.</p>
+<p>GR.cr is a library under development, so even small improvements like fixing typos are welcome! Please feel free to send us your PR.
+The author is not familiar with Crystal, so it may be written in an inefficient way, and you may be able to fix it.</p>
+<ul>
+<li>Look at <a href="https://github.com/red-data-tools/GR.rb">GR.rb</a> and implement the missing methods!</li>
+<li>Report bugs</li>
+<li>Fix bugs and submit pull requests</li>
+<li>Write, clarify, or fix documentation</li>
+<li>Suggest or add new features</li>
+</ul>
+<pre><code class="language-crystal"><span class="t">Do</span> you need commit rights to my repository?
+<span class="t">Do</span> you want to get admin rights and take over the project?
+<span class="t">If</span> so, please feel free to contact us @kojix2.</code></pre>
+<h2><a id="acknowledgements" class="anchor" href="#acknowledgements">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Acknowledgements</h2>
+<p>We would like to thank Josef Heinen, the creator of <a href="https://github.com/sciapp/gr">GR</a> and <a href="https://github.com/jheinen/GR.jl">GR.jl</a>, Florian Rhiem, the creator of <a href="https://github.com/sciapp/python-gr">python-gr</a>, and all <a href="https://github.com/sciapp/gr">GR</a> developers.</p>
+</div>
+</body>
+</html>
