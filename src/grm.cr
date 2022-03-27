@@ -1,3 +1,4 @@
+require "./gr_common/config.cr"
 require "./grm/libgrm"
 
 module GRM

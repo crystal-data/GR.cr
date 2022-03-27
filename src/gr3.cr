@@ -1,3 +1,4 @@
+require "./gr_common/config.cr"
 require "./gr3/libgr3"
 require "./gr_common/utils"
 
