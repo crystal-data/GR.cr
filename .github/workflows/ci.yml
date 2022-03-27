@@ -6,7 +6,7 @@ jobs:
     runs-on: ${{ matrix.os }}-latest
     strategy:
       matrix:
-        os:   [ 'ubuntu' ]
+        os:   [ 'ubuntu', 'macos' ]
         crystal: [ '1.2', '1.3' ]
     steps:
       - name: Download source
@@ -15,16 +15,28 @@ jobs:
         uses: crystal-lang/install-crystal@v1
         with:
           crystal: ${{ matrix.crystal }}
-      - name: Update Ubuntu packages
+      - name: Update Ubuntu packages (ubuntu)
+        if: ${{ matrix.os == 'ubuntu' }}
         run: |
           : # Required before installing GR (2022-02-12)
           sudo apt update -y
           sudo apt upgrade -y
           wget https://download.opensuse.org/repositories/science:/gr-framework/xUbuntu_20.04/amd64/gr_0.64.0-1_amd64.deb
           sudo apt-get install -y ./gr_0.64.0-1_amd64.deb
+      - name: Set up Homebrew (macos)
+        if: ${{ matrix.os == 'macos' }}
+        run: |
+          brew update
+          brew install libgr
       - run: shards install
-      - name: Run tests
+      - name: Run tests (ubuntu)
+        if: ${{ matrix.os == 'ubuntu' }}
         env:
           QT_QPA_PLATFORM: offscreen
           GRDIR: /usr/gr
+        run: crystal spec
+      - name: Run tests (macos)
+        if: ${{ matrix.os == 'macos' }}
+        env:
+          QT_QPA_PLATFORM: offscreen
         run: crystal spec
