@@ -1,5 +1,9 @@
 module GRM
-  @[Link(ldflags: "-L `if [ -z $GRDIR ]; then pkg-config grm --variable=libdir ; else echo $GRDIR/lib ; fi` -lGRM -Wl,-rpath,`if [ -z $GRDIR ]; then pkg-config grm --variable=libdir ; else echo $GRDIR/lib ; fi`")]
+  {% if env("GRDIR") %}
+    @[Link(ldflags: "-L `echo $GRDIR/lib` -lGRM -Wl,-rpath,`echo $GRDIR/lib`")]
+  {% else %}
+    @[Link("grm")]
+  {% end %}
   lib LibGRM
     fun args_new = grm_args_new : ArgsT
     type ArgsT = Void*

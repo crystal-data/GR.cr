@@ -1,5 +1,9 @@
 module GR3
-  @[Link(ldflags: "-L `if [ -z $GRDIR ]; then pkg-config gr3 --variable=libdir ; else echo $GRDIR/lib ; fi` -lGR3 -Wl,-rpath,`if [ -z $GRDIR ]; then pkg-config gr3 --variable=libdir ; else echo $GRDIR/lib ; fi`")]
+  {% if env("GRDIR") %}
+    @[Link(ldflags: "-L `echo $GRDIR/lib` -lGR3 -Wl,-rpath,`echo $GRDIR/lib`")]
+  {% else %}
+    @[Link("gr3")]
+  {% end %}
   lib LibGR3
     fun init = gr3_init(attrib_list : LibC::Int*) : LibC::Int
     fun free = gr3_free(pointer : Void*)
