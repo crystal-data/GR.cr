@@ -1,26 +1,28 @@
-on:
-  push:
-  pull_request:
-    branches: [master]
+name: test
+on: [push, pull_request]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    name: ${{ matrix.os }} Crystal ${{ matrix.crystal }}
+    runs-on: ${{ matrix.os }}-latest
+    strategy:
+      matrix:
+        os:   [ 'ubuntu' ]
+        crystal: [ '1.2', '1.3' ]
     steps:
       - name: Download source
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Install Crystal
         uses: crystal-lang/install-crystal@v1
+        with:
+          crystal: ${{ matrix.crystal }}
       - name: Update Ubuntu packages
         run: |
           : # Required before installing GR (2022-02-12)
           sudo apt update -y
           sudo apt upgrade -y
-      - name: Install GR
-        run: |
           wget https://download.opensuse.org/repositories/science:/gr-framework/xUbuntu_20.04/amd64/gr_0.64.0-1_amd64.deb
           sudo apt-get install -y ./gr_0.64.0-1_amd64.deb
-      - name: Install shards
-        run: shards install
+      - run: shards install
       - name: Run tests
         env:
           QT_QPA_PLATFORM: offscreen
