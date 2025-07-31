@@ -6,8 +6,8 @@ jobs:
     runs-on: ${{ matrix.os }}-latest
     strategy:
       matrix:
-        os:   [ 'ubuntu', 'macos' ]
-        crystal: [ '1.2', '1.3' ]
+        os: ["ubuntu", "macos"]
+        crystal: ["1.2", "1.3"]
     steps:
       - name: Download source
         uses: actions/checkout@v3

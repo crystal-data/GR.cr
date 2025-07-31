@@ -195,7 +195,7 @@ module GR
   end
 
   def path(x, y, codes)
-    raise "size error" if x.size != y.size    # fixme
+    raise "size error" if x.size != y.size # fixme
     LibGR.path(x.size, x, y, codes)
   end
 
