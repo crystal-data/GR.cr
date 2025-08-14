@@ -35,15 +35,64 @@ module GRM
     @ylabel : String?
     @zlabel : String?
     @color : String?
+    @x_data : Array(Float64)?
+    @y_data : Array(Float64)?
+    @z_data : Array(Float64)?
+    @nbins : Int32?
+    @m : Int32? # For 2D data dimensions (rows)
+    @n : Int32? # For 2D data dimensions (columns)
+
+    getter args : LibGRM::ArgsT
+    getter kind : String?
+    getter color : String?
 
     def initialize
       @args = LibGRM.args_new
     end
 
-    # Data setting methods (chainable)
+    # Method to build clean args without polluting internal state
+    def build_series_args : LibGRM::ArgsT
+      temp_args = LibGRM.args_new
+
+      # Add data
+      if @x_data
+        LibGRM.args_push(temp_args, "x", "nD", @x_data.not_nil!.size, @x_data.not_nil!)
+      end
+      if @y_data && !@y_data.not_nil!.empty?
+        LibGRM.args_push(temp_args, "y", "nD", @y_data.not_nil!.size, @y_data.not_nil!)
+      end
+      if @z_data
+        LibGRM.args_push(temp_args, "z", "nD", @z_data.not_nil!.size, @z_data.not_nil!)
+
+        # Add dimension information for 2D plots (surface/contour)
+        if @kind == "surface" || @kind == "contour"
+          # Ensure m and n are set for 2D kinds to prevent crashes
+          raise ArgumentError.new("2D kinds (#{@kind}) require m and n to be set") unless @m && @n
+          LibGRM.args_push(temp_args, "m", "i", @m.as(Int32))
+          LibGRM.args_push(temp_args, "n", "i", @n.as(Int32))
+        end
+      end
+
+      # Strict check: 2D kinds require z data
+      if (@kind == "surface" || @kind == "contour") && !@z_data
+        raise ArgumentError.new("2D kinds (#{@kind}) require z data to be set")
+      end
+
+      # Add series-specific properties (NOT figure-level properties)
+      # Use "line" as default kind if not specified
+      kind_to_use = @kind || "line"
+      LibGRM.args_push(temp_args, "kind", "s", kind_to_use)
+      LibGRM.args_push(temp_args, "color", "s", @color.as(String)) if @color
+      LibGRM.args_push(temp_args, "nbins", "i", @nbins.as(Int32)) if @nbins
+
+      temp_args
+    end
+
+    # Data setting methods (chainable) - for 1D series
     def data(x : Array(Number), y : Array(Number), z : Array(Number)? = nil)
       # Allow empty y array for histograms
       unless y.empty?
+        # 1D series assumption (2D should use data2d)
         raise ArgumentError.new("x and y arrays must have the same size") if x.size != y.size
       end
 
@@ -51,18 +100,46 @@ module GRM
         raise ArgumentError.new("x, y, and z arrays must have the same size")
       end
 
-      x_data = x.map(&.to_f64)
-      y_data = y.map(&.to_f64)
+      @x_data = x.map(&.to_f64)
+      @y_data = y.map(&.to_f64)
+      @z_data = z ? z.map(&.to_f64) : nil
 
-      LibGRM.args_push(@args, "x", "nD", x_data.size, x_data)
+      # Also update the legacy args for backward compatibility
+      LibGRM.args_push(@args, "x", "nD", @x_data.not_nil!.size, @x_data.not_nil!)
       unless y.empty?
-        LibGRM.args_push(@args, "y", "nD", y_data.size, y_data)
+        LibGRM.args_push(@args, "y", "nD", @y_data.not_nil!.size, @y_data.not_nil!)
       end
 
-      if z
-        z_data = z.map(&.to_f64)
-        LibGRM.args_push(@args, "z", "nD", z_data.size, z_data)
+      if @z_data
+        LibGRM.args_push(@args, "z", "nD", @z_data.not_nil!.size, @z_data.not_nil!)
       end
+
+      self
+    end
+
+    # 2D data helper for surface/contour (z: m x n matrix)
+    def data2d(x : Array(Number), y : Array(Number), z : Array(Array(Number)))
+      raise ArgumentError.new("z must be non-empty") if z.empty?
+      m = z.size
+      n = z.first.size
+      raise ArgumentError.new("all rows of z must have the same length") unless z.all? { |row| row.size == n }
+
+      @x_data = x.map(&.to_f64)         # grid axes (length m or n depending on GRM mode)
+      @y_data = y.map(&.to_f64)         # grid axes (length n or m depending on GRM mode)
+      @z_data = z.flatten.map(&.to_f64) # flattened m*n data
+      @m = m
+      @n = n
+
+      # Validate dimension consistency to prevent crashes
+      raise ArgumentError.new("x length must equal m (#{@x_data.not_nil!.size} != #{m})") unless @x_data.not_nil!.size == m
+      raise ArgumentError.new("y length must equal n (#{@y_data.not_nil!.size} != #{n})") unless @y_data.not_nil!.size == n
+
+      # Legacy args for standalone usage
+      LibGRM.args_push(@args, "x", "nD", @x_data.not_nil!.size, @x_data.not_nil!)
+      LibGRM.args_push(@args, "y", "nD", @y_data.not_nil!.size, @y_data.not_nil!)
+      LibGRM.args_push(@args, "z", "nD", @z_data.not_nil!.size, @z_data.not_nil!)
+      LibGRM.args_push(@args, "m", "i", m)
+      LibGRM.args_push(@args, "n", "i", n)
 
       self
     end
@@ -92,6 +169,7 @@ module GRM
 
     def histogram(bins : Int32 = 50)
       @kind = "hist"
+      @nbins = bins
       LibGRM.args_push(@args, "nbins", "i", bins)
       self
     end
@@ -111,13 +189,17 @@ module GRM
       self
     end
 
-    def surface
+    def surface(m : Int32? = nil, n : Int32? = nil)
       @kind = "surface"
+      @m = m if m
+      @n = n if n
       self
     end
 
-    def contour
+    def contour(m : Int32? = nil, n : Int32? = nil)
       @kind = "contour"
+      @m = m if m
+      @n = n if n
       self
     end
 
@@ -166,21 +248,41 @@ module GRM
       self
     end
 
-    # Method to apply all settings (accessible from Figure class)
+    # Apply only series-specific settings (for Figure usage)
+    private def apply_series_settings_only(args : LibGRM::ArgsT)
+      LibGRM.args_push(args, "kind", "s", @kind.as(String)) if @kind
+      LibGRM.args_push(args, "color", "s", @color.as(String)) if @color
+      LibGRM.args_push(args, "nbins", "i", @nbins.as(Int32)) if @nbins
+    end
+
+    # Apply figure-level labels (for standalone Plot usage only)
+    private def apply_standalone_labels(args : LibGRM::ArgsT)
+      LibGRM.args_push(args, "title", "s", @title.as(String)) if @title
+      LibGRM.args_push(args, "xlabel", "s", @xlabel.as(String)) if @xlabel
+      LibGRM.args_push(args, "ylabel", "s", @ylabel.as(String)) if @ylabel
+      LibGRM.args_push(args, "zlabel", "s", @zlabel.as(String)) if @zlabel
+    end
+
+    # Method to apply all settings for standalone Plot usage
     def apply_settings
-      LibGRM.args_push(@args, "kind", "s", @kind.as(String)) if @kind
-      LibGRM.args_push(@args, "title", "s", @title.as(String)) if @title
-      LibGRM.args_push(@args, "xlabel", "s", @xlabel.as(String)) if @xlabel
-      LibGRM.args_push(@args, "ylabel", "s", @ylabel.as(String)) if @ylabel
-      LibGRM.args_push(@args, "zlabel", "s", @zlabel.as(String)) if @zlabel
-      LibGRM.args_push(@args, "color", "s", @color.as(String)) if @color
+      apply_series_settings_only(@args)
+      apply_standalone_labels(@args)
     end
 
     # Rendering and output methods
+    # WARNING: This method calls LibGRM.clear which affects the global GRM state.
+    # Do not use this method when working with Figure instances, as it may clear
+    # other plots. This method is intended for standalone Plot usage only.
     def show
-      apply_settings
-      LibGRM.clear
-      LibGRM.plot(@args)
+      # Build a clean args that includes data + series props
+      temp_args = build_series_args
+      # Add standalone (figure-level) labels
+      apply_standalone_labels(temp_args)
+
+      LibGRM.clear # WARNING: Clears global GRM state
+      LibGRM.plot(temp_args)
+
+      LibGRM.args_delete(temp_args)
       self
     end
 
@@ -190,9 +292,13 @@ module GRM
     end
 
     def save(path : String)
-      apply_settings
-      LibGRM.plot(@args)
+      temp_args = build_series_args
+      apply_standalone_labels(temp_args)
+
+      LibGRM.plot(temp_args)
       LibGRM.export(path)
+
+      LibGRM.args_delete(temp_args)
       self
     end
 
@@ -220,50 +326,150 @@ module GRM
   # Figure class for multiple plots
   class Figure
     @plots = [] of Plot
+    @plot_id : Int32
+    @title : String?
+    @xlabel : String?
+    @ylabel : String?
+    @created : Bool = false
+    @dirty : Bool = true
+
+    @@next_plot_id : Int32 = 1
+
+    getter plot_id : Int32 # For debugging and inspection
 
     def initialize
       @plots = [] of Plot
+      # Use a deterministic small positive integer for plot_id
+      # Start from 1 and increment for each new figure
+      @plot_id = @@next_plot_id
+      @@next_plot_id += 1
+    end
+
+    # External plot_id specification constructor
+    def initialize(plot_id : Int32)
+      @plots = [] of Plot
+      @plot_id = plot_id
     end
 
     def add_plot(&block : Plot -> Plot)
       plot = Plot.new
       configured_plot = yield(plot)
       @plots << configured_plot
+      @dirty = true # Mark as dirty when plots are added
       self
     end
 
     def add_plot(plot : Plot)
       @plots << plot
+      @dirty = true # Mark as dirty when plots are added
       self
     end
 
     def show
-      # For multiple plots, we need to merge them
-      if @plots.size > 1
-        # First plot
-        first_plot = @plots[0]
-        first_plot.show
+      return self if @plots.empty?
+      return self if @created && !@dirty # Nothing to do - skip work
 
-        # Merge additional plots
-        @plots[1..-1].each do |plot|
-          plot.apply_settings
-          LibGRM.merge_hold(plot.@args)
-        end
-      elsif @plots.size == 1
-        @plots[0].show
+      # Handle re-rendering: clear existing figure if already created
+      if @created
+        LibGRM.switch(@plot_id)
+        LibGRM.clear
       end
+
+      last_index = @plots.size - 1
+
+      # Create clean temporary args for each series
+      # Try alternative approach: merge each series individually instead of using merge_hold
+      @plots.each_with_index do |plot, i|
+        # Use Plot's build_series_args method to get clean args
+        temp_args = plot.build_series_args
+
+        # Add plot_id to the clean args
+        LibGRM.args_push(temp_args, "plot_id", "i", @plot_id)
+
+        # Include figure-level properties in the last series (no additional fig_args merge)
+        if i == last_index
+          LibGRM.args_push(temp_args, "title", "s", @title.as(String)) if @title
+          LibGRM.args_push(temp_args, "xlabel", "s", @xlabel.as(String)) if @xlabel
+          LibGRM.args_push(temp_args, "ylabel", "s", @ylabel.as(String)) if @ylabel
+        end
+
+        # Try merging each series individually instead of using merge_hold
+        LibGRM.merge(temp_args)
+
+        LibGRM.args_delete(temp_args)
+      end
+
+      @created = true
+      @dirty = false
       self
     end
 
     def save(path : String)
-      show
+      return self if @plots.empty?
+
+      # Only render if dirty or not created yet
+      show if !@created || @dirty
+
+      # At this point, @created is true (figure exists in GRM)
+      LibGRM.switch(@plot_id) # Safe to switch to existing figure
       LibGRM.export(path)
       self
     end
 
+    # Figure-level label setting methods
+    def title(text : String)
+      @title = text
+      @dirty = true # Mark as dirty when properties change
+      self
+    end
+
+    def xlabel(text : String)
+      @xlabel = text
+      @dirty = true # Mark as dirty when properties change
+      self
+    end
+
+    def ylabel(text : String)
+      @ylabel = text
+      @dirty = true # Mark as dirty when properties change
+      self
+    end
+
+    # Convenience methods
+    def to_html(id : String? = nil) : String
+      return "" if @plots.empty?
+
+      # Only render if dirty or not created yet
+      show if !@created || @dirty
+
+      # At this point, @created is true (figure exists in GRM)
+      LibGRM.switch(@plot_id) # Safe to switch to existing figure
+      html_ptr = id ? LibGRM.dump_html(id) : LibGRM.dump_html(nil)
+      String.new(html_ptr)
+    end
+
+    def to_json : String
+      return "{}" if @plots.empty?
+
+      # Only render if dirty or not created yet
+      show if !@created || @dirty
+
+      # At this point, @created is true (figure exists in GRM)
+      LibGRM.switch(@plot_id) # Safe to switch to existing figure
+      json_ptr = LibGRM.dump_json_str
+      String.new(json_ptr)
+    end
+
     def clear
+      # Clear the figure if it was created
+      if @created
+        LibGRM.switch(@plot_id)
+        LibGRM.clear
+      end
+
       @plots.clear
-      LibGRM.clear
+      @created = false
+      @dirty = true
       self
     end
   end
@@ -277,6 +483,10 @@ module GRM
     Figure.new
   end
 
+  def self.figure(plot_id : Int32)
+    Figure.new(plot_id)
+  end
+
   # Block-style plotting
   def self.plot(&block : Plot -> Plot)
     plot = Plot.new
@@ -285,6 +495,11 @@ module GRM
 
   def self.figure(&block : Figure -> Figure)
     figure = Figure.new
+    yield(figure)
+  end
+
+  def self.figure(plot_id : Int32, &block : Figure -> Figure)
+    figure = Figure.new(plot_id)
     yield(figure)
   end
 
@@ -438,11 +653,10 @@ module GRM
               xlabel : String? = nil,
               ylabel : String? = nil,
               zlabel : String? = nil)
-    # Convert 2D array to 1D for surface plot
-    z_flat = z.flatten
+    # Use data2d for proper 2D data handling with dimensions
     plot = Plot.new
-      .data(x, y, z_flat)
-      .surface
+      .data2d(x, y, z)
+      .surface(z.size, z.first.size) # m, n explicitly specified
     plot.title(title) if title
     plot.xlabel(xlabel) if xlabel
     plot.ylabel(ylabel) if ylabel
@@ -455,11 +669,10 @@ module GRM
               title : String? = nil,
               xlabel : String? = nil,
               ylabel : String? = nil)
-    # Convert 2D array to 1D for contour plot
-    z_flat = z.flatten
+    # Use data2d for proper 2D data handling with dimensions
     plot = Plot.new
-      .data(x, y, z_flat)
-      .contour
+      .data2d(x, y, z)
+      .contour(z.size, z.first.size) # m, n explicitly specified
     plot.title(title) if title
     plot.xlabel(xlabel) if xlabel
     plot.ylabel(ylabel) if ylabel
