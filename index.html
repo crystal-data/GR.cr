@@ -187,33 +187,77 @@
     <use href="#octicon-link"/>
   </svg>
 </a>Quick Start</h2>
-<p>With the GRM module, you can easily display beautiful charts.</p>
-<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;../src/grm&quot;</span>
+<h3><a id="simple-line-plot" class="anchor" href="#simple-line-plot">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Simple Line Plot</h3>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;grm&quot;</span>
 
-n <span class="o">=</span> <span class="n">1000</span>
-x <span class="o">=</span> <span class="o">[]</span> <span class="k">of</span> <span class="t">Float64</span>
-y <span class="o">=</span> <span class="o">[]</span> <span class="k">of</span> <span class="t">Float64</span>
-z <span class="o">=</span> <span class="o">[]</span> <span class="k">of</span> <span class="t">Float64</span>
-n.times <span class="k">do</span> <span class="o">|</span>i<span class="o">|</span>
-  x <span class="o">&lt;&lt;</span> i <span class="o">*</span> <span class="n">30.0</span> <span class="o">/</span> n
-  y <span class="o">&lt;&lt;</span> <span class="t">Math</span>.cos(x[i]) <span class="o">*</span> x[i]
-  z <span class="o">&lt;&lt;</span> <span class="t">Math</span>.sin(x[i]) <span class="o">*</span> x[i]
-<span class="k">end</span>
+x <span class="o">=</span> [<span class="n">1.0</span>, <span class="n">2.0</span>, <span class="n">3.0</span>, <span class="n">4.0</span>, <span class="n">5.0</span>]
+y <span class="o">=</span> [<span class="n">1.0</span>, <span class="n">4.0</span>, <span class="n">9.0</span>, <span class="n">16.0</span>, <span class="n">25.0</span>]
 
-plot_types <span class="o">=</span> <span class="s">%w[line hexbin polar shade stem step contour
-  trisurf plot3 scatter scatter3]</span>
+<span class="c"># High-level API</span>
+<span class="t">GRM</span>.line(x, y, title: <span class="s">&quot;My Plot&quot;</span>)
 
-plot_types.each <span class="k">do</span> <span class="o">|</span><span class="k">type</span><span class="o">|</span>
-  <span class="t">GRM</span>.clear
-  args <span class="o">=</span> <span class="t">GRM</span>.args_new
-  <span class="t">GRM</span>.args_push(args, <span class="s">&quot;x&quot;</span>, <span class="s">&quot;nD&quot;</span>, n, x)
-  <span class="t">GRM</span>.args_push(args, <span class="s">&quot;y&quot;</span>, <span class="s">&quot;nD&quot;</span>, n, y)
-  <span class="t">GRM</span>.args_push(args, <span class="s">&quot;z&quot;</span>, <span class="s">&quot;nD&quot;</span>, n, z)
-  <span class="t">GRM</span>.args_push(args, <span class="s">&quot;kind&quot;</span>, <span class="s">&quot;s&quot;</span>, <span class="k">type</span>)
-  <span class="t">GRM</span>.args_push(args, <span class="s">&quot;title&quot;</span>, <span class="s">&quot;s&quot;</span>, <span class="k">type</span>)
-  <span class="t">GRM</span>.plot(args)
-  sleep <span class="n">2</span>
-<span class="k">end</span></code></pre>
+<span class="c"># Object-oriented API</span>
+plot <span class="o">=</span> <span class="t">GRM</span>.plot
+  .data(x, y)
+  .line
+  .color(<span class="s">&quot;red&quot;</span>)
+  .title(<span class="s">&quot;My Plot&quot;</span>)
+  .xlabel(<span class="s">&quot;X&quot;</span>)
+  .ylabel(<span class="s">&quot;Y&quot;</span>)
+
+plot.show
+plot.save(<span class="s">&quot;output.png&quot;</span>)</code></pre>
+<h3><a id="plot-types" class="anchor" href="#plot-types">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Plot Types</h3>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;grm&quot;</span>
+
+x <span class="o">=</span> [<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>, <span class="n">4</span>, <span class="n">5</span>]
+y <span class="o">=</span> [<span class="n">2</span>, <span class="n">4</span>, <span class="n">6</span>, <span class="n">8</span>, <span class="n">10</span>]
+
+<span class="t">GRM</span>.line(x, y, title: <span class="s">&quot;Line Plot&quot;</span>)
+<span class="t">GRM</span>.scatter(x, y, title: <span class="s">&quot;Scatter Plot&quot;</span>)
+<span class="t">GRM</span>.bar(x, y, title: <span class="s">&quot;Bar Chart&quot;</span>)
+<span class="t">GRM</span>.histogram([<span class="n">1</span>, <span class="n">2</span>, <span class="n">2</span>, <span class="n">3</span>, <span class="n">3</span>, <span class="n">3</span>, <span class="n">4</span>, <span class="n">4</span>, <span class="n">5</span>], title: <span class="s">&quot;Histogram&quot;</span>)</code></pre>
+<h3><a id="3-d-surface-plot" class="anchor" href="#3-d-surface-plot">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>3D Surface Plot</h3>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;grm&quot;</span>
+
+x <span class="o">=</span> [<span class="n">1.0</span>, <span class="n">2.0</span>, <span class="n">3.0</span>]
+y <span class="o">=</span> [<span class="n">1.0</span>, <span class="n">2.0</span>, <span class="n">3.0</span>]
+z <span class="o">=</span> [
+  [<span class="n">1.0</span>, <span class="n">4.0</span>, <span class="n">9.0</span>],
+  [<span class="n">2.0</span>, <span class="n">8.0</span>, <span class="n">18.0</span>],
+  [<span class="n">3.0</span>, <span class="n">12.0</span>, <span class="n">27.0</span>]
+]
+
+plot <span class="o">=</span> <span class="t">GRM</span>.plot
+  .data2d(x, y, z)
+  .surface
+  .title(<span class="s">&quot;3D Surface&quot;</span>)
+
+plot.show</code></pre>
+<h3><a id="supported-features" class="anchor" href="#supported-features">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Supported Features</h3>
+<ul>
+<li>2D Plots: line, scatter, bar, histogram, stem, step, hexbin, polar</li>
+<li>3D Plots: surface, contour, scatter3d</li>
+<li>Output: PNG, HTML, JSON export</li>
+<li>API: High-level functions and object-oriented interface</li>
+</ul>
+<p>Note: Multiple 2D plots in one figure do not currently work.</p>
 <h2><a id="usage" class="anchor" href="#usage">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
