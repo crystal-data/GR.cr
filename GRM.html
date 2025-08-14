@@ -92,8 +92,23 @@
       
     </li>
   
-  <li class=" current" data-id="gr/GRM" data-name="grm">
+  <li class="parent open current" data-id="gr/GRM" data-name="grm">
       <a href="GRM.html">GRM</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gr/GRM/Figure" data-name="grm::figure">
+      <a href="GRM/Figure.html">Figure</a>
+      
+    </li>
+  
+  <li class=" " data-id="gr/GRM/Plot" data-name="grm::plot">
+      <a href="GRM/Plot.html">Plot</a>
+      
+    </li>
+  
+</ul>
+
       
     </li>
   
@@ -155,14 +170,14 @@
   </h2>
   
     
-      <a href="https://github.com/crystal-data/GR.cr/blob/d85de38ebc688a6444a71e6ce2111dd45f048d12/src/grm.cr#L4" target="_blank">
+      <a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L4" target="_blank">
         grm.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/crystal-data/GR.cr/blob/d85de38ebc688a6444a71e6ce2111dd45f048d12/src/grm/libgrm.cr#L1" target="_blank">
+      <a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm/libgrm.cr#L1" target="_blank">
         grm/libgrm.cr
       </a>
     
@@ -176,6 +191,42 @@
   
 
   
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#figure-class-method" class="signature"><strong>.figure</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#figure%28%26block%3AFigure-%3EFigure%29-class-method" class="signature"><strong>.figure</strong>(&block : Figure -> Figure)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#plot-class-method" class="signature"><strong>.plot</strong></a>
+        
+          <div class="summary"><p>Factory methods</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#plot%28%26block%3APlot-%3EPlot%29-class-method" class="signature"><strong>.plot</strong>(&block : Plot -> Plot)</a>
+        
+          <div class="summary"><p>Block-style plotting</p></div>
+        
+      </li>
+    
+  </ul>
+
 
   
 
@@ -208,7 +259,7 @@
       <li class="entry-summary">
         <a href="#bar%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#bar</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
         
-          <div class="summary"><p>Create a bar plot</p></div>
+          <div class="summary"><p>Create a bar plot (using Plot class internally)</p></div>
         
       </li>
     
@@ -220,28 +271,63 @@
       <li class="entry-summary">
         <a href="#contour%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Array%28Number%29%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#contour</strong>(x : Array(Number), y : Array(Number), z : Array(Array(Number)), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>)</a>
         
-          <div class="summary"><p>Create a contour plot</p></div>
+          <div class="summary"><p>Create a contour plot (using Plot class internally)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dump_html%28%2Aargs%29-instance-method" class="signature"><strong>#dump_html</strong>(*args)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dump_json_str%28%2Aargs%29-instance-method" class="signature"><strong>#dump_json_str</strong>(*args)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#export%28%2Aargs%29-instance-method" class="signature"><strong>#export</strong>(*args)</a>
         
       </li>
     
       <li class="entry-summary">
         <a href="#hexbin%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#hexbin</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>)</a>
         
-          <div class="summary"><p>Create a hexbin plot</p></div>
+          <div class="summary"><p>Create a hexbin plot (using Plot class internally)</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#histogram%28data%3AArray%28Number%29%2Cbins%3AInt32%3D50%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#histogram</strong>(data : Array(Number), bins : Int32 = <span class="n">50</span>, title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
         
-          <div class="summary"><p>Create a histogram</p></div>
+          <div class="summary"><p>Create a histogram (using Plot class internally)</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#line%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#line</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
         
-          <div class="summary"><p>Create a line plot</p></div>
+          <div class="summary"><p>Create a line plot (using Plot class internally)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max_plot_id%28%2Aargs%29-instance-method" class="signature"><strong>#max_plot_id</strong>(*args)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#merge%28%2Aargs%29-instance-method" class="signature"><strong>#merge</strong>(*args)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#merge_hold%28%2Aargs%29-instance-method" class="signature"><strong>#merge_hold</strong>(*args)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#merge_named%28%2Aargs%29-instance-method" class="signature"><strong>#merge_named</strong>(*args)</a>
         
       </li>
     
@@ -260,42 +346,52 @@
       <li class="entry-summary">
         <a href="#polar%28theta%3AArray%28Number%29%2Cr%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#polar</strong>(theta : Array(Number), r : Array(Number), title : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
         
-          <div class="summary"><p>Create a polar plot</p></div>
+          <div class="summary"><p>Create a polar plot (using Plot class internally)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#render%28%2Aargs%29-instance-method" class="signature"><strong>#render</strong>(*args)</a>
         
       </li>
     
       <li class="entry-summary">
         <a href="#scatter%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#scatter</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
         
-          <div class="summary"><p>Create a scatter plot</p></div>
+          <div class="summary"><p>Create a scatter plot (using Plot class internally)</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#scatter3d%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Czlabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#scatter3d</strong>(x : Array(Number), y : Array(Number), z : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, zlabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
         
-          <div class="summary"><p>Create a 3D scatter plot</p></div>
+          <div class="summary"><p>Create a 3D scatter plot (using Plot class internally)</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#stem%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#stem</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
         
-          <div class="summary"><p>Create a stem plot</p></div>
+          <div class="summary"><p>Create a stem plot (using Plot class internally)</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#step%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#step</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
         
-          <div class="summary"><p>Create a step plot</p></div>
+          <div class="summary"><p>Create a step plot (using Plot class internally)</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#surface%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Array%28Number%29%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Czlabel%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#surface</strong>(x : Array(Number), y : Array(Number), z : Array(Array(Number)), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, zlabel : String | Nil = <span class="n">nil</span>)</a>
         
-          <div class="summary"><p>Create a 3D surface plot</p></div>
+          <div class="summary"><p>Create a 3D surface plot (using Plot class internally)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#switch%28%2Aargs%29-instance-method" class="signature"><strong>#switch</strong>(*args)</a>
         
       </li>
     
@@ -310,6 +406,90 @@
   
 
   
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="figure-class-method">
+      <div class="signature">
+        
+        def self.<strong>figure</strong>
+
+        <a class="method-permalink" href="#figure-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L276" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="figure(&amp;block:Figure-&gt;Figure)-class-method">
+      <div class="signature">
+        
+        def self.<strong>figure</strong>(&block : <a href="GRM/Figure.html">Figure</a> -> <a href="GRM/Figure.html">Figure</a>)
+
+        <a class="method-permalink" href="#figure%28%26block%3AFigure-%3EFigure%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L286" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="plot-class-method">
+      <div class="signature">
+        
+        def self.<strong>plot</strong>
+
+        <a class="method-permalink" href="#plot-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Factory methods</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L272" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="plot(&amp;block:Plot-&gt;Plot)-class-method">
+      <div class="signature">
+        
+        def self.<strong>plot</strong>(&block : <a href="GRM/Plot.html">Plot</a> -> <a href="GRM/Plot.html">Plot</a>)
+
+        <a class="method-permalink" href="#plot%28%26block%3APlot-%3EPlot%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Block-style plotting</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L281" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
 
   
 
@@ -334,7 +514,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/d85de38ebc688a6444a71e6ce2111dd45f048d12/src/grm.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -350,7 +530,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/d85de38ebc688a6444a71e6ce2111dd45f048d12/src/grm.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -366,7 +546,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/d85de38ebc688a6444a71e6ce2111dd45f048d12/src/grm.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -381,13 +561,13 @@
       
         <div class="doc">
           
-          <p>Create a bar plot</p>
+          <p>Create a bar plot (using Plot class internally)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/d85de38ebc688a6444a71e6ce2111dd45f048d12/src/grm.cr#L96" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L353" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -403,7 +583,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/d85de38ebc688a6444a71e6ce2111dd45f048d12/src/grm.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -418,13 +598,61 @@
       
         <div class="doc">
           
-          <p>Create a contour plot</p>
+          <p>Create a contour plot (using Plot class internally)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/d85de38ebc688a6444a71e6ce2111dd45f048d12/src/grm.cr#L236" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L454" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dump_html(*args)-instance-method">
+      <div class="signature">
+        
+        def <strong>dump_html</strong>(*args)
+
+        <a class="method-permalink" href="#dump_html%28%2Aargs%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dump_json_str(*args)-instance-method">
+      <div class="signature">
+        
+        def <strong>dump_json_str</strong>(*args)
+
+        <a class="method-permalink" href="#dump_json_str%28%2Aargs%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="export(*args)-instance-method">
+      <div class="signature">
+        
+        def <strong>export</strong>(*args)
+
+        <a class="method-permalink" href="#export%28%2Aargs%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -439,13 +667,13 @@
       
         <div class="doc">
           
-          <p>Create a hexbin plot</p>
+          <p>Create a hexbin plot (using Plot class internally)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/d85de38ebc688a6444a71e6ce2111dd45f048d12/src/grm.cr#L257" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L470" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -460,13 +688,13 @@
       
         <div class="doc">
           
-          <p>Create a histogram</p>
+          <p>Create a histogram (using Plot class internally)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/d85de38ebc688a6444a71e6ce2111dd45f048d12/src/grm.cr#L119" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L369" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -481,13 +709,77 @@
       
         <div class="doc">
           
-          <p>Create a line plot</p>
+          <p>Create a line plot (using Plot class internally)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/d85de38ebc688a6444a71e6ce2111dd45f048d12/src/grm.cr#L50" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L321" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_plot_id(*args)-instance-method">
+      <div class="signature">
+        
+        def <strong>max_plot_id</strong>(*args)
+
+        <a class="method-permalink" href="#max_plot_id%28%2Aargs%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="merge(*args)-instance-method">
+      <div class="signature">
+        
+        def <strong>merge</strong>(*args)
+
+        <a class="method-permalink" href="#merge%28%2Aargs%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="merge_hold(*args)-instance-method">
+      <div class="signature">
+        
+        def <strong>merge_hold</strong>(*args)
+
+        <a class="method-permalink" href="#merge_hold%28%2Aargs%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="merge_named(*args)-instance-method">
+      <div class="signature">
+        
+        def <strong>merge_named</strong>(*args)
+
+        <a class="method-permalink" href="#merge_named%28%2Aargs%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -508,7 +800,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/d85de38ebc688a6444a71e6ce2111dd45f048d12/src/grm.cr#L23" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L294" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -524,7 +816,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/d85de38ebc688a6444a71e6ce2111dd45f048d12/src/grm.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -539,13 +831,29 @@
       
         <div class="doc">
           
-          <p>Create a polar plot</p>
+          <p>Create a polar plot (using Plot class internally)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/d85de38ebc688a6444a71e6ce2111dd45f048d12/src/grm.cr#L278" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L484" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="render(*args)-instance-method">
+      <div class="signature">
+        
+        def <strong>render</strong>(*args)
+
+        <a class="method-permalink" href="#render%28%2Aargs%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -560,13 +868,13 @@
       
         <div class="doc">
           
-          <p>Create a scatter plot</p>
+          <p>Create a scatter plot (using Plot class internally)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/d85de38ebc688a6444a71e6ce2111dd45f048d12/src/grm.cr#L73" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L337" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -581,13 +889,13 @@
       
         <div class="doc">
           
-          <p>Create a 3D scatter plot</p>
+          <p>Create a 3D scatter plot (using Plot class internally)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/d85de38ebc688a6444a71e6ce2111dd45f048d12/src/grm.cr#L186" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L418" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -602,13 +910,13 @@
       
         <div class="doc">
           
-          <p>Create a stem plot</p>
+          <p>Create a stem plot (using Plot class internally)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/d85de38ebc688a6444a71e6ce2111dd45f048d12/src/grm.cr#L140" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L386" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -623,13 +931,13 @@
       
         <div class="doc">
           
-          <p>Create a step plot</p>
+          <p>Create a step plot (using Plot class internally)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/d85de38ebc688a6444a71e6ce2111dd45f048d12/src/grm.cr#L163" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L402" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -644,13 +952,29 @@
       
         <div class="doc">
           
-          <p>Create a 3D surface plot</p>
+          <p>Create a 3D surface plot (using Plot class internally)</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/d85de38ebc688a6444a71e6ce2111dd45f048d12/src/grm.cr#L213" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L436" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="switch(*args)-instance-method">
+      <div class="signature">
+        
+        def <strong>switch</strong>(*args)
+
+        <a class="method-permalink" href="#switch%28%2Aargs%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>

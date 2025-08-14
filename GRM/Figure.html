@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="gr">
-  <title>GR::GRparms - gr main</title>
+  <title>GRM::Figure - gr main</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -57,12 +57,12 @@
   <div class="types-list">
     <ul>
   
-  <li class="parent open current" data-id="gr/GR" data-name="gr">
+  <li class="parent " data-id="gr/GR" data-name="gr">
       <a href="../GR.html">GR</a>
       
         <ul>
   
-  <li class=" current" data-id="gr/GR/GRparms" data-name="gr::grparms">
+  <li class=" " data-id="gr/GR/GRparms" data-name="gr::grparms">
       <a href="../GR/GRparms.html">GRparms</a>
       
     </li>
@@ -92,12 +92,12 @@
       
     </li>
   
-  <li class="parent " data-id="gr/GRM" data-name="grm">
+  <li class="parent open current" data-id="gr/GRM" data-name="grm">
       <a href="../GRM.html">GRM</a>
       
         <ul>
   
-  <li class=" " data-id="gr/GRM/Figure" data-name="grm::figure">
+  <li class=" current" data-id="gr/GRM/Figure" data-name="grm::figure">
       <a href="../GRM/Figure.html">Figure</a>
       
     </li>
@@ -123,15 +123,26 @@
 
   <span class="kind">
     class
-  </span> GR::<wbr>GRparms
+  </span> GRM::<wbr>Figure
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../GR/GRparms.html">GR::GRparms</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../GRM/Figure.html">GRM::Figure</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Figure class for multiple plots</p>
 
 
 
@@ -158,8 +169,8 @@
   </h2>
   
     
-      <a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/gr/makino.cr#L2" target="_blank">
-        gr/makino.cr
+      <a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L221" target="_blank">
+        grm.cr
       </a>
     
     <br/>
@@ -170,45 +181,18 @@
 
 
   
-
-  
   <h2>
-    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+    <a id="constructors" class="anchor" href="#constructors">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-    Class Method Summary
+    Constructors
   </h2>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#charheight%28x%3AFloat64%29-class-method" class="signature"><strong>.charheight</strong>(x : Float64)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#charheight-class-method" class="signature"><strong>.charheight</strong></a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#winmax%28x%3AArray%28Float64%29%29-class-method" class="signature"><strong>.winmax</strong>(x : Array(Float64))</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#winmax-class-method" class="signature"><strong>.winmax</strong></a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#winmin%28x%3AArray%28Float64%29%29-class-method" class="signature"><strong>.winmin</strong>(x : Array(Float64))</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#winmin-class-method" class="signature"><strong>.winmin</strong></a>
+        <a href="#new-class-method" class="signature"><strong>.new</strong></a>
         
       </li>
     
@@ -218,6 +202,45 @@
   
 
   
+
+  
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#add_plot%28%26block%3APlot-%3EPlot%29-instance-method" class="signature"><strong>#add_plot</strong>(&block : Plot -> Plot)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#add_plot%28plot%3APlot%29-instance-method" class="signature"><strong>#add_plot</strong>(plot : Plot)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clear-instance-method" class="signature"><strong>#clear</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#save%28path%3AString%29-instance-method" class="signature"><strong>#save</strong>(path : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#show-instance-method" class="signature"><strong>#show</strong></a>
+        
+      </li>
+    
+  </ul>
+
 
 
   <div class="methods-inherited">
@@ -251,109 +274,27 @@
   </div>
 
   
-
-  
   <h2>
-    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-    Class Method Detail
+    Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="charheight(x:Float64)-class-method">
+    <div class="entry-detail" id="new-class-method">
       <div class="signature">
         
-        def self.<strong>charheight</strong>(x : Float64)
+        def self.<strong>new</strong>
 
-        <a class="method-permalink" href="#charheight%28x%3AFloat64%29-class-method">#</a>
+        <a class="method-permalink" href="#new-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/gr/makino.cr#L9" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="charheight-class-method">
-      <div class="signature">
-        
-        def self.<strong>charheight</strong>
-
-        <a class="method-permalink" href="#charheight-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/gr/makino.cr#L5" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="winmax(x:Array(Float64))-class-method">
-      <div class="signature">
-        
-        def self.<strong>winmax</strong>(x : Array(Float64))
-
-        <a class="method-permalink" href="#winmax%28x%3AArray%28Float64%29%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/gr/makino.cr#L20" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="winmax-class-method">
-      <div class="signature">
-        
-        def self.<strong>winmax</strong>
-
-        <a class="method-permalink" href="#winmax-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/gr/makino.cr#L16" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="winmin(x:Array(Float64))-class-method">
-      <div class="signature">
-        
-        def self.<strong>winmin</strong>(x : Array(Float64))
-
-        <a class="method-permalink" href="#winmin%28x%3AArray%28Float64%29%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/gr/makino.cr#L28" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="winmin-class-method">
-      <div class="signature">
-        
-        def self.<strong>winmin</strong>
-
-        <a class="method-permalink" href="#winmin-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/gr/makino.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L224" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -363,6 +304,98 @@
   
 
   
+
+  
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="add_plot(&amp;block:Plot-&gt;Plot)-instance-method">
+      <div class="signature">
+        
+        def <strong>add_plot</strong>(&block : <a href="../GRM/Plot.html">Plot</a> -> <a href="../GRM/Plot.html">Plot</a>)
+
+        <a class="method-permalink" href="#add_plot%28%26block%3APlot-%3EPlot%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L228" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="add_plot(plot:Plot)-instance-method">
+      <div class="signature">
+        
+        def <strong>add_plot</strong>(plot : <a href="../GRM/Plot.html">Plot</a>)
+
+        <a class="method-permalink" href="#add_plot%28plot%3APlot%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L235" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clear-instance-method">
+      <div class="signature">
+        
+        def <strong>clear</strong>
+
+        <a class="method-permalink" href="#clear-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L264" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="save(path:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>save</strong>(path : String)
+
+        <a class="method-permalink" href="#save%28path%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L258" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="show-instance-method">
+      <div class="signature">
+        
+        def <strong>show</strong>
+
+        <a class="method-permalink" href="#show-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L240" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
 
 
 </div>
