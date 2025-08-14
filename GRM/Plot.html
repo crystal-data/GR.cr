@@ -169,7 +169,7 @@
   </h2>
   
     
-      <a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L30" target="_blank">
+      <a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L30" target="_blank">
         grm.cr
       </a>
     
@@ -217,7 +217,12 @@
       <li class="entry-summary">
         <a href="#apply_settings-instance-method" class="signature"><strong>#apply_settings</strong></a>
         
-          <div class="summary"><p>Method to apply all settings (accessible from Figure class)</p></div>
+          <div class="summary"><p>Method to apply all settings for standalone Plot usage</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#args%3ALibGRM%3A%3AArgsT-instance-method" class="signature"><strong>#args</strong> : LibGRM::ArgsT</a>
         
       </li>
     
@@ -227,19 +232,31 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#build_series_args%3ALibGRM%3A%3AArgsT-instance-method" class="signature"><strong>#build_series_args</strong> : LibGRM::ArgsT</a>
+        
+          <div class="summary"><p>Method to build clean args without polluting internal state</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#color%28color%3AString%29-instance-method" class="signature"><strong>#color</strong>(color : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#contour-instance-method" class="signature"><strong>#contour</strong></a>
+        <a href="#color%3AString%7CNil-instance-method" class="signature"><strong>#color</strong> : String | Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#contour%28m%3AInt32%7CNil%3Dnil%2Cn%3AInt32%7CNil%3Dnil%29-instance-method" class="signature"><strong>#contour</strong>(m : Int32 | Nil = <span class="n">nil</span>, n : Int32 | Nil = <span class="n">nil</span>)</a>
         
       </li>
     
       <li class="entry-summary">
         <a href="#data%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Number%29%7CNil%3Dnil%29-instance-method" class="signature"><strong>#data</strong>(x : Array(Number), y : Array(Number), z : Array(Number) | Nil = <span class="n">nil</span>)</a>
         
-          <div class="summary"><p>Data setting methods (chainable)</p></div>
+          <div class="summary"><p>Data setting methods (chainable) - for 1D series</p></div>
         
       </li>
     
@@ -247,6 +264,13 @@
         <a href="#data%28points%3AArray%28Tuple%28Number%2CNumber%29%29%29-instance-method" class="signature"><strong>#data</strong>(points : Array(Tuple(Number, Number)))</a>
         
           <div class="summary"><p>Convenience method for point arrays</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#data2d%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Array%28Number%29%29%29-instance-method" class="signature"><strong>#data2d</strong>(x : Array(Number), y : Array(Number), z : Array(Array(Number)))</a>
+        
+          <div class="summary"><p>2D data helper for surface/contour (z: m x n matrix)</p></div>
         
       </li>
     
@@ -264,6 +288,11 @@
     
       <li class="entry-summary">
         <a href="#histogram%28bins%3AInt32%3D50%29-instance-method" class="signature"><strong>#histogram</strong>(bins : Int32 = <span class="n">50</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#kind%3AString%7CNil-instance-method" class="signature"><strong>#kind</strong> : String | Nil</a>
         
       </li>
     
@@ -302,7 +331,7 @@
       <li class="entry-summary">
         <a href="#show-instance-method" class="signature"><strong>#show</strong></a>
         
-          <div class="summary"><p>Rendering and output methods</p></div>
+          <div class="summary"><p>Rendering and output methods WARNING: This method calls LibGRM.clear which affects the global GRM state.</p></div>
         
       </li>
     
@@ -324,7 +353,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#surface-instance-method" class="signature"><strong>#surface</strong></a>
+        <a href="#surface%28m%3AInt32%7CNil%3Dnil%2Cn%3AInt32%7CNil%3Dnil%29-instance-method" class="signature"><strong>#surface</strong>(m : Int32 | Nil = <span class="n">nil</span>, n : Int32 | Nil = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -415,7 +444,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L39" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L49" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -446,13 +475,29 @@
       
         <div class="doc">
           
-          <p>Method to apply all settings (accessible from Figure class)</p>
+          <p>Method to apply all settings for standalone Plot usage</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L170" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L267" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="args:LibGRM::ArgsT-instance-method">
+      <div class="signature">
+        
+        def <strong>args</strong> : LibGRM::ArgsT
+
+        <a class="method-permalink" href="#args%3ALibGRM%3A%3AArgsT-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L45" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -468,7 +513,28 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L88" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L165" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="build_series_args:LibGRM::ArgsT-instance-method">
+      <div class="signature">
+        
+        def <strong>build_series_args</strong> : LibGRM::ArgsT
+
+        <a class="method-permalink" href="#build_series_args%3ALibGRM%3A%3AArgsT-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Method to build clean args without polluting internal state</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L54" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -484,23 +550,39 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L155" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L237" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="contour-instance-method">
+    <div class="entry-detail" id="color:String|Nil-instance-method">
       <div class="signature">
         
-        def <strong>contour</strong>
+        def <strong>color</strong> : String | Nil
 
-        <a class="method-permalink" href="#contour-instance-method">#</a>
+        <a class="method-permalink" href="#color%3AString%7CNil-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L119" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L47" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="contour(m:Int32|Nil=nil,n:Int32|Nil=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>contour</strong>(m : Int32 | Nil = <span class="n">nil</span>, n : Int32 | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#contour%28m%3AInt32%7CNil%3Dnil%2Cn%3AInt32%7CNil%3Dnil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L199" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -515,13 +597,13 @@
       
         <div class="doc">
           
-          <p>Data setting methods (chainable)</p>
+          <p>Data setting methods (chainable) - for 1D series</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L92" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -542,7 +624,28 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L71" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L148" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="data2d(x:Array(Number),y:Array(Number),z:Array(Array(Number)))-instance-method">
+      <div class="signature">
+        
+        def <strong>data2d</strong>(x : Array(Number), y : Array(Number), z : Array(Array(Number)))
+
+        <a class="method-permalink" href="#data2d%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Array%28Number%29%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>2D data helper for surface/contour (z: m x n matrix)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L121" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -563,7 +666,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L215" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L321" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -579,7 +682,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L124" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L206" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -595,7 +698,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L93" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L170" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="kind:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>kind</strong> : String | Nil
+
+        <a class="method-permalink" href="#kind%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L46" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -616,7 +735,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L78" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L155" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -632,7 +751,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L129" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L211" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -648,7 +767,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L187" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L289" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -664,7 +783,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L192" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L294" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -680,7 +799,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L83" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L160" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -696,7 +815,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L109" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L187" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -712,12 +831,15 @@
         <div class="doc">
           
           <p>Rendering and output methods</p>
+<p><span class="flag yellow">WARNING</span>  This method calls LibGRM.clear which affects the global GRM state.
+Do not use this method when working with Figure instances, as it may clear
+other plots. This method is intended for standalone Plot usage only.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L180" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L276" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -733,7 +855,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L99" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L177" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -749,7 +871,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L104" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L182" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -770,23 +892,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L161" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L243" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="surface-instance-method">
+    <div class="entry-detail" id="surface(m:Int32|Nil=nil,n:Int32|Nil=nil)-instance-method">
       <div class="signature">
         
-        def <strong>surface</strong>
+        def <strong>surface</strong>(m : Int32 | Nil = <span class="n">nil</span>, n : Int32 | Nil = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#surface-instance-method">#</a>
+        <a class="method-permalink" href="#surface%28m%3AInt32%7CNil%3Dnil%2Cn%3AInt32%7CNil%3Dnil%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L114" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L192" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -807,7 +929,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L135" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L217" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -823,7 +945,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L199" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L305" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -839,7 +961,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L209" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L315" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -855,7 +977,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L140" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L222" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -871,7 +993,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L145" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L227" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -887,7 +1009,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L150" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L232" target="_blank">View source</a>]
         
       </div>
     </div>

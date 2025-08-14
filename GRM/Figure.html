@@ -169,7 +169,7 @@
   </h2>
   
     
-      <a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L221" target="_blank">
+      <a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L327" target="_blank">
         grm.cr
       </a>
     
@@ -190,6 +190,13 @@
     Constructors
   </h2>
   <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28plot_id%3AInt32%29-class-method" class="signature"><strong>.new</strong>(plot_id : Int32)</a>
+        
+          <div class="summary"><p>External plot_id specification constructor</p></div>
+        
+      </li>
     
       <li class="entry-summary">
         <a href="#new-class-method" class="signature"><strong>.new</strong></a>
@@ -230,12 +237,46 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#plot_id%3AInt32-instance-method" class="signature"><strong>#plot_id</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#save%28path%3AString%29-instance-method" class="signature"><strong>#save</strong>(path : String)</a>
         
       </li>
     
       <li class="entry-summary">
         <a href="#show-instance-method" class="signature"><strong>#show</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#title%28text%3AString%29-instance-method" class="signature"><strong>#title</strong>(text : String)</a>
+        
+          <div class="summary"><p>Figure-level label setting methods</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_html%28id%3AString%7CNil%3Dnil%29%3AString-instance-method" class="signature"><strong>#to_html</strong>(id : String | Nil = <span class="n">nil</span>) : String</a>
+        
+          <div class="summary"><p>Convenience methods</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_json%3AString-instance-method" class="signature"><strong>#to_json</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#xlabel%28text%3AString%29-instance-method" class="signature"><strong>#xlabel</strong>(text : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ylabel%28text%3AString%29-instance-method" class="signature"><strong>#ylabel</strong>(text : String)</a>
         
       </li>
     
@@ -283,6 +324,27 @@
     Constructor Detail
   </h2>
   
+    <div class="entry-detail" id="new(plot_id:Int32)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(plot_id : Int32)
+
+        <a class="method-permalink" href="#new%28plot_id%3AInt32%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>External plot_id specification constructor</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L349" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="new-class-method">
       <div class="signature">
         
@@ -294,7 +356,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L224" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L340" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -326,7 +388,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L228" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L354" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -342,7 +404,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L235" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L362" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -358,7 +420,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L264" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L463" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="plot_id:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>plot_id</strong> : Int32
+
+        <a class="method-permalink" href="#plot_id%3AInt32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L338" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -374,7 +452,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L258" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L407" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -390,7 +468,97 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/7b5e7b7ea34e8752064c1566044f50a296835406/src/grm.cr#L240" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L368" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="title(text:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>title</strong>(text : String)
+
+        <a class="method-permalink" href="#title%28text%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Figure-level label setting methods</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L420" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_html(id:String|Nil=nil):String-instance-method">
+      <div class="signature">
+        
+        def <strong>to_html</strong>(id : String | Nil = <span class="n">nil</span>) : String
+
+        <a class="method-permalink" href="#to_html%28id%3AString%7CNil%3Dnil%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Convenience methods</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L439" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_json:String-instance-method">
+      <div class="signature">
+        
+        def <strong>to_json</strong> : String
+
+        <a class="method-permalink" href="#to_json%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L451" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="xlabel(text:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>xlabel</strong>(text : String)
+
+        <a class="method-permalink" href="#xlabel%28text%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L426" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ylabel(text:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>ylabel</strong>(text : String)
+
+        <a class="method-permalink" href="#ylabel%28text%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d4c82df37e6932fc30567e11fea7305801c551e1/src/grm.cr#L432" target="_blank">View source</a>]
         
       </div>
     </div>
