@@ -55,36 +55,73 @@ GR.cr is still immature, but even in its current state, GRM can be used to creat
 
 ## Quick Start
 
-With the GRM module, you can easily display beautiful charts.
+### Simple Line Plot
 
 ```crystal
-require "../src/grm"
+require "grm"
 
-n = 1000
-x = [] of Float64
-y = [] of Float64
-z = [] of Float64
-n.times do |i|
-  x << i * 30.0 / n
-  y << Math.cos(x[i]) * x[i]
-  z << Math.sin(x[i]) * x[i]
-end
+x = [1.0, 2.0, 3.0, 4.0, 5.0]
+y = [1.0, 4.0, 9.0, 16.0, 25.0]
 
-plot_types = %w[line hexbin polar shade stem step contour
-  trisurf plot3 scatter scatter3]
+# High-level API
+GRM.line(x, y, title: "My Plot")
 
-plot_types.each do |type|
-  GRM.clear
-  args = GRM.args_new
-  GRM.args_push(args, "x", "nD", n, x)
-  GRM.args_push(args, "y", "nD", n, y)
-  GRM.args_push(args, "z", "nD", n, z)
-  GRM.args_push(args, "kind", "s", type)
-  GRM.args_push(args, "title", "s", type)
-  GRM.plot(args)
-  sleep 2
-end
+# Object-oriented API
+plot = GRM.plot
+  .data(x, y)
+  .line
+  .color("red")
+  .title("My Plot")
+  .xlabel("X")
+  .ylabel("Y")
+
+plot.show
+plot.save("output.png")
 ```
+
+### Plot Types
+
+```crystal
+require "grm"
+
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+GRM.line(x, y, title: "Line Plot")
+GRM.scatter(x, y, title: "Scatter Plot")
+GRM.bar(x, y, title: "Bar Chart")
+GRM.histogram([1, 2, 2, 3, 3, 3, 4, 4, 5], title: "Histogram")
+```
+
+### 3D Surface Plot
+
+```crystal
+require "grm"
+
+x = [1.0, 2.0, 3.0]
+y = [1.0, 2.0, 3.0]
+z = [
+  [1.0, 4.0, 9.0],
+  [2.0, 8.0, 18.0],
+  [3.0, 12.0, 27.0]
+]
+
+plot = GRM.plot
+  .data2d(x, y, z)
+  .surface
+  .title("3D Surface")
+
+plot.show
+```
+
+### Supported Features
+
+- 2D Plots: line, scatter, bar, histogram, stem, step, hexbin, polar
+- 3D Plots: surface, contour, scatter3d
+- Output: PNG, HTML, JSON export
+- API: High-level functions and object-oriented interface
+
+Note: Multiple 2D plots in one figure do not currently work.
 
 ## Usage
 
