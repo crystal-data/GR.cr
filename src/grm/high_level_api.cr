@@ -1,63 +1,7 @@
-require "./gr_common/config.cr"
-require "./grm/libgrm"
-require "./grm/plot"
-require "./grm/figure"
-require "./grm/high_level_api"
+require "./libgrm"
+require "./plot"
 
 module GRM
-  extend self
-
-  # Low-level API forwarding
-  {% for name in %w[
-                   args_new
-                   args_push
-                   plot
-                   clear
-                   args_delete
-                   render
-                   export
-                   dump_html
-                   dump_json_str
-                   merge
-                   merge_hold
-                   merge_named
-                   switch
-                   max_plot_id
-                 ] %}
-    def {{name.id}}(*args)
-      LibGRM.{{name.id}}(*args)
-    end
-  {% end %}
-
-  # Factory methods
-  def self.plot
-    Plot.new
-  end
-
-  def self.figure
-    Figure.new
-  end
-
-  def self.figure(plot_id : Int32)
-    Figure.new(plot_id)
-  end
-
-  # Block-style plotting
-  def self.plot(&block : Plot -> Plot)
-    plot = Plot.new
-    yield(plot)
-  end
-
-  def self.figure(&block : Figure -> Figure)
-    figure = Figure.new
-    yield(figure)
-  end
-
-  def self.figure(plot_id : Int32, &block : Figure -> Figure)
-    figure = Figure.new(plot_id)
-    yield(figure)
-  end
-
   # High-level plotting API
 
   # Unified plot function (like the original low-level API)
