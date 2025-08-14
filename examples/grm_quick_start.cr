@@ -22,5 +22,5 @@ plot_types.each do |type|
   GRM.args_push(args, "kind", "s", type)
   GRM.args_push(args, "title", "s", type)
   GRM.plot(args)
-  sleep 2
+  sleep 2.seconds
 end
