@@ -266,7 +266,7 @@ y <span class="o">=</span> [<span class="n">1.0</span>, <span class="n">4.0</spa
 <span class="t">GRM</span>.plot(x, y, title: <span class="s">&quot;My Plot&quot;</span>)
 
 <span class="c"># Object-oriented API</span>
-plot <span class="o">=</span> <span class="t">GRM</span>.plot
+plot <span class="o">=</span> <span class="t">GRM</span><span class="t">::</span><span class="t">Plot</span>.new
   .data(x, y)
   .color(<span class="s">&quot;red&quot;</span>)
   .title(<span class="s">&quot;My Plot&quot;</span>)
@@ -304,7 +304,7 @@ z <span class="o">=</span> [
   [<span class="n">3.0</span>, <span class="n">12.0</span>, <span class="n">27.0</span>]
 ]
 
-plot <span class="o">=</span> <span class="t">GRM</span>.plot
+plot <span class="o">=</span> <span class="t">GRM</span><span class="t">::</span><span class="t">Plot</span>.new
   .data2d(x, y, z)
   .surface
   .title(<span class="s">&quot;3D Surface&quot;</span>)
