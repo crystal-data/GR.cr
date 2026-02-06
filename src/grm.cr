@@ -1,93 +1,281 @@
 require "./gr_common/config.cr"
+require "./gr_common/exceptions"
 require "./grm/libgrm"
 require "./grm/plot"
 require "./grm/figure"
-require "./grm/high_level_api"
 
 module GRM
   extend self
 
-  # Low-level API forwarding
-  {% for name in %w[
-                   args_new
-                   args_push
-                   plot
-                   clear
-                   args_delete
-                   render
-                   export
-                   dump_html
-                   dump_json_str
-                   merge
-                   merge_hold
-                   merge_named
-                   switch
-                   max_plot_id
-                 ] %}
-    def {{name.id}}(*args)
-      LibGRM.{{name.id}}(*args)
+  def args_new
+    LibGRM.args_new
+  end
+
+  def args_push(*args)
+    LibGRM.args_push(*args)
+  end
+
+  def clear
+    LibGRM.clear
+  end
+
+  def args_delete(*args)
+    LibGRM.args_delete(*args)
+  end
+
+  def render
+    LibGRM.render
+  end
+
+  def export(*args)
+    LibGRM.export(*args)
+  end
+
+  def dump_html(*args)
+    LibGRM.dump_html(*args)
+  end
+
+  def dump_json_str
+    LibGRM.dump_json_str
+  end
+
+  def switch(*args)
+    LibGRM.switch(*args)
+  end
+
+  def max_plot_id
+    LibGRM.max_plot_id
+  end
+
+  def self.with_args(&block : LibGRM::ArgsT -> Void)
+    args = args_new
+    begin
+      yield(args)
+    ensure
+      args_delete(args)
     end
-  {% end %}
-
-  # Factory methods
-  def self.plot
-    Plot.new
   end
 
-  def self.figure
-    Figure.new
+  class Args
+    getter ptr
+    getter? deleted
+
+    def initialize
+      @ptr = LibGRM.args_new
+      @deleted = false
+      @references = [] of Reference
+    end
+
+    def initialize(**args)
+      initialize
+      args.each { |key, value| push(key.to_s, value) }
+    end
+
+    def initialize(args : Hash(String, _))
+      initialize
+      args.each { |key, value| push(key, value) }
+    end
+
+    def initialize(args : Hash(Symbol, _))
+      initialize
+      args.each { |key, value| push(key.to_s, value) }
+    end
+
+    def delete
+      return if @deleted
+      @deleted = true
+      LibGRM.args_delete(@ptr)
+    end
+
+    def finalize
+      delete
+    end
+
+    def clear
+      LibGRM.args_clear(@ptr)
+      @references.clear
+    end
+
+    def remove(key : String)
+      LibGRM.args_remove(@ptr, key)
+    end
+
+    def contains?(key : String) : Bool
+      LibGRM.args_contains(@ptr, key) == 1
+    end
+
+    def []=(key : String, value)
+      push(key, value)
+    end
+
+    def push(key : String, value : String)
+      LibGRM.args_push(@ptr, key, "s", value)
+      @references << value
+    end
+
+    def push(key : String, value : Int32)
+      LibGRM.args_push(@ptr, key, "i", value)
+    end
+
+    def push(key : String, value : Int64)
+      LibGRM.args_push(@ptr, key, "i", value.to_i32)
+    end
+
+    def push(key : String, value : Float64)
+      LibGRM.args_push(@ptr, key, "d", value)
+    end
+
+    def push(key : String, value : Args)
+      if value.deleted?
+        raise ArgumentError.new("Argument container is already consumed or deleted")
+      end
+      value.mark_deleted!
+      LibGRM.args_push(@ptr, key, "a", value.ptr)
+    end
+
+    def push(key : String, values : Array(String))
+      raise ArgumentError.new("Array value for key '#{key}' cannot be empty") if values.empty?
+      ptrs = values.map { |v| v.to_unsafe.as(LibC::Char*) }
+      LibGRM.args_push(@ptr, key, "nS", ptrs.size, ptrs.to_unsafe)
+      @references << values
+      @references << ptrs
+    end
+
+    def push(key : String, values : Array(Int32))
+      raise ArgumentError.new("Array value for key '#{key}' cannot be empty") if values.empty?
+      data = values.map(&.to_i32)
+      LibGRM.args_push(@ptr, key, "nI", data.size, data.to_unsafe)
+      @references << data
+    end
+
+    def push(key : String, values : Array(Int64))
+      raise ArgumentError.new("Array value for key '#{key}' cannot be empty") if values.empty?
+      data = values.map(&.to_i32)
+      LibGRM.args_push(@ptr, key, "nI", data.size, data.to_unsafe)
+      @references << data
+    end
+
+    def push(key : String, values : Array(Float64))
+      raise ArgumentError.new("Array value for key '#{key}' cannot be empty") if values.empty?
+      data = values.map(&.to_f64)
+      LibGRM.args_push(@ptr, key, "nD", data.size, data.to_unsafe)
+      @references << data
+    end
+
+    def push(key : String, values : Array(Args))
+      raise ArgumentError.new("Array value for key '#{key}' cannot be empty") if values.empty?
+      values.each do |value|
+        if value.deleted?
+          raise ArgumentError.new("Argument container is already consumed or deleted")
+        end
+      end
+      values.each(&.mark_deleted!)
+      ptrs = values.map(&.ptr)
+      LibGRM.args_push(@ptr, key, "nA", ptrs.size, ptrs.to_unsafe)
+      @references << values
+      @references << ptrs
+    end
+
+    def push(key : String, values : Array(Array(Int32)))
+      dims, flat = flatten_matrix_int(values, key)
+      push(key, flat)
+      push("#{key}_dims", dims)
+    end
+
+    def push(key : String, values : Array(Array(Float64)))
+      dims, flat = flatten_matrix_float(values, key)
+      push(key, flat)
+      push("#{key}_dims", dims)
+    end
+
+    private def mark_deleted!
+      @deleted = true
+    end
+
+    private def flatten_matrix_int(values : Array(Array(Int32)), key : String)
+      raise ArgumentError.new("Array value for key '#{key}' cannot be empty") if values.empty?
+      rows = values.size
+      cols = values.first.size
+      unless values.all? { |row| row.size == cols }
+        raise ArgumentError.new("All rows in 2D array for key '#{key}' must have the same length")
+      end
+      flat = values.flat_map { |row| row.map(&.to_i32) }
+      dims = [cols.to_i32, rows.to_i32]
+      {dims, flat}
+    end
+
+    private def flatten_matrix_float(values : Array(Array(Float64)), key : String)
+      raise ArgumentError.new("Array value for key '#{key}' cannot be empty") if values.empty?
+      rows = values.size
+      cols = values.first.size
+      unless values.all? { |row| row.size == cols }
+        raise ArgumentError.new("All rows in 2D array for key '#{key}' must have the same length")
+      end
+      flat = values.flat_map { |row| row.map(&.to_f64) }
+      dims = [cols.to_i32, rows.to_i32]
+      {dims, flat}
+    end
   end
 
-  def self.figure(plot_id : Int32)
-    Figure.new(plot_id)
+  def merge(args : Args)
+    LibGRM.merge(args.ptr)
   end
 
-  # Block-style plotting
-  def self.plot(&block : Plot -> Plot)
-    plot = Plot.new
-    yield(plot)
+  def merge_hold(args : Args)
+    LibGRM.merge_hold(args.ptr)
   end
 
-  def self.figure(&block : Figure -> Figure)
-    figure = Figure.new
-    yield(figure)
+  def merge_named(args : Args, identificator : String)
+    LibGRM.merge_named(args.ptr, identificator)
   end
 
-  def self.figure(plot_id : Int32, &block : Figure -> Figure)
-    figure = Figure.new(plot_id)
-    yield(figure)
+  def merge_extended(args : Args, hold : Int32 = 0)
+    LibGRM.merge_extended(args.ptr, hold, Pointer(LibC::Char).null)
   end
 
-  # High-level plotting API
+  def merge_extended(args : Args, hold : Int32, identificator : String)
+    LibGRM.merge_extended(args.ptr, hold, identificator)
+  end
 
-  # Unified plot function (like the original low-level API)
+  def plot(args : Args)
+    LibGRM.plot(args.ptr)
+  end
+
   def plot(x : Array(Number), y : Array(Number), z : Array(Number)? = nil,
            kind : String = "line", title : String? = nil,
            xlabel : String? = nil, ylabel : String? = nil, zlabel : String? = nil,
            color : String? = nil)
-    args = args_new
-    x_data = x.map(&.to_f64)
-    y_data = y.map(&.to_f64)
-
-    args_push(args, "x", "nD", x_data.size, x_data)
-    args_push(args, "y", "nD", y_data.size, y_data)
-
-    if z
-      z_data = z.map(&.to_f64)
-      args_push(args, "z", "nD", z_data.size, z_data)
+    if x.size != y.size
+      raise GRCommon::DimensionMismatchError.new(
+        "X and Y arrays must have equal length: x=#{x.size}, y=#{y.size}"
+      )
     end
 
-    args_push(args, "kind", "s", kind)
-    args_push(args, "title", "s", title) if title
-    args_push(args, "xlabel", "s", xlabel) if xlabel
-    args_push(args, "ylabel", "s", ylabel) if ylabel
-    args_push(args, "zlabel", "s", zlabel) if zlabel
-    args_push(args, "color", "s", color) if color
+    if z && z.size != x.size
+      raise GRCommon::DimensionMismatchError.new(
+        "X and Z arrays must have equal length: x=#{x.size}, z=#{z.size}"
+      )
+    end
 
+    if x.empty? || y.empty?
+      raise GRCommon::InvalidDataError.new(
+        "X and Y arrays cannot be empty"
+      )
+    end
+
+    args = Args.new
+    args.push("x", x.map(&.to_f64))
+    args.push("y", y.map(&.to_f64))
+    args.push("z", z.map(&.to_f64)) if z
+    args.push("kind", kind)
+    args.push("title", title) if title
+    args.push("xlabel", xlabel) if xlabel
+    args.push("ylabel", ylabel) if ylabel
+    args.push("zlabel", zlabel) if zlabel
+    args.push("color", color) if color
     plot(args)
   end
 
-  # Create a line plot (using Plot class internally)
   def line(x : Array(Number), y : Array(Number),
            title : String? = nil,
            xlabel : String? = nil,
@@ -103,7 +291,6 @@ module GRM
     plot.show
   end
 
-  # Create a scatter plot (using Plot class internally)
   def scatter(x : Array(Number), y : Array(Number),
               title : String? = nil,
               xlabel : String? = nil,
@@ -119,7 +306,6 @@ module GRM
     plot.show
   end
 
-  # Create a bar plot (using Plot class internally)
   def bar(x : Array(Number), y : Array(Number),
           title : String? = nil,
           xlabel : String? = nil,
@@ -135,7 +321,6 @@ module GRM
     plot.show
   end
 
-  # Create a histogram (using Plot class internally)
   def histogram(data : Array(Number),
                 bins : Int32 = 50,
                 title : String? = nil,
@@ -152,7 +337,6 @@ module GRM
     plot.show
   end
 
-  # Create a stem plot (using Plot class internally)
   def stem(x : Array(Number), y : Array(Number),
            title : String? = nil,
            xlabel : String? = nil,
@@ -168,7 +352,6 @@ module GRM
     plot.show
   end
 
-  # Create a step plot (using Plot class internally)
   def step(x : Array(Number), y : Array(Number),
            title : String? = nil,
            xlabel : String? = nil,
@@ -184,7 +367,6 @@ module GRM
     plot.show
   end
 
-  # Create a 3D scatter plot (using Plot class internally)
   def scatter3d(x : Array(Number), y : Array(Number), z : Array(Number),
                 title : String? = nil,
                 xlabel : String? = nil,
@@ -202,16 +384,14 @@ module GRM
     plot.show
   end
 
-  # Create a 3D surface plot (using Plot class internally)
   def surface(x : Array(Number), y : Array(Number), z : Array(Array(Number)),
               title : String? = nil,
               xlabel : String? = nil,
               ylabel : String? = nil,
               zlabel : String? = nil)
-    # Use data2d for proper 2D data handling with dimensions
     plot = Plot.new
       .data2d(x, y, z)
-      .surface(z.size, z.first.size) # m, n explicitly specified
+      .surface(z.size, z.first.size)
     plot.title(title) if title
     plot.xlabel(xlabel) if xlabel
     plot.ylabel(ylabel) if ylabel
@@ -219,22 +399,19 @@ module GRM
     plot.show
   end
 
-  # Create a contour plot (using Plot class internally)
   def contour(x : Array(Number), y : Array(Number), z : Array(Array(Number)),
               title : String? = nil,
               xlabel : String? = nil,
               ylabel : String? = nil)
-    # Use data2d for proper 2D data handling with dimensions
     plot = Plot.new
       .data2d(x, y, z)
-      .contour(z.size, z.first.size) # m, n explicitly specified
+      .contour(z.size, z.first.size)
     plot.title(title) if title
     plot.xlabel(xlabel) if xlabel
     plot.ylabel(ylabel) if ylabel
     plot.show
   end
 
-  # Create a hexbin plot (using Plot class internally)
   def hexbin(x : Array(Number), y : Array(Number),
              title : String? = nil,
              xlabel : String? = nil,
@@ -248,7 +425,6 @@ module GRM
     plot.show
   end
 
-  # Create a polar plot (using Plot class internally)
   def polar(theta : Array(Number), r : Array(Number),
             title : String? = nil,
             color : String? = nil)
