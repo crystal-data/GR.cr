@@ -18,8 +18,8 @@ jobs:
         run: |
           sudo apt update -y
           sudo apt upgrade -y
-          wget https://download.opensuse.org/repositories/science:/gr-framework/xUbuntu_24.04/amd64/gr_0.73.17-1_amd64.deb
-          sudo apt-get install -y ./gr_0.73.17-1_amd64.deb
+          wget https://download.opensuse.org/repositories/science:/gr-framework/xUbuntu_24.04/amd64/gr_0.73.22-1_amd64.deb
+          sudo apt-get install -y ./gr_0.73.22-1_amd64.deb
       - name: Set up Homebrew (macos)
         if: ${{ matrix.os == 'macos' }}
         run: |
