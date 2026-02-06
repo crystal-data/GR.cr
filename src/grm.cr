@@ -30,6 +30,7 @@ module GRM
     end
   end
 
+  # Low-level LibGRM wrappers
   def args_new
     with_error_check("args_new") { LibGRM.args_new }
   end
@@ -83,6 +84,7 @@ module GRM
     end
   end
 
+  # Managed argument container
   class Args
     alias Reference = Args | String | Array(String) | Array(Int32) | Array(Int64) | Array(Float64) | Array(LibC::Char*) | Array(Args)
 
@@ -272,6 +274,7 @@ module GRM
     with_error_check("merge_extended") { LibGRM.merge_extended(args.ptr, hold, identificator) }
   end
 
+  # Low-level plot entrypoints
   def plot(args : Args)
     with_error_check("plot") { LibGRM.plot(args.ptr) }
   end
@@ -280,6 +283,7 @@ module GRM
     with_error_check("plot") { LibGRM.plot(args) }
   end
 
+  # High-level convenience helpers (Plot-based)
   def plot(x : Array(Number), y : Array(Number), z : Array(Number)? = nil,
            kind : String = "line", title : String? = nil,
            xlabel : String? = nil, ylabel : String? = nil, zlabel : String? = nil,
@@ -315,21 +319,6 @@ module GRM
     plot(args)
   end
 
-  def line(x : Array(Number), y : Array(Number),
-           title : String? = nil,
-           xlabel : String? = nil,
-           ylabel : String? = nil,
-           color : String? = nil)
-    plot = Plot.new
-      .data(x, y)
-      .line
-    plot.title(title) if title
-    plot.xlabel(xlabel) if xlabel
-    plot.ylabel(ylabel) if ylabel
-    plot.color(color) if color
-    plot.show
-  end
-
   def scatter(x : Array(Number), y : Array(Number),
               title : String? = nil,
               xlabel : String? = nil,
@@ -345,14 +334,14 @@ module GRM
     plot.show
   end
 
-  def bar(x : Array(Number), y : Array(Number),
-          title : String? = nil,
-          xlabel : String? = nil,
-          ylabel : String? = nil,
-          color : String? = nil)
+  def barplot(x : Array(Number), y : Array(Number),
+              title : String? = nil,
+              xlabel : String? = nil,
+              ylabel : String? = nil,
+              color : String? = nil)
     plot = Plot.new
       .data(x, y)
-      .bar
+      .barplot
     plot.title(title) if title
     plot.xlabel(xlabel) if xlabel
     plot.ylabel(ylabel) if ylabel
@@ -360,15 +349,14 @@ module GRM
     plot.show
   end
 
-  def histogram(data : Array(Number),
-                bins : Int32 = 50,
-                title : String? = nil,
-                xlabel : String? = nil,
-                ylabel : String? = nil,
-                color : String? = nil)
+  def stairs(x : Array(Number), y : Array(Number),
+             title : String? = nil,
+             xlabel : String? = nil,
+             ylabel : String? = nil,
+             color : String? = nil)
     plot = Plot.new
-      .data(data, [] of Float64)
-      .histogram(bins)
+      .data(x, y)
+      .stairs
     plot.title(title) if title
     plot.xlabel(xlabel) if xlabel
     plot.ylabel(ylabel) if ylabel
@@ -391,14 +379,14 @@ module GRM
     plot.show
   end
 
-  def step(x : Array(Number), y : Array(Number),
-           title : String? = nil,
-           xlabel : String? = nil,
-           ylabel : String? = nil,
-           color : String? = nil)
+  def hexbin(x : Array(Number), y : Array(Number),
+             title : String? = nil,
+             xlabel : String? = nil,
+             ylabel : String? = nil,
+             color : String? = nil)
     plot = Plot.new
       .data(x, y)
-      .step
+      .hexbin
     plot.title(title) if title
     plot.xlabel(xlabel) if xlabel
     plot.ylabel(ylabel) if ylabel
@@ -406,15 +394,48 @@ module GRM
     plot.show
   end
 
-  def scatter3d(x : Array(Number), y : Array(Number), z : Array(Number),
+  def histogram(data : Array(Number),
+                bins : Int32 = 50,
                 title : String? = nil,
                 xlabel : String? = nil,
                 ylabel : String? = nil,
-                zlabel : String? = nil,
                 color : String? = nil)
     plot = Plot.new
+      .data(data)
+      .histogram(bins)
+    plot.title(title) if title
+    plot.xlabel(xlabel) if xlabel
+    plot.ylabel(ylabel) if ylabel
+    plot.color(color) if color
+    plot.show
+  end
+
+  def plot3(x : Array(Number), y : Array(Number), z : Array(Number),
+            title : String? = nil,
+            xlabel : String? = nil,
+            ylabel : String? = nil,
+            zlabel : String? = nil,
+            color : String? = nil)
+    plot = Plot.new
       .data(x, y, z)
-      .scatter3d
+      .plot3
+    plot.title(title) if title
+    plot.xlabel(xlabel) if xlabel
+    plot.ylabel(ylabel) if ylabel
+    plot.zlabel(zlabel) if zlabel
+    plot.color(color) if color
+    plot.show
+  end
+
+  def scatter3(x : Array(Number), y : Array(Number), z : Array(Number),
+               title : String? = nil,
+               xlabel : String? = nil,
+               ylabel : String? = nil,
+               zlabel : String? = nil,
+               color : String? = nil)
+    plot = Plot.new
+      .data(x, y, z)
+      .scatter3
     plot.title(title) if title
     plot.xlabel(xlabel) if xlabel
     plot.ylabel(ylabel) if ylabel
@@ -438,6 +459,19 @@ module GRM
     plot.show
   end
 
+  def contourf(x : Array(Number), y : Array(Number), z : Array(Array(Number)),
+               title : String? = nil,
+               xlabel : String? = nil,
+               ylabel : String? = nil)
+    plot = Plot.new
+      .data2d(x, y, z)
+      .contourf(z.size, z.first.size)
+    plot.title(title) if title
+    plot.xlabel(xlabel) if xlabel
+    plot.ylabel(ylabel) if ylabel
+    plot.show
+  end
+
   def contour(x : Array(Number), y : Array(Number), z : Array(Array(Number)),
               title : String? = nil,
               xlabel : String? = nil,
@@ -451,16 +485,14 @@ module GRM
     plot.show
   end
 
-  def hexbin(x : Array(Number), y : Array(Number),
-             title : String? = nil,
-             xlabel : String? = nil,
-             ylabel : String? = nil)
+  def polarhistogram(theta : Array(Number),
+                     title : String? = nil,
+                     color : String? = nil)
     plot = Plot.new
-      .data(x, y)
-      .hexbin
+      .data(theta)
+      .polarhistogram
     plot.title(title) if title
-    plot.xlabel(xlabel) if xlabel
-    plot.ylabel(ylabel) if ylabel
+    plot.color(color) if color
     plot.show
   end
 
@@ -472,6 +504,63 @@ module GRM
       .polar
     plot.title(title) if title
     plot.color(color) if color
+    plot.show
+  end
+
+  def heatmap(x : Array(Number), y : Array(Number), z : Array(Array(Number)),
+              title : String? = nil,
+              xlabel : String? = nil,
+              ylabel : String? = nil)
+    plot = Plot.new
+      .data2d(x, y, z)
+      .heatmap(z.size, z.first.size)
+    plot.title(title) if title
+    plot.xlabel(xlabel) if xlabel
+    plot.ylabel(ylabel) if ylabel
+    plot.show
+  end
+
+  def imshow(z : Array(Array(Number)),
+             title : String? = nil)
+    plot = Plot.new
+      .data_image(z)
+      .imshow
+    plot.title(title) if title
+    plot.show
+  end
+
+  def isosurface(c : Array(Array(Array(Number))),
+                 isovalue : Number? = nil,
+                 title : String? = nil)
+    plot = Plot.new
+      .data_volume(c)
+      .isosurface
+    plot.isovalue(isovalue) if isovalue
+    plot.title(title) if title
+    plot.show
+  end
+
+  def shade(x : Array(Number), y : Array(Number), z : Array(Array(Number)),
+            title : String? = nil,
+            xlabel : String? = nil,
+            ylabel : String? = nil)
+    plot = Plot.new
+      .data2d(x, y, z)
+      .shade(z.size, z.first.size)
+    plot.title(title) if title
+    plot.xlabel(xlabel) if xlabel
+    plot.ylabel(ylabel) if ylabel
+    plot.show
+  end
+
+  def volume(c : Array(Array(Array(Number))),
+             algorithm : String? = nil,
+             title : String? = nil)
+    plot = Plot.new
+      .data_volume(c)
+      .volume
+    plot.algorithm(algorithm) if algorithm
+    plot.title(title) if title
     plot.show
   end
 end
