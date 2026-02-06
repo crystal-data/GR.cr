@@ -72,8 +72,18 @@
       
     </li>
   
-  <li class=" " data-id="gr/GR3" data-name="gr3">
+  <li class="parent " data-id="gr/GR3" data-name="gr3">
       <a href="GR3.html">GR3</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gr/GR3/Error" data-name="gr3::error">
+      <a href="GR3/Error.html">Error</a>
+      
+    </li>
+  
+</ul>
+
       
     </li>
   
@@ -144,6 +154,11 @@
   
 </ul>
 
+      
+    </li>
+  
+  <li class=" " data-id="gr/GRM/Error" data-name="grm::error">
+      <a href="GRM/Error.html">Error</a>
       
     </li>
   
@@ -234,21 +249,21 @@
   </h2>
   
     
-      <a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L5" target="_blank">
+      <a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L5" target="_blank">
         gr.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr/libgr.cr#L1" target="_blank">
+      <a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr/libgr.cr#L1" target="_blank">
         gr/libgr.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr/makino.cr#L1" target="_blank">
+      <a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr/makino.cr#L1" target="_blank">
         gr/makino.cr
       </a>
     
@@ -277,7 +292,47 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
+        <a href="#activatews%28i0%29-instance-method" class="signature"><strong>#activatews</strong>(i0)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#adjustlimits%28amin%2Camax%29-instance-method" class="signature"><strong>#adjustlimits</strong>(amin, amax)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#adjustrange%28amin%2Camax%29-instance-method" class="signature"><strong>#adjustrange</strong>(amin, amax)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#axes%28x_tick%2Cy_tick%2Cx_org%2Cy_org%2Cmajor_x%2Cmajor_y%2Ctick_size%29-instance-method" class="signature"><strong>#axes</strong>(x_tick, y_tick, x_org, y_org, major_x, major_y, tick_size)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#axes3d%28x%2Cx1%2Cx2%2Cx3%2Cx4%2Cx5%2Ci%2Ci1%2Ci2%2Cx6%29-instance-method" class="signature"><strong>#axes3d</strong>(x, x1, x2, x3, x4, x5, i, i1, i2, x6)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#begingraphics%28path%29-instance-method" class="signature"><strong>#begingraphics</strong>(path)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#beginprint%28pathname%29-instance-method" class="signature"><strong>#beginprint</strong>(pathname)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#beginprintext%28pathname%2Cmode%2Cfmt%2Corientation%29-instance-method" class="signature"><strong>#beginprintext</strong>(pathname, mode, fmt, orientation)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#beginselection%28index%2Ctype%29-instance-method" class="signature"><strong>#beginselection</strong>(index, type)</a>
         
       </li>
     
@@ -287,7 +342,17 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#camerainteraction%28rotate_x%2Crotate_y%2Crotate_z%2Czoom%29-instance-method" class="signature"><strong>#camerainteraction</strong>(rotate_x, rotate_y, rotate_z, zoom)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#cellarray%28xmin%2Cxmax%2Cymin%2Cymax%2Cdimx%2Cdimy%2Ccolor%29-instance-method" class="signature"><strong>#cellarray</strong>(xmin, xmax, ymin, ymax, dimx, dimy, color)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clearbackground-instance-method" class="signature"><strong>#clearbackground</strong></a>
         
       </li>
     
@@ -302,7 +367,22 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#closeseg-instance-method" class="signature"><strong>#closeseg</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#closews%28i0%29-instance-method" class="signature"><strong>#closews</strong>(i0)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#colorbar-instance-method" class="signature"><strong>#colorbar</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#configurews-instance-method" class="signature"><strong>#configurews</strong></a>
         
       </li>
     
@@ -317,12 +397,117 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#copysegws%28segment%29-instance-method" class="signature"><strong>#copysegws</strong>(segment)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#createseg%28segment%29-instance-method" class="signature"><strong>#createseg</strong>(segment)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#deactivatews%28i0%29-instance-method" class="signature"><strong>#deactivatews</strong>(i0)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#delaunay%28x%2Cy%29-instance-method" class="signature"><strong>#delaunay</strong>(x, y)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#destroycontext%28context%29-instance-method" class="signature"><strong>#destroycontext</strong>(context)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#drawarc%28xmin%2Cxmax%2Cymin%2Cymax%2Ca1%2Ca2%29-instance-method" class="signature"><strong>#drawarc</strong>(xmin, xmax, ymin, ymax, a1, a2)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#drawarrow%28x1%2Cy1%2Cx2%2Cy2%29-instance-method" class="signature"><strong>#drawarrow</strong>(x1, y1, x2, y2)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#drawgraphics%28data%29-instance-method" class="signature"><strong>#drawgraphics</strong>(data)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#drawimage%28xmin%2Cxmax%2Cymin%2Cymax%2Cwidth%2Cheight%2Cdata%2Cmodel%3D0%29-instance-method" class="signature"><strong>#drawimage</strong>(xmin, xmax, ymin, ymax, width, height, data, model = <span class="n">0</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#drawpath%28vertices%2Ccodes%2Cfill%29-instance-method" class="signature"><strong>#drawpath</strong>(vertices, codes, fill)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#drawrect%28xmin%2Cxmax%2Cymin%2Cymax%29-instance-method" class="signature"><strong>#drawrect</strong>(xmin, xmax, ymin, ymax)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#emergencyclosegks-instance-method" class="signature"><strong>#emergencyclosegks</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#endgraphics-instance-method" class="signature"><strong>#endgraphics</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#endprint-instance-method" class="signature"><strong>#endprint</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#endselection-instance-method" class="signature"><strong>#endselection</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fillarc%28xmin%2Cxmax%2Cymin%2Cymax%2Ca1%2Ca2%29-instance-method" class="signature"><strong>#fillarc</strong>(xmin, xmax, ymin, ymax, a1, a2)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#fillarea%28x%2Cy%29-instance-method" class="signature"><strong>#fillarea</strong>(x, y)</a>
         
       </li>
     
       <li class="entry-summary">
+        <a href="#fillrect%28xmin%2Cxmax%2Cymin%2Cymax%29-instance-method" class="signature"><strong>#fillrect</strong>(xmin, xmax, ymin, ymax)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#gdp%28x%2Cy%2Cprimid%2Cdatrec%29-instance-method" class="signature"><strong>#gdp</strong>(x, y, primid, datrec)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#getgraphics-instance-method" class="signature"><strong>#getgraphics</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#gradient%28x%2Cy%2Cz%2Cnx%2Cny%29-instance-method" class="signature"><strong>#gradient</strong>(x, y, z, nx, ny)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#grid%28x_tick%2Cy_tick%2Cx_org%2Cy_org%2Cmajor_x%2Cmajor_y%29-instance-method" class="signature"><strong>#grid</strong>(x_tick, y_tick, x_org, y_org, major_x, major_y)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#grid3d%28x_tick%2Cy_tick%2Cz_tick%2Cx_org%2Cy_org%2Cz_org%2Cmajor_x%2Cmajor_y%2Cmajor_z%29-instance-method" class="signature"><strong>#grid3d</strong>(x_tick, y_tick, z_tick, x_org, y_org, z_org, major_x, major_y, major_z)</a>
         
       </li>
     
@@ -342,7 +527,77 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#hsvtorgb%28h%2Cs%2Cv%29-instance-method" class="signature"><strong>#hsvtorgb</strong>(h, s, v)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#importgraphics%28path%29-instance-method" class="signature"><strong>#importgraphics</strong>(path)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#initgr-instance-method" class="signature"><strong>#initgr</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqbbox-instance-method" class="signature"><strong>#inqbbox</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqbordercolorind-instance-method" class="signature"><strong>#inqbordercolorind</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqborderwidth-instance-method" class="signature"><strong>#inqborderwidth</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqcharheight-instance-method" class="signature"><strong>#inqcharheight</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqclip-instance-method" class="signature"><strong>#inqclip</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqclipregion-instance-method" class="signature"><strong>#inqclipregion</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqclipsector-instance-method" class="signature"><strong>#inqclipsector</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqclipxform-instance-method" class="signature"><strong>#inqclipxform</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqcolor%28color%29-instance-method" class="signature"><strong>#inqcolor</strong>(color)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqcolorfromrgb%28red%2Cgreen%2Cblue%29-instance-method" class="signature"><strong>#inqcolorfromrgb</strong>(red, green, blue)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqcolormap-instance-method" class="signature"><strong>#inqcolormap</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqcolormapinds-instance-method" class="signature"><strong>#inqcolormapinds</strong></a>
         
       </li>
     
@@ -352,7 +607,137 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#inqfillcolorind-instance-method" class="signature"><strong>#inqfillcolorind</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqfillintstyle-instance-method" class="signature"><strong>#inqfillintstyle</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqfillstyle-instance-method" class="signature"><strong>#inqfillstyle</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqgrplotport-instance-method" class="signature"><strong>#inqgrplotport</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqlinecolorind-instance-method" class="signature"><strong>#inqlinecolorind</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqlinetype-instance-method" class="signature"><strong>#inqlinetype</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqlinewidth-instance-method" class="signature"><strong>#inqlinewidth</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqmarkercolorind-instance-method" class="signature"><strong>#inqmarkercolorind</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqmarkersize-instance-method" class="signature"><strong>#inqmarkersize</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqmarkertype-instance-method" class="signature"><strong>#inqmarkertype</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqmathfont-instance-method" class="signature"><strong>#inqmathfont</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqmathtex%28x%2Cy%2Cc%29-instance-method" class="signature"><strong>#inqmathtex</strong>(x, y, c)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqmathtex3d%28x%2Cy%2Cz%2Cc%2Caxis%29-instance-method" class="signature"><strong>#inqmathtex3d</strong>(x, y, z, c, axis)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqnominalsize-instance-method" class="signature"><strong>#inqnominalsize</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqorthographicprojection-instance-method" class="signature"><strong>#inqorthographicprojection</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqperspectiveprojection-instance-method" class="signature"><strong>#inqperspectiveprojection</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqprojectiontype-instance-method" class="signature"><strong>#inqprojectiontype</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqregenflags-instance-method" class="signature"><strong>#inqregenflags</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqresamplemethod-instance-method" class="signature"><strong>#inqresamplemethod</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqscale-instance-method" class="signature"><strong>#inqscale</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqscalefactors3d-instance-method" class="signature"><strong>#inqscalefactors3d</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqspace-instance-method" class="signature"><strong>#inqspace</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqspace3d-instance-method" class="signature"><strong>#inqspace3d</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#inqtext%28x%2Cy%2Cc%29-instance-method" class="signature"><strong>#inqtext</strong>(x, y, c)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqtext3d%28x%2Cy%2Cz%2Cc%2Caxis%29-instance-method" class="signature"><strong>#inqtext3d</strong>(x, y, z, c, axis)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqtextcolorind-instance-method" class="signature"><strong>#inqtextcolorind</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqtextencoding-instance-method" class="signature"><strong>#inqtextencoding</strong></a>
         
       </li>
     
@@ -367,7 +752,62 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#inqtransformationparameters-instance-method" class="signature"><strong>#inqtransformationparameters</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqtransparency-instance-method" class="signature"><strong>#inqtransparency</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqviewport-instance-method" class="signature"><strong>#inqviewport</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqvpsize-instance-method" class="signature"><strong>#inqvpsize</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqwindow-instance-method" class="signature"><strong>#inqwindow</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inqwindow3d-instance-method" class="signature"><strong>#inqwindow3d</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#interp2%28x%2Cy%2Cz%2Cxq%2Cyq%2Cmethod%2Cextrapval%29-instance-method" class="signature"><strong>#interp2</strong>(x, y, z, xq, yq, method, extrapval)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#loadfont%28filename%29-instance-method" class="signature"><strong>#loadfont</strong>(filename)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#mathtex%28x%2Cx1%2Cc%29-instance-method" class="signature"><strong>#mathtex</strong>(x, x1, c)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mathtex3d%28x%2Cy%2Cz%2Cc%2Caxis%29-instance-method" class="signature"><strong>#mathtex3d</strong>(x, y, z, c, axis)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#moveselection%28x%2Cy%29-instance-method" class="signature"><strong>#moveselection</strong>(x, y)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ndctowc%28x%2Cy%29-instance-method" class="signature"><strong>#ndctowc</strong>(x, y)</a>
         
       </li>
     
@@ -392,12 +832,22 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#panzoom%28x%2Cy%2Czoom%2Cangle%29-instance-method" class="signature"><strong>#panzoom</strong>(x, y, zoom, angle)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#path%28x%2Cy%2Ccodes%29-instance-method" class="signature"><strong>#path</strong>(x, y, codes)</a>
         
       </li>
     
       <li class="entry-summary">
         <a href="#polarcellarray%28x_org%2Cy_org%2Cphimin%2Cphimax%2Crmin%2Crmax%2Cdimphi%2Cdimr%2Ccolor%29-instance-method" class="signature"><strong>#polarcellarray</strong>(x_org, y_org, phimin, phimax, rmin, rmax, dimphi, dimr, color)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#polygonmesh3d%28x%2Cy%2Cz%2Cfaces%2Ccolors%29-instance-method" class="signature"><strong>#polygonmesh3d</strong>(x, y, z, faces, colors)</a>
         
       </li>
     
@@ -422,7 +872,372 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#precision-instance-method" class="signature"><strong>#precision</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#quiver%28x%2Cy%2Cu%2Cv%2Ccolor%29-instance-method" class="signature"><strong>#quiver</strong>(x, y, u, v, color)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#readimage%28path%29-instance-method" class="signature"><strong>#readimage</strong>(path)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#redrawsegws-instance-method" class="signature"><strong>#redrawsegws</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reducepoints%28x%2Cy%2Cn_out%29-instance-method" class="signature"><strong>#reducepoints</strong>(x, y, n_out)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#resizeselection%28type%2Cx%2Cy%29-instance-method" class="signature"><strong>#resizeselection</strong>(type, x, y)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#restorestate-instance-method" class="signature"><strong>#restorestate</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#samplelocator-instance-method" class="signature"><strong>#samplelocator</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#savecontext%28context%29-instance-method" class="signature"><strong>#savecontext</strong>(context)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#savestate-instance-method" class="signature"><strong>#savestate</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#selectclipxform%28transform%29-instance-method" class="signature"><strong>#selectclipxform</strong>(transform)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#selectcontext%28context%29-instance-method" class="signature"><strong>#selectcontext</strong>(context)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#selntran%28transform%29-instance-method" class="signature"><strong>#selntran</strong>(transform)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setarrowsize%28size%29-instance-method" class="signature"><strong>#setarrowsize</strong>(size)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setarrowstyle%28style%29-instance-method" class="signature"><strong>#setarrowstyle</strong>(style)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setbackground%28red%2Cgreen%2Cblue%2Calpha%29-instance-method" class="signature"><strong>#setbackground</strong>(red, green, blue, alpha)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setbordercolorind%28color%29-instance-method" class="signature"><strong>#setbordercolorind</strong>(color)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setborderwidth%28width%29-instance-method" class="signature"><strong>#setborderwidth</strong>(width)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setcharexpan%28factor%29-instance-method" class="signature"><strong>#setcharexpan</strong>(factor)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setcharheight%28height%29-instance-method" class="signature"><strong>#setcharheight</strong>(height)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setcharspace%28spacing%29-instance-method" class="signature"><strong>#setcharspace</strong>(spacing)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setcharup%28ux%2Cuy%29-instance-method" class="signature"><strong>#setcharup</strong>(ux, uy)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setclip%28indicator%29-instance-method" class="signature"><strong>#setclip</strong>(indicator)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setclipregion%28region%29-instance-method" class="signature"><strong>#setclipregion</strong>(region)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setclipsector%28start_angle%2Cend_angle%29-instance-method" class="signature"><strong>#setclipsector</strong>(start_angle, end_angle)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setcolormap%28index%29-instance-method" class="signature"><strong>#setcolormap</strong>(index)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setcolormapfromrgb%28r%2Cg%2Cb%2Cx%3Dnil%29-instance-method" class="signature"><strong>#setcolormapfromrgb</strong>(r, g, b, x = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setcolorrep%28index%2Cred%2Cgreen%2Cblue%29-instance-method" class="signature"><strong>#setcolorrep</strong>(index, red, green, blue)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setcoordxform%28mat%29-instance-method" class="signature"><strong>#setcoordxform</strong>(mat)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setfillcolorind%28color%29-instance-method" class="signature"><strong>#setfillcolorind</strong>(color)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setfillintstyle%28style%29-instance-method" class="signature"><strong>#setfillintstyle</strong>(style)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setfillstyle%28index%29-instance-method" class="signature"><strong>#setfillstyle</strong>(index)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setgrplotport%28port%29-instance-method" class="signature"><strong>#setgrplotport</strong>(port)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setlinecolorind%28color%29-instance-method" class="signature"><strong>#setlinecolorind</strong>(color)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setlinetype%28type%29-instance-method" class="signature"><strong>#setlinetype</strong>(type)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setlinewidth%28width%29-instance-method" class="signature"><strong>#setlinewidth</strong>(width)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setmarkercolorind%28color%29-instance-method" class="signature"><strong>#setmarkercolorind</strong>(color)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setmarkersize%28size%29-instance-method" class="signature"><strong>#setmarkersize</strong>(size)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setmarkertype%28type%29-instance-method" class="signature"><strong>#setmarkertype</strong>(type)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setmathfont%28font%29-instance-method" class="signature"><strong>#setmathfont</strong>(font)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setnominalsize%28size%29-instance-method" class="signature"><strong>#setnominalsize</strong>(size)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setorthographicprojection%28left%2Cright%2Cbottom%2Ctop%2Cnear_plane%2Cfar_plane%29-instance-method" class="signature"><strong>#setorthographicprojection</strong>(left, right, bottom, top, near_plane, far_plane)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setperspectiveprojection%28near_plane%2Cfar_plane%2Cfov%29-instance-method" class="signature"><strong>#setperspectiveprojection</strong>(near_plane, far_plane, fov)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setprojectiontype%28type%29-instance-method" class="signature"><strong>#setprojectiontype</strong>(type)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setregenflags%28flags%29-instance-method" class="signature"><strong>#setregenflags</strong>(flags)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setresamplemethod%28flag%29-instance-method" class="signature"><strong>#setresamplemethod</strong>(flag)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setscale%28options%29-instance-method" class="signature"><strong>#setscale</strong>(options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setscalefactors3d%28x_axis_scale%2Cy_axis_scale%2Cz_axis_scale%29-instance-method" class="signature"><strong>#setscalefactors3d</strong>(x_axis_scale, y_axis_scale, z_axis_scale)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setscientificformat%28format_option%29-instance-method" class="signature"><strong>#setscientificformat</strong>(format_option)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setsegtran%28segment%2Cfx%2Cfy%2Ctransx%2Ctransy%2Cphi%2Cscalex%2Cscaley%29-instance-method" class="signature"><strong>#setsegtran</strong>(segment, fx, fy, transx, transy, phi, scalex, scaley)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setshadow%28offsetx%2Coffsety%2Cblur%29-instance-method" class="signature"><strong>#setshadow</strong>(offsetx, offsety, blur)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setspace%28zmin%2Czmax%2Crotation%2Ctilt%29-instance-method" class="signature"><strong>#setspace</strong>(zmin, zmax, rotation, tilt)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setspace3d%28phi%2Ctheta%2Cfov%2Ccamera_distance%29-instance-method" class="signature"><strong>#setspace3d</strong>(phi, theta, fov, camera_distance)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#settextalign%28horizontal%2Cvertical%29-instance-method" class="signature"><strong>#settextalign</strong>(horizontal, vertical)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#settextcolorind%28color%29-instance-method" class="signature"><strong>#settextcolorind</strong>(color)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#settextencoding%28encoding%29-instance-method" class="signature"><strong>#settextencoding</strong>(encoding)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#settextfontprec%28font%2Cprecision%29-instance-method" class="signature"><strong>#settextfontprec</strong>(font, precision)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#settextoffset%28xoff%2Cyoff%29-instance-method" class="signature"><strong>#settextoffset</strong>(xoff, yoff)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#settextpath%28path%29-instance-method" class="signature"><strong>#settextpath</strong>(path)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setthreadnumber%28num%29-instance-method" class="signature"><strong>#setthreadnumber</strong>(num)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#settitles3d%28x_title%2Cy_title%2Cz_title%29-instance-method" class="signature"><strong>#settitles3d</strong>(x_title, y_title, z_title)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#settransformationparameters%28a0%2Ca1%2Ca2%2Ca3%2Ca4%2Ca5%2Ca6%2Ca7%2Ca8%29-instance-method" class="signature"><strong>#settransformationparameters</strong>(a0, a1, a2, a3, a4, a5, a6, a7, a8)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#settransparency%28alpha%29-instance-method" class="signature"><strong>#settransparency</strong>(alpha)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setviewport%28xmin%2Cxmax%2Cymin%2Cymax%29-instance-method" class="signature"><strong>#setviewport</strong>(xmin, xmax, ymin, ymax)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setwindow%28xmin%2Cxmax%2Cymin%2Cymax%29-instance-method" class="signature"><strong>#setwindow</strong>(xmin, xmax, ymin, ymax)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setwindow3d%28xmin%2Cxmax%2Cymin%2Cymax%2Czmin%2Czmax%29-instance-method" class="signature"><strong>#setwindow3d</strong>(xmin, xmax, ymin, ymax, zmin, zmax)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setwscharheight%28chh%2Cheight%29-instance-method" class="signature"><strong>#setwscharheight</strong>(chh, height)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setwsviewport%28xmin%2Cxmax%2Cymin%2Cymax%29-instance-method" class="signature"><strong>#setwsviewport</strong>(xmin, xmax, ymin, ymax)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setwswindow%28xmin%2Cxmax%2Cymin%2Cymax%29-instance-method" class="signature"><strong>#setwswindow</strong>(xmin, xmax, ymin, ymax)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shade%28x%2Cy%2Clines%2Cflip%2Ch%2Cxform%2Cbins%2Cdims%29-instance-method" class="signature"><strong>#shade</strong>(x, y, lines, flip, h, xform, bins, dims)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shadelines%28x%2Cy%2Cxform%2Cw%2Ch%29-instance-method" class="signature"><strong>#shadelines</strong>(x, y, xform, w, h)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shadepoints%28x%2Cy%2Cxform%2Cw%2Ch%29-instance-method" class="signature"><strong>#shadepoints</strong>(x, y, xform, w, h)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#spline%28x%2Cy%2Ci1%2Ci2%29-instance-method" class="signature"><strong>#spline</strong>(x, y, i1, i2)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#startlistener-instance-method" class="signature"><strong>#startlistener</strong></a>
         
       </li>
     
@@ -437,6 +1252,16 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#text3d%28x%2Cy%2Cz%2Cc%2Caxis%29-instance-method" class="signature"><strong>#text3d</strong>(x, y, z, c, axis)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#text_maxsize-instance-method" class="signature"><strong>#text_maxsize</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#textext%28x%2Cx1%2Cc%29-instance-method" class="signature"><strong>#textext</strong>(x, x1, c)</a>
         
       </li>
@@ -447,12 +1272,47 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#tick%28amin%2Camax%29-instance-method" class="signature"><strong>#tick</strong>(amin, amax)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#titles3d%28c%2Cc0%2Cc1%29-instance-method" class="signature"><strong>#titles3d</strong>(c, c0, c1)</a>
         
       </li>
     
       <li class="entry-summary">
+        <a href="#tricontour%28x%2Cy%2Cz%2Clevels%29-instance-method" class="signature"><strong>#tricontour</strong>(x, y, z, levels)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#trisurface%28x%2Cy%2Cz%29-instance-method" class="signature"><strong>#trisurface</strong>(x, y, z)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unselectcontext-instance-method" class="signature"><strong>#unselectcontext</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#updategks-instance-method" class="signature"><strong>#updategks</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#updatews-instance-method" class="signature"><strong>#updatews</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#uselinespec%28linespec%29-instance-method" class="signature"><strong>#uselinespec</strong>(linespec)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#validaterange%28amin%2Camax%29-instance-method" class="signature"><strong>#validaterange</strong>(amin, amax)</a>
         
       </li>
     
@@ -463,6 +1323,16 @@
     
       <li class="entry-summary">
         <a href="#version-instance-method" class="signature"><strong>#version</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#wc3towc%28x%2Cy%2Cz%29-instance-method" class="signature"><strong>#wc3towc</strong>(x, y, z)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#wctondc%28x%2Cy%29-instance-method" class="signature"><strong>#wctondc</strong>(x, y)</a>
         
       </li>
     
@@ -512,6 +1382,70 @@
     Instance Method Detail
   </h2>
   
+    <div class="entry-detail" id="activatews(i0)-instance-method">
+      <div class="signature">
+        
+        def <strong>activatews</strong>(i0)
+
+        <a class="method-permalink" href="#activatews%28i0%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L46" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="adjustlimits(amin,amax)-instance-method">
+      <div class="signature">
+        
+        def <strong>adjustlimits</strong>(amin, amax)
+
+        <a class="method-permalink" href="#adjustlimits%28amin%2Camax%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L549" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="adjustrange(amin,amax)-instance-method">
+      <div class="signature">
+        
+        def <strong>adjustrange</strong>(amin, amax)
+
+        <a class="method-permalink" href="#adjustrange%28amin%2Camax%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L558" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="axes(x_tick,y_tick,x_org,y_org,major_x,major_y,tick_size)-instance-method">
+      <div class="signature">
+        
+        def <strong>axes</strong>(x_tick, y_tick, x_org, y_org, major_x, major_y, tick_size)
+
+        <a class="method-permalink" href="#axes%28x_tick%2Cy_tick%2Cx_org%2Cy_org%2Cmajor_x%2Cmajor_y%2Ctick_size%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L475" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="axes3d(x,x1,x2,x3,x4,x5,i,i1,i2,x6)-instance-method">
       <div class="signature">
         
@@ -523,7 +1457,71 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L156" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L168" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="begingraphics(path)-instance-method">
+      <div class="signature">
+        
+        def <strong>begingraphics</strong>(path)
+
+        <a class="method-permalink" href="#begingraphics%28path%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L685" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="beginprint(pathname)-instance-method">
+      <div class="signature">
+        
+        def <strong>beginprint</strong>(pathname)
+
+        <a class="method-permalink" href="#beginprint%28pathname%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L567" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="beginprintext(pathname,mode,fmt,orientation)-instance-method">
+      <div class="signature">
+        
+        def <strong>beginprintext</strong>(pathname, mode, fmt, orientation)
+
+        <a class="method-permalink" href="#beginprintext%28pathname%2Cmode%2Cfmt%2Corientation%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L571" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="beginselection(index,type)-instance-method">
+      <div class="signature">
+        
+        def <strong>beginselection</strong>(index, type)
+
+        <a class="method-permalink" href="#beginselection%28index%2Ctype%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L739" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -539,7 +1537,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr/makino.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr/makino.cr#L33" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="camerainteraction(rotate_x,rotate_y,rotate_z,zoom)-instance-method">
+      <div class="signature">
+        
+        def <strong>camerainteraction</strong>(rotate_x, rotate_y, rotate_z, zoom)
+
+        <a class="method-permalink" href="#camerainteraction%28rotate_x%2Crotate_y%2Crotate_z%2Czoom%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L992" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -555,7 +1569,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L61" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L73" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clearbackground-instance-method">
+      <div class="signature">
+        
+        def <strong>clearbackground</strong>
+
+        <a class="method-permalink" href="#clearbackground-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L768" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -571,7 +1601,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -587,7 +1617,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L17" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="closeseg-instance-method">
+      <div class="signature">
+        
+        def <strong>closeseg</strong>
+
+        <a class="method-permalink" href="#closeseg-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L428" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -603,7 +1649,39 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L42" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="colorbar-instance-method">
+      <div class="signature">
+        
+        def <strong>colorbar</strong>
+
+        <a class="method-permalink" href="#colorbar-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L519" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="configurews-instance-method">
+      <div class="signature">
+        
+        def <strong>configurews</strong>
+
+        <a class="method-permalink" href="#configurews-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L54" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -619,7 +1697,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L132" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L144" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -635,7 +1713,263 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L139" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L151" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="copysegws(segment)-instance-method">
+      <div class="signature">
+        
+        def <strong>copysegws</strong>(segment)
+
+        <a class="method-permalink" href="#copysegws%28segment%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L416" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="createseg(segment)-instance-method">
+      <div class="signature">
+        
+        def <strong>createseg</strong>(segment)
+
+        <a class="method-permalink" href="#createseg%28segment%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L412" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="deactivatews(i0)-instance-method">
+      <div class="signature">
+        
+        def <strong>deactivatews</strong>(i0)
+
+        <a class="method-permalink" href="#deactivatews%28i0%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L50" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delaunay(x,y)-instance-method">
+      <div class="signature">
+        
+        def <strong>delaunay</strong>(x, y)
+
+        <a class="method-permalink" href="#delaunay%28x%2Cy%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L816" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="destroycontext(context)-instance-method">
+      <div class="signature">
+        
+        def <strong>destroycontext</strong>(context)
+
+        <a class="method-permalink" href="#destroycontext%28context%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L804" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="drawarc(xmin,xmax,ymin,ymax,a1,a2)-instance-method">
+      <div class="signature">
+        
+        def <strong>drawarc</strong>(xmin, xmax, ymin, ymax, a1, a2)
+
+        <a class="method-permalink" href="#drawarc%28xmin%2Cxmax%2Cymin%2Cymax%2Ca1%2Ca2%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L616" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="drawarrow(x1,y1,x2,y2)-instance-method">
+      <div class="signature">
+        
+        def <strong>drawarrow</strong>(x1, y1, x2, y2)
+
+        <a class="method-permalink" href="#drawarrow%28x1%2Cy1%2Cx2%2Cy2%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L641" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="drawgraphics(data)-instance-method">
+      <div class="signature">
+        
+        def <strong>drawgraphics</strong>(data)
+
+        <a class="method-permalink" href="#drawgraphics%28data%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L698" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="drawimage(xmin,xmax,ymin,ymax,width,height,data,model=0)-instance-method">
+      <div class="signature">
+        
+        def <strong>drawimage</strong>(xmin, xmax, ymin, ymax, width, height, data, model = <span class="n">0</span>)
+
+        <a class="method-permalink" href="#drawimage%28xmin%2Cxmax%2Cymin%2Cymax%2Cwidth%2Cheight%2Cdata%2Cmodel%3D0%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L659" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="drawpath(vertices,codes,fill)-instance-method">
+      <div class="signature">
+        
+        def <strong>drawpath</strong>(vertices, codes, fill)
+
+        <a class="method-permalink" href="#drawpath%28vertices%2Ccodes%2Cfill%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L624" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="drawrect(xmin,xmax,ymin,ymax)-instance-method">
+      <div class="signature">
+        
+        def <strong>drawrect</strong>(xmin, xmax, ymin, ymax)
+
+        <a class="method-permalink" href="#drawrect%28xmin%2Cxmax%2Cymin%2Cymax%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L608" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="emergencyclosegks-instance-method">
+      <div class="signature">
+        
+        def <strong>emergencyclosegks</strong>
+
+        <a class="method-permalink" href="#emergencyclosegks-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L440" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="endgraphics-instance-method">
+      <div class="signature">
+        
+        def <strong>endgraphics</strong>
+
+        <a class="method-permalink" href="#endgraphics-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L689" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="endprint-instance-method">
+      <div class="signature">
+        
+        def <strong>endprint</strong>
+
+        <a class="method-permalink" href="#endprint-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L575" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="endselection-instance-method">
+      <div class="signature">
+        
+        def <strong>endselection</strong>
+
+        <a class="method-permalink" href="#endselection-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L743" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fillarc(xmin,xmax,ymin,ymax,a1,a2)-instance-method">
+      <div class="signature">
+        
+        def <strong>fillarc</strong>(xmin, xmax, ymin, ymax, a1, a2)
+
+        <a class="method-permalink" href="#fillarc%28xmin%2Cxmax%2Cymin%2Cymax%2Ca1%2Ca2%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L620" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -651,7 +1985,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L56" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L68" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fillrect(xmin,xmax,ymin,ymax)-instance-method">
+      <div class="signature">
+        
+        def <strong>fillrect</strong>(xmin, xmax, ymin, ymax)
+
+        <a class="method-permalink" href="#fillrect%28xmin%2Cxmax%2Cymin%2Cymax%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L612" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -667,7 +2017,71 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L179" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L191" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="getgraphics-instance-method">
+      <div class="signature">
+        
+        def <strong>getgraphics</strong>
+
+        <a class="method-permalink" href="#getgraphics-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L693" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="gradient(x,y,z,nx,ny)-instance-method">
+      <div class="signature">
+        
+        def <strong>gradient</strong>(x, y, z, nx, ny)
+
+        <a class="method-permalink" href="#gradient%28x%2Cy%2Cz%2Cnx%2Cny%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L846" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="grid(x_tick,y_tick,x_org,y_org,major_x,major_y)-instance-method">
+      <div class="signature">
+        
+        def <strong>grid</strong>(x_tick, y_tick, x_org, y_org, major_x, major_y)
+
+        <a class="method-permalink" href="#grid%28x_tick%2Cy_tick%2Cx_org%2Cy_org%2Cmajor_x%2Cmajor_y%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L479" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="grid3d(x_tick,y_tick,z_tick,x_org,y_org,z_org,major_x,major_y,major_z)-instance-method">
+      <div class="signature">
+        
+        def <strong>grid3d</strong>(x_tick, y_tick, z_tick, x_org, y_org, z_org, major_x, major_y, major_z)
+
+        <a class="method-permalink" href="#grid3d%28x_tick%2Cy_tick%2Cz_tick%2Cx_org%2Cy_org%2Cz_org%2Cmajor_x%2Cmajor_y%2Cmajor_z%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L483" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -683,7 +2097,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L189" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L201" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -699,7 +2113,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L169" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L181" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -715,7 +2129,39 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L174" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L186" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hsvtorgb(h,s,v)-instance-method">
+      <div class="signature">
+        
+        def <strong>hsvtorgb</strong>(h, s, v)
+
+        <a class="method-permalink" href="#hsvtorgb%28h%2Cs%2Cv%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L533" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="importgraphics(path)-instance-method">
+      <div class="signature">
+        
+        def <strong>importgraphics</strong>(path)
+
+        <a class="method-permalink" href="#importgraphics%28path%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L663" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -731,7 +2177,199 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqbbox-instance-method">
+      <div class="signature">
+        
+        def <strong>inqbbox</strong>
+
+        <a class="method-permalink" href="#inqbbox-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L755" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqbordercolorind-instance-method">
+      <div class="signature">
+        
+        def <strong>inqbordercolorind</strong>
+
+        <a class="method-permalink" href="#inqbordercolorind-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L914" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqborderwidth-instance-method">
+      <div class="signature">
+        
+        def <strong>inqborderwidth</strong>
+
+        <a class="method-permalink" href="#inqborderwidth-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L904" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqcharheight-instance-method">
+      <div class="signature">
+        
+        def <strong>inqcharheight</strong>
+
+        <a class="method-permalink" href="#inqcharheight-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L308" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqclip-instance-method">
+      <div class="signature">
+        
+        def <strong>inqclip</strong>
+
+        <a class="method-permalink" href="#inqclip-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L930" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqclipregion-instance-method">
+      <div class="signature">
+        
+        def <strong>inqclipregion</strong>
+
+        <a class="method-permalink" href="#inqclipregion-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1095" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqclipsector-instance-method">
+      <div class="signature">
+        
+        def <strong>inqclipsector</strong>
+
+        <a class="method-permalink" href="#inqclipsector-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1105" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqclipxform-instance-method">
+      <div class="signature">
+        
+        def <strong>inqclipxform</strong>
+
+        <a class="method-permalink" href="#inqclipxform-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L924" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqcolor(color)-instance-method">
+      <div class="signature">
+        
+        def <strong>inqcolor</strong>(color)
+
+        <a class="method-permalink" href="#inqcolor%28color%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L523" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqcolorfromrgb(red,green,blue)-instance-method">
+      <div class="signature">
+        
+        def <strong>inqcolorfromrgb</strong>(red, green, blue)
+
+        <a class="method-permalink" href="#inqcolorfromrgb%28red%2Cgreen%2Cblue%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L529" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqcolormap-instance-method">
+      <div class="signature">
+        
+        def <strong>inqcolormap</strong>
+
+        <a class="method-permalink" href="#inqcolormap-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L500" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqcolormapinds-instance-method">
+      <div class="signature">
+        
+        def <strong>inqcolormapinds</strong>
+
+        <a class="method-permalink" href="#inqcolormapinds-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L512" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -747,7 +2385,375 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L29" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqfillcolorind-instance-method">
+      <div class="signature">
+        
+        def <strong>inqfillcolorind</strong>
+
+        <a class="method-permalink" href="#inqfillcolorind-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L350" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqfillintstyle-instance-method">
+      <div class="signature">
+        
+        def <strong>inqfillintstyle</strong>
+
+        <a class="method-permalink" href="#inqfillintstyle-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L330" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqfillstyle-instance-method">
+      <div class="signature">
+        
+        def <strong>inqfillstyle</strong>
+
+        <a class="method-permalink" href="#inqfillstyle-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L340" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqgrplotport-instance-method">
+      <div class="signature">
+        
+        def <strong>inqgrplotport</strong>
+
+        <a class="method-permalink" href="#inqgrplotport-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L706" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqlinecolorind-instance-method">
+      <div class="signature">
+        
+        def <strong>inqlinecolorind</strong>
+
+        <a class="method-permalink" href="#inqlinecolorind-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L242" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqlinetype-instance-method">
+      <div class="signature">
+        
+        def <strong>inqlinetype</strong>
+
+        <a class="method-permalink" href="#inqlinetype-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L222" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqlinewidth-instance-method">
+      <div class="signature">
+        
+        def <strong>inqlinewidth</strong>
+
+        <a class="method-permalink" href="#inqlinewidth-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L232" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqmarkercolorind-instance-method">
+      <div class="signature">
+        
+        def <strong>inqmarkercolorind</strong>
+
+        <a class="method-permalink" href="#inqmarkercolorind-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L272" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqmarkersize-instance-method">
+      <div class="signature">
+        
+        def <strong>inqmarkersize</strong>
+
+        <a class="method-permalink" href="#inqmarkersize-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L262" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqmarkertype-instance-method">
+      <div class="signature">
+        
+        def <strong>inqmarkertype</strong>
+
+        <a class="method-permalink" href="#inqmarkertype-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L252" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqmathfont-instance-method">
+      <div class="signature">
+        
+        def <strong>inqmathfont</strong>
+
+        <a class="method-permalink" href="#inqmathfont-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1085" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqmathtex(x,y,c)-instance-method">
+      <div class="signature">
+        
+        def <strong>inqmathtex</strong>(x, y, c)
+
+        <a class="method-permalink" href="#inqmathtex%28x%2Cy%2Cc%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L714" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqmathtex3d(x,y,z,c,axis)-instance-method">
+      <div class="signature">
+        
+        def <strong>inqmathtex3d</strong>(x, y, z, c, axis)
+
+        <a class="method-permalink" href="#inqmathtex3d%28x%2Cy%2Cz%2Cc%2Caxis%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L725" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqnominalsize-instance-method">
+      <div class="signature">
+        
+        def <strong>inqnominalsize</strong>
+
+        <a class="method-permalink" href="#inqnominalsize-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L360" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqorthographicprojection-instance-method">
+      <div class="signature">
+        
+        def <strong>inqorthographicprojection</strong>
+
+        <a class="method-permalink" href="#inqorthographicprojection-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L981" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqperspectiveprojection-instance-method">
+      <div class="signature">
+        
+        def <strong>inqperspectiveprojection</strong>
+
+        <a class="method-permalink" href="#inqperspectiveprojection-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L951" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqprojectiontype-instance-method">
+      <div class="signature">
+        
+        def <strong>inqprojectiontype</strong>
+
+        <a class="method-permalink" href="#inqprojectiontype-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L941" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqregenflags-instance-method">
+      <div class="signature">
+        
+        def <strong>inqregenflags</strong>
+
+        <a class="method-permalink" href="#inqregenflags-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L784" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqresamplemethod-instance-method">
+      <div class="signature">
+        
+        def <strong>inqresamplemethod</strong>
+
+        <a class="method-permalink" href="#inqresamplemethod-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L894" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqscale-instance-method">
+      <div class="signature">
+        
+        def <strong>inqscale</strong>
+
+        <a class="method-permalink" href="#inqscale-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L465" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqscalefactors3d-instance-method">
+      <div class="signature">
+        
+        def <strong>inqscalefactors3d</strong>
+
+        <a class="method-permalink" href="#inqscalefactors3d-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1015" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqspace-instance-method">
+      <div class="signature">
+        
+        def <strong>inqspace</strong>
+
+        <a class="method-permalink" href="#inqspace-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L452" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqspace3d-instance-method">
+      <div class="signature">
+        
+        def <strong>inqspace3d</strong>
+
+        <a class="method-permalink" href="#inqspace3d-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1027" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -763,7 +2769,55 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L97" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L109" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqtext3d(x,y,z,c,axis)-instance-method">
+      <div class="signature">
+        
+        def <strong>inqtext3d</strong>(x, y, z, c, axis)
+
+        <a class="method-permalink" href="#inqtext3d%28x%2Cy%2Cz%2Cc%2Caxis%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1041" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqtextcolorind-instance-method">
+      <div class="signature">
+        
+        def <strong>inqtextcolorind</strong>
+
+        <a class="method-permalink" href="#inqtextcolorind-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L294" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqtextencoding-instance-method">
+      <div class="signature">
+        
+        def <strong>inqtextencoding</strong>
+
+        <a class="method-permalink" href="#inqtextencoding-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1052" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -779,7 +2833,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L119" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L131" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -795,7 +2849,135 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L104" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L116" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqtransformationparameters-instance-method">
+      <div class="signature">
+        
+        def <strong>inqtransformationparameters</strong>
+
+        <a class="method-permalink" href="#inqtransformationparameters-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L963" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqtransparency-instance-method">
+      <div class="signature">
+        
+        def <strong>inqtransparency</strong>
+
+        <a class="method-permalink" href="#inqtransparency-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L675" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqviewport-instance-method">
+      <div class="signature">
+        
+        def <strong>inqviewport</strong>
+
+        <a class="method-permalink" href="#inqviewport-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L387" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqvpsize-instance-method">
+      <div class="signature">
+        
+        def <strong>inqvpsize</strong>
+
+        <a class="method-permalink" href="#inqvpsize-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1068" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqwindow-instance-method">
+      <div class="signature">
+        
+        def <strong>inqwindow</strong>
+
+        <a class="method-permalink" href="#inqwindow-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L374" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inqwindow3d-instance-method">
+      <div class="signature">
+        
+        def <strong>inqwindow3d</strong>
+
+        <a class="method-permalink" href="#inqwindow3d-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1000" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="interp2(x,y,z,xq,yq,method,extrapval)-instance-method">
+      <div class="signature">
+        
+        def <strong>interp2</strong>(x, y, z, xq, yq, method, extrapval)
+
+        <a class="method-permalink" href="#interp2%28x%2Cy%2Cz%2Cxq%2Cyq%2Cmethod%2Cextrapval%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L860" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="loadfont(filename)-instance-method">
+      <div class="signature">
+        
+        def <strong>loadfont</strong>(filename)
+
+        <a class="method-permalink" href="#loadfont%28filename%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1058" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -811,7 +2993,55 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L111" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L123" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mathtex3d(x,y,z,c,axis)-instance-method">
+      <div class="signature">
+        
+        def <strong>mathtex3d</strong>(x, y, z, c, axis)
+
+        <a class="method-permalink" href="#mathtex3d%28x%2Cy%2Cz%2Cc%2Caxis%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L721" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="moveselection(x,y)-instance-method">
+      <div class="signature">
+        
+        def <strong>moveselection</strong>(x, y)
+
+        <a class="method-permalink" href="#moveselection%28x%2Cy%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L747" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ndctowc(x,y)-instance-method">
+      <div class="signature">
+        
+        def <strong>ndctowc</strong>(x, y)
+
+        <a class="method-permalink" href="#ndctowc%28x%2Cy%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L579" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -827,7 +3057,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L65" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L77" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -843,7 +3073,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L79" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L91" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -859,7 +3089,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -875,7 +3105,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L38" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L38" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="panzoom(x,y,zoom,angle)-instance-method">
+      <div class="signature">
+        
+        def <strong>panzoom</strong>(x, y, zoom, angle)
+
+        <a class="method-permalink" href="#panzoom%28x%2Cy%2Czoom%2Cangle%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L881" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -891,7 +3137,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L201" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L213" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -907,7 +3153,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L75" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L87" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="polygonmesh3d(x,y,z,faces,colors)-instance-method">
+      <div class="signature">
+        
+        def <strong>polygonmesh3d</strong>(x, y, z, faces, colors)
+
+        <a class="method-permalink" href="#polygonmesh3d%28x%2Cy%2Cz%2Cfaces%2Ccolors%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1076" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -923,7 +3185,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L46" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L58" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -939,7 +3201,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L146" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L158" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -955,7 +3217,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L63" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -971,7 +3233,1159 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L151" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L163" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="precision-instance-method">
+      <div class="signature">
+        
+        def <strong>precision</strong>
+
+        <a class="method-permalink" href="#precision-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L772" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="quiver(x,y,u,v,color)-instance-method">
+      <div class="signature">
+        
+        def <strong>quiver</strong>(x, y, u, v, color)
+
+        <a class="method-permalink" href="#quiver%28x%2Cy%2Cu%2Cv%2Ccolor%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L856" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="readimage(path)-instance-method">
+      <div class="signature">
+        
+        def <strong>readimage</strong>(path)
+
+        <a class="method-permalink" href="#readimage%28path%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L645" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="redrawsegws-instance-method">
+      <div class="signature">
+        
+        def <strong>redrawsegws</strong>
+
+        <a class="method-permalink" href="#redrawsegws-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L420" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reducepoints(x,y,n_out)-instance-method">
+      <div class="signature">
+        
+        def <strong>reducepoints</strong>(x, y, n_out)
+
+        <a class="method-permalink" href="#reducepoints%28x%2Cy%2Cn_out%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L830" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="resizeselection(type,x,y)-instance-method">
+      <div class="signature">
+        
+        def <strong>resizeselection</strong>(type, x, y)
+
+        <a class="method-permalink" href="#resizeselection%28type%2Cx%2Cy%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L751" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="restorestate-instance-method">
+      <div class="signature">
+        
+        def <strong>restorestate</strong>
+
+        <a class="method-permalink" href="#restorestate-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L792" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="samplelocator-instance-method">
+      <div class="signature">
+        
+        def <strong>samplelocator</strong>
+
+        <a class="method-permalink" href="#samplelocator-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L432" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="savecontext(context)-instance-method">
+      <div class="signature">
+        
+        def <strong>savecontext</strong>(context)
+
+        <a class="method-permalink" href="#savecontext%28context%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L796" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="savestate-instance-method">
+      <div class="signature">
+        
+        def <strong>savestate</strong>
+
+        <a class="method-permalink" href="#savestate-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L788" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="selectclipxform(transform)-instance-method">
+      <div class="signature">
+        
+        def <strong>selectclipxform</strong>(transform)
+
+        <a class="method-permalink" href="#selectclipxform%28transform%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L920" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="selectcontext(context)-instance-method">
+      <div class="signature">
+        
+        def <strong>selectcontext</strong>(context)
+
+        <a class="method-permalink" href="#selectcontext%28context%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L800" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="selntran(transform)-instance-method">
+      <div class="signature">
+        
+        def <strong>selntran</strong>(transform)
+
+        <a class="method-permalink" href="#selntran%28transform%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L396" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setarrowsize(size)-instance-method">
+      <div class="signature">
+        
+        def <strong>setarrowsize</strong>(size)
+
+        <a class="method-permalink" href="#setarrowsize%28size%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L637" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setarrowstyle(style)-instance-method">
+      <div class="signature">
+        
+        def <strong>setarrowstyle</strong>(style)
+
+        <a class="method-permalink" href="#setarrowstyle%28style%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L633" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setbackground(red,green,blue,alpha)-instance-method">
+      <div class="signature">
+        
+        def <strong>setbackground</strong>(red, green, blue, alpha)
+
+        <a class="method-permalink" href="#setbackground%28red%2Cgreen%2Cblue%2Calpha%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L764" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setbordercolorind(color)-instance-method">
+      <div class="signature">
+        
+        def <strong>setbordercolorind</strong>(color)
+
+        <a class="method-permalink" href="#setbordercolorind%28color%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L910" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setborderwidth(width)-instance-method">
+      <div class="signature">
+        
+        def <strong>setborderwidth</strong>(width)
+
+        <a class="method-permalink" href="#setborderwidth%28width%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L900" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setcharexpan(factor)-instance-method">
+      <div class="signature">
+        
+        def <strong>setcharexpan</strong>(factor)
+
+        <a class="method-permalink" href="#setcharexpan%28factor%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L282" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setcharheight(height)-instance-method">
+      <div class="signature">
+        
+        def <strong>setcharheight</strong>(height)
+
+        <a class="method-permalink" href="#setcharheight%28height%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L300" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setcharspace(spacing)-instance-method">
+      <div class="signature">
+        
+        def <strong>setcharspace</strong>(spacing)
+
+        <a class="method-permalink" href="#setcharspace%28spacing%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L286" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setcharup(ux,uy)-instance-method">
+      <div class="signature">
+        
+        def <strong>setcharup</strong>(ux, uy)
+
+        <a class="method-permalink" href="#setcharup%28ux%2Cuy%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L314" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setclip(indicator)-instance-method">
+      <div class="signature">
+        
+        def <strong>setclip</strong>(indicator)
+
+        <a class="method-permalink" href="#setclip%28indicator%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L400" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setclipregion(region)-instance-method">
+      <div class="signature">
+        
+        def <strong>setclipregion</strong>(region)
+
+        <a class="method-permalink" href="#setclipregion%28region%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1091" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setclipsector(start_angle,end_angle)-instance-method">
+      <div class="signature">
+        
+        def <strong>setclipsector</strong>(start_angle, end_angle)
+
+        <a class="method-permalink" href="#setclipsector%28start_angle%2Cend_angle%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1101" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setcolormap(index)-instance-method">
+      <div class="signature">
+        
+        def <strong>setcolormap</strong>(index)
+
+        <a class="method-permalink" href="#setcolormap%28index%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L496" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setcolormapfromrgb(r,g,b,x=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>setcolormapfromrgb</strong>(r, g, b, x = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#setcolormapfromrgb%28r%2Cg%2Cb%2Cx%3Dnil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L506" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setcolorrep(index,red,green,blue)-instance-method">
+      <div class="signature">
+        
+        def <strong>setcolorrep</strong>(index, red, green, blue)
+
+        <a class="method-permalink" href="#setcolorrep%28index%2Cred%2Cgreen%2Cblue%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L366" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setcoordxform(mat)-instance-method">
+      <div class="signature">
+        
+        def <strong>setcoordxform</strong>(mat)
+
+        <a class="method-permalink" href="#setcoordxform%28mat%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L681" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setfillcolorind(color)-instance-method">
+      <div class="signature">
+        
+        def <strong>setfillcolorind</strong>(color)
+
+        <a class="method-permalink" href="#setfillcolorind%28color%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L346" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setfillintstyle(style)-instance-method">
+      <div class="signature">
+        
+        def <strong>setfillintstyle</strong>(style)
+
+        <a class="method-permalink" href="#setfillintstyle%28style%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L326" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setfillstyle(index)-instance-method">
+      <div class="signature">
+        
+        def <strong>setfillstyle</strong>(index)
+
+        <a class="method-permalink" href="#setfillstyle%28index%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L336" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setgrplotport(port)-instance-method">
+      <div class="signature">
+        
+        def <strong>setgrplotport</strong>(port)
+
+        <a class="method-permalink" href="#setgrplotport%28port%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L710" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setlinecolorind(color)-instance-method">
+      <div class="signature">
+        
+        def <strong>setlinecolorind</strong>(color)
+
+        <a class="method-permalink" href="#setlinecolorind%28color%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L238" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setlinetype(type)-instance-method">
+      <div class="signature">
+        
+        def <strong>setlinetype</strong>(type)
+
+        <a class="method-permalink" href="#setlinetype%28type%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L218" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setlinewidth(width)-instance-method">
+      <div class="signature">
+        
+        def <strong>setlinewidth</strong>(width)
+
+        <a class="method-permalink" href="#setlinewidth%28width%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L228" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setmarkercolorind(color)-instance-method">
+      <div class="signature">
+        
+        def <strong>setmarkercolorind</strong>(color)
+
+        <a class="method-permalink" href="#setmarkercolorind%28color%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L268" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setmarkersize(size)-instance-method">
+      <div class="signature">
+        
+        def <strong>setmarkersize</strong>(size)
+
+        <a class="method-permalink" href="#setmarkersize%28size%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L258" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setmarkertype(type)-instance-method">
+      <div class="signature">
+        
+        def <strong>setmarkertype</strong>(type)
+
+        <a class="method-permalink" href="#setmarkertype%28type%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L248" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setmathfont(font)-instance-method">
+      <div class="signature">
+        
+        def <strong>setmathfont</strong>(font)
+
+        <a class="method-permalink" href="#setmathfont%28font%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1081" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setnominalsize(size)-instance-method">
+      <div class="signature">
+        
+        def <strong>setnominalsize</strong>(size)
+
+        <a class="method-permalink" href="#setnominalsize%28size%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L356" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setorthographicprojection(left,right,bottom,top,near_plane,far_plane)-instance-method">
+      <div class="signature">
+        
+        def <strong>setorthographicprojection</strong>(left, right, bottom, top, near_plane, far_plane)
+
+        <a class="method-permalink" href="#setorthographicprojection%28left%2Cright%2Cbottom%2Ctop%2Cnear_plane%2Cfar_plane%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L977" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setperspectiveprojection(near_plane,far_plane,fov)-instance-method">
+      <div class="signature">
+        
+        def <strong>setperspectiveprojection</strong>(near_plane, far_plane, fov)
+
+        <a class="method-permalink" href="#setperspectiveprojection%28near_plane%2Cfar_plane%2Cfov%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L947" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setprojectiontype(type)-instance-method">
+      <div class="signature">
+        
+        def <strong>setprojectiontype</strong>(type)
+
+        <a class="method-permalink" href="#setprojectiontype%28type%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L937" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setregenflags(flags)-instance-method">
+      <div class="signature">
+        
+        def <strong>setregenflags</strong>(flags)
+
+        <a class="method-permalink" href="#setregenflags%28flags%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L780" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setresamplemethod(flag)-instance-method">
+      <div class="signature">
+        
+        def <strong>setresamplemethod</strong>(flag)
+
+        <a class="method-permalink" href="#setresamplemethod%28flag%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L890" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setscale(options)-instance-method">
+      <div class="signature">
+        
+        def <strong>setscale</strong>(options)
+
+        <a class="method-permalink" href="#setscale%28options%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L461" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setscalefactors3d(x_axis_scale,y_axis_scale,z_axis_scale)-instance-method">
+      <div class="signature">
+        
+        def <strong>setscalefactors3d</strong>(x_axis_scale, y_axis_scale, z_axis_scale)
+
+        <a class="method-permalink" href="#setscalefactors3d%28x_axis_scale%2Cy_axis_scale%2Cz_axis_scale%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1011" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setscientificformat(format_option)-instance-method">
+      <div class="signature">
+        
+        def <strong>setscientificformat</strong>(format_option)
+
+        <a class="method-permalink" href="#setscientificformat%28format_option%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L471" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setsegtran(segment,fx,fy,transx,transy,phi,scalex,scaley)-instance-method">
+      <div class="signature">
+        
+        def <strong>setsegtran</strong>(segment, fx, fy, transx, transy, phi, scalex, scaley)
+
+        <a class="method-permalink" href="#setsegtran%28segment%2Cfx%2Cfy%2Ctransx%2Ctransy%2Cphi%2Cscalex%2Cscaley%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L424" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setshadow(offsetx,offsety,blur)-instance-method">
+      <div class="signature">
+        
+        def <strong>setshadow</strong>(offsetx, offsety, blur)
+
+        <a class="method-permalink" href="#setshadow%28offsetx%2Coffsety%2Cblur%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L667" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setspace(zmin,zmax,rotation,tilt)-instance-method">
+      <div class="signature">
+        
+        def <strong>setspace</strong>(zmin, zmax, rotation, tilt)
+
+        <a class="method-permalink" href="#setspace%28zmin%2Czmax%2Crotation%2Ctilt%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L448" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setspace3d(phi,theta,fov,camera_distance)-instance-method">
+      <div class="signature">
+        
+        def <strong>setspace3d</strong>(phi, theta, fov, camera_distance)
+
+        <a class="method-permalink" href="#setspace3d%28phi%2Ctheta%2Cfov%2Ccamera_distance%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1023" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="settextalign(horizontal,vertical)-instance-method">
+      <div class="signature">
+        
+        def <strong>settextalign</strong>(horizontal, vertical)
+
+        <a class="method-permalink" href="#settextalign%28horizontal%2Cvertical%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L322" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="settextcolorind(color)-instance-method">
+      <div class="signature">
+        
+        def <strong>settextcolorind</strong>(color)
+
+        <a class="method-permalink" href="#settextcolorind%28color%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L290" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="settextencoding(encoding)-instance-method">
+      <div class="signature">
+        
+        def <strong>settextencoding</strong>(encoding)
+
+        <a class="method-permalink" href="#settextencoding%28encoding%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1048" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="settextfontprec(font,precision)-instance-method">
+      <div class="signature">
+        
+        def <strong>settextfontprec</strong>(font, precision)
+
+        <a class="method-permalink" href="#settextfontprec%28font%2Cprecision%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L278" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="settextoffset(xoff,yoff)-instance-method">
+      <div class="signature">
+        
+        def <strong>settextoffset</strong>(xoff, yoff)
+
+        <a class="method-permalink" href="#settextoffset%28xoff%2Cyoff%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1112" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="settextpath(path)-instance-method">
+      <div class="signature">
+        
+        def <strong>settextpath</strong>(path)
+
+        <a class="method-permalink" href="#settextpath%28path%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L318" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setthreadnumber(num)-instance-method">
+      <div class="signature">
+        
+        def <strong>setthreadnumber</strong>(num)
+
+        <a class="method-permalink" href="#setthreadnumber%28num%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1064" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="settitles3d(x_title,y_title,z_title)-instance-method">
+      <div class="signature">
+        
+        def <strong>settitles3d</strong>(x_title, y_title, z_title)
+
+        <a class="method-permalink" href="#settitles3d%28x_title%2Cy_title%2Cz_title%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L487" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="settransformationparameters(a0,a1,a2,a3,a4,a5,a6,a7,a8)-instance-method">
+      <div class="signature">
+        
+        def <strong>settransformationparameters</strong>(a0, a1, a2, a3, a4, a5, a6, a7, a8)
+
+        <a class="method-permalink" href="#settransformationparameters%28a0%2Ca1%2Ca2%2Ca3%2Ca4%2Ca5%2Ca6%2Ca7%2Ca8%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L959" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="settransparency(alpha)-instance-method">
+      <div class="signature">
+        
+        def <strong>settransparency</strong>(alpha)
+
+        <a class="method-permalink" href="#settransparency%28alpha%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L671" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setviewport(xmin,xmax,ymin,ymax)-instance-method">
+      <div class="signature">
+        
+        def <strong>setviewport</strong>(xmin, xmax, ymin, ymax)
+
+        <a class="method-permalink" href="#setviewport%28xmin%2Cxmax%2Cymin%2Cymax%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L383" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setwindow(xmin,xmax,ymin,ymax)-instance-method">
+      <div class="signature">
+        
+        def <strong>setwindow</strong>(xmin, xmax, ymin, ymax)
+
+        <a class="method-permalink" href="#setwindow%28xmin%2Cxmax%2Cymin%2Cymax%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L370" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setwindow3d(xmin,xmax,ymin,ymax,zmin,zmax)-instance-method">
+      <div class="signature">
+        
+        def <strong>setwindow3d</strong>(xmin, xmax, ymin, ymax, zmin, zmax)
+
+        <a class="method-permalink" href="#setwindow3d%28xmin%2Cxmax%2Cymin%2Cymax%2Czmin%2Czmax%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L996" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setwscharheight(chh,height)-instance-method">
+      <div class="signature">
+        
+        def <strong>setwscharheight</strong>(chh, height)
+
+        <a class="method-permalink" href="#setwscharheight%28chh%2Cheight%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L304" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setwsviewport(xmin,xmax,ymin,ymax)-instance-method">
+      <div class="signature">
+        
+        def <strong>setwsviewport</strong>(xmin, xmax, ymin, ymax)
+
+        <a class="method-permalink" href="#setwsviewport%28xmin%2Cxmax%2Cymin%2Cymax%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L408" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setwswindow(xmin,xmax,ymin,ymax)-instance-method">
+      <div class="signature">
+        
+        def <strong>setwswindow</strong>(xmin, xmax, ymin, ymax)
+
+        <a class="method-permalink" href="#setwswindow%28xmin%2Cxmax%2Cymin%2Cymax%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L404" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shade(x,y,lines,flip,h,xform,bins,dims)-instance-method">
+      <div class="signature">
+        
+        def <strong>shade</strong>(x, y, lines, flip, h, xform, bins, dims)
+
+        <a class="method-permalink" href="#shade%28x%2Cy%2Clines%2Cflip%2Ch%2Cxform%2Cbins%2Cdims%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L867" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shadelines(x,y,xform,w,h)-instance-method">
+      <div class="signature">
+        
+        def <strong>shadelines</strong>(x, y, xform, w, h)
+
+        <a class="method-permalink" href="#shadelines%28x%2Cy%2Cxform%2Cw%2Ch%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L876" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shadepoints(x,y,xform,w,h)-instance-method">
+      <div class="signature">
+        
+        def <strong>shadepoints</strong>(x, y, xform, w, h)
+
+        <a class="method-permalink" href="#shadepoints%28x%2Cy%2Cxform%2Cw%2Ch%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L871" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -987,7 +4401,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L184" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L196" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="startlistener-instance-method">
+      <div class="signature">
+        
+        def <strong>startlistener</strong>
+
+        <a class="method-permalink" href="#startlistener-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L702" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1003,7 +4433,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L126" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L138" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1019,7 +4449,39 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L89" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L101" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="text3d(x,y,z,c,axis)-instance-method">
+      <div class="signature">
+        
+        def <strong>text3d</strong>(x, y, z, c, axis)
+
+        <a class="method-permalink" href="#text3d%28x%2Cy%2Cz%2Cc%2Caxis%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1037" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="text_maxsize-instance-method">
+      <div class="signature">
+        
+        def <strong>text_maxsize</strong>
+
+        <a class="method-permalink" href="#text_maxsize-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L776" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1035,7 +4497,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L115" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L127" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1051,7 +4513,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L93" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L105" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tick(amin,amax)-instance-method">
+      <div class="signature">
+        
+        def <strong>tick</strong>(amin, amax)
+
+        <a class="method-permalink" href="#tick%28amin%2Camax%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L541" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1067,7 +4545,71 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L160" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L172" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tricontour(x,y,z,levels)-instance-method">
+      <div class="signature">
+        
+        def <strong>tricontour</strong>(x, y, z, levels)
+
+        <a class="method-permalink" href="#tricontour%28x%2Cy%2Cz%2Clevels%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L491" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="trisurface(x,y,z)-instance-method">
+      <div class="signature">
+        
+        def <strong>trisurface</strong>(x, y, z)
+
+        <a class="method-permalink" href="#trisurface%28x%2Cy%2Cz%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L841" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unselectcontext-instance-method">
+      <div class="signature">
+        
+        def <strong>unselectcontext</strong>
+
+        <a class="method-permalink" href="#unselectcontext-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L808" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="updategks-instance-method">
+      <div class="signature">
+        
+        def <strong>updategks</strong>
+
+        <a class="method-permalink" href="#updategks-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L444" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1083,7 +4625,39 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L21" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="uselinespec(linespec)-instance-method">
+      <div class="signature">
+        
+        def <strong>uselinespec</strong>(linespec)
+
+        <a class="method-permalink" href="#uselinespec%28linespec%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L812" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="validaterange(amin,amax)-instance-method">
+      <div class="signature">
+        
+        def <strong>validaterange</strong>(amin, amax)
+
+        <a class="method-permalink" href="#validaterange%28amin%2Camax%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L545" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1099,7 +4673,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L164" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L176" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1115,7 +4689,39 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/gr.cr#L206" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L1116" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="wc3towc(x,y,z)-instance-method">
+      <div class="signature">
+        
+        def <strong>wc3towc</strong>(x, y, z)
+
+        <a class="method-permalink" href="#wc3towc%28x%2Cy%2Cz%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L597" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="wctondc(x,y)-instance-method">
+      <div class="signature">
+        
+        def <strong>wctondc</strong>(x, y)
+
+        <a class="method-permalink" href="#wctondc%28x%2Cy%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/gr.cr#L588" target="_blank">View source</a>]
         
       </div>
     </div>

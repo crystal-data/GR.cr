@@ -72,8 +72,18 @@
       
     </li>
   
-  <li class=" " data-id="gr/GR3" data-name="gr3">
+  <li class="parent " data-id="gr/GR3" data-name="gr3">
       <a href="GR3.html">GR3</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gr/GR3/Error" data-name="gr3::error">
+      <a href="GR3/Error.html">Error</a>
+      
+    </li>
+  
+</ul>
+
       
     </li>
   
@@ -144,6 +154,11 @@
   
 </ul>
 
+      
+    </li>
+  
+  <li class=" " data-id="gr/GRM/Error" data-name="grm::error">
+      <a href="GRM/Error.html">Error</a>
       
     </li>
   
@@ -220,28 +235,28 @@
   </h2>
   
     
-      <a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L7" target="_blank">
+      <a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L7" target="_blank">
         grm.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm/figure.cr#L4" target="_blank">
+      <a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm/figure.cr#L4" target="_blank">
         grm/figure.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm/libgrm.cr#L1" target="_blank">
+      <a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm/libgrm.cr#L1" target="_blank">
         grm/libgrm.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm/plot.cr#L3" target="_blank">
+      <a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm/plot.cr#L3" target="_blank">
         grm/plot.cr
       </a>
     
@@ -249,6 +264,25 @@
   
 
 
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="ERROR_MUTEX">
+        <strong>ERROR_MUTEX</strong> = <code><span class="t">Mutex</span>.new</code>
+      </dt>
+      
+    
+  </dl>
 
 
 
@@ -303,6 +337,11 @@
     
       <li class="entry-summary">
         <a href="#bar%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#bar</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#check_error%21%28context%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#check_error!</strong>(context : String | Nil = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -431,6 +470,11 @@
         
       </li>
     
+      <li class="entry-summary">
+        <a href="#with_error_check%28context%3AString%7CNil%3Dnil%2C%26%29-instance-method" class="signature"><strong>#with_error_check</strong>(context : String | Nil = <span class="n">nil</span>, &)</a>
+        
+      </li>
+    
   </ul>
 
 
@@ -462,7 +506,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L50" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L73" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -492,7 +536,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L45" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -508,7 +552,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L33" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -524,7 +568,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L37" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -540,7 +584,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L321" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L344" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="check_error!(context:String|Nil=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>check_error!</strong>(context : String | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#check_error%21%28context%3AString%7CNil%3Dnil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -556,7 +616,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -572,7 +632,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L414" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L437" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -588,7 +648,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L57" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -604,7 +664,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L38" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L61" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -620,7 +680,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L30" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L53" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -636,7 +696,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L427" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L450" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -652,7 +712,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L336" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L359" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -668,7 +728,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L291" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L314" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -684,7 +744,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L46" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L69" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -700,7 +760,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L228" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L251" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -716,7 +776,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L244" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L267" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -732,7 +792,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L240" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L263" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -748,7 +808,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L232" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L255" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -764,7 +824,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L236" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L259" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -780,7 +840,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L256" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L279" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -796,7 +856,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L248" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L271" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -812,7 +872,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L252" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L275" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -828,7 +888,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L440" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L463" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -844,7 +904,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L26" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L49" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -860,7 +920,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L306" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L329" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -876,7 +936,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L382" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L405" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -892,7 +952,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L352" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L375" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -908,7 +968,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L367" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L390" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -924,7 +984,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L399" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L422" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -940,7 +1000,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/818720da0c38ac44cbb41e90bbbae6128c772a92/src/grm.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L65" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="with_error_check(context:String|Nil=nil,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>with_error_check</strong>(context : String | Nil = <span class="n">nil</span>, &)
+
+        <a class="method-permalink" href="#with_error_check%28context%3AString%7CNil%3Dnil%2C%26%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/978534cf9610ca7da6359b9d8b86f5e63289e84f/src/grm.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
