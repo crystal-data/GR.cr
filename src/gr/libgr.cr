@@ -237,7 +237,7 @@ module GR
     fun setshadow = gr_setshadow(offsetx : LibC::Double, offsety : LibC::Double, blur : LibC::Double)
     fun settransparency = gr_settransparency(alpha : LibC::Double)
     fun inqtransparency = gr_inqtransparency(alpha : LibC::Double*)
-    fun setcoordxform = gr_setcoordxform(mat : LibC::Double[3][2])
+    fun setcoordxform = gr_setcoordxform(mat : LibC::Double*)
 
     # Graphics state
     fun begingraphics = gr_begingraphics(path : LibC::Char*)

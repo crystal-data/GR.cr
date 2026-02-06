@@ -16,6 +16,11 @@ module GRCommon
       end
     end
 
+    private def uint8_ptr(codes)
+      slice = codes.is_a?(String) ? codes.to_slice : codes
+      Pointer(UInt8).malloc(slice.size) { |i| slice[i] }
+    end
+
     # Converts a String to a C string (null-terminated UInt8 pointer)
     def to_cchar(s)
       cp = Pointer(UInt8).malloc(s.size + 1)
