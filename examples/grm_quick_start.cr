@@ -10,17 +10,18 @@ n.times do |i|
   z << Math.sin(x[i]) * x[i]
 end
 
-plot_types = %w[line hexbin polar shade stem step contour
-  trisurf plot3 scatter scatter3]
+plot_types = %w[line hexbin stairs shade stem scatter
+  contour surface plot3 scatter3]
 
 plot_types.each do |type|
+  puts "Plotting: #{type}"
   GRM.clear
-  args = GRM.args_new
-  GRM.args_push(args, "x", "nD", n, x)
-  GRM.args_push(args, "y", "nD", n, y)
-  GRM.args_push(args, "z", "nD", n, z)
-  GRM.args_push(args, "kind", "s", type)
-  GRM.args_push(args, "title", "s", type)
+  args = GRM::Args.new
+  args.push("x", x)
+  args.push("y", y)
+  args.push("z", z)
+  args.push("kind", type)
+  args.push("title", type)
   GRM.plot(args)
   sleep 2.seconds
 end
