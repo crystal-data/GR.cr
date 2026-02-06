@@ -263,12 +263,11 @@ x <span class="o">=</span> [<span class="n">1.0</span>, <span class="n">2.0</spa
 y <span class="o">=</span> [<span class="n">1.0</span>, <span class="n">4.0</span>, <span class="n">9.0</span>, <span class="n">16.0</span>, <span class="n">25.0</span>]
 
 <span class="c"># High-level API</span>
-<span class="t">GRM</span>.line(x, y, title: <span class="s">&quot;My Plot&quot;</span>)
+<span class="t">GRM</span>.plot(x, y, title: <span class="s">&quot;My Plot&quot;</span>)
 
 <span class="c"># Object-oriented API</span>
 plot <span class="o">=</span> <span class="t">GRM</span>.plot
   .data(x, y)
-  .line
   .color(<span class="s">&quot;red&quot;</span>)
   .title(<span class="s">&quot;My Plot&quot;</span>)
   .xlabel(<span class="s">&quot;X&quot;</span>)
@@ -286,9 +285,9 @@ plot.save(<span class="s">&quot;output.png&quot;</span>)</code></pre>
 x <span class="o">=</span> [<span class="n">1</span>, <span class="n">2</span>, <span class="n">3</span>, <span class="n">4</span>, <span class="n">5</span>]
 y <span class="o">=</span> [<span class="n">2</span>, <span class="n">4</span>, <span class="n">6</span>, <span class="n">8</span>, <span class="n">10</span>]
 
-<span class="t">GRM</span>.line(x, y, title: <span class="s">&quot;Line Plot&quot;</span>)
+<span class="t">GRM</span>.plot(x, y, title: <span class="s">&quot;Line Plot&quot;</span>)
 <span class="t">GRM</span>.scatter(x, y, title: <span class="s">&quot;Scatter Plot&quot;</span>)
-<span class="t">GRM</span>.bar(x, y, title: <span class="s">&quot;Bar Chart&quot;</span>)
+<span class="t">GRM</span>.barplot(x, y, title: <span class="s">&quot;Bar Chart&quot;</span>)
 <span class="t">GRM</span>.histogram([<span class="n">1</span>, <span class="n">2</span>, <span class="n">2</span>, <span class="n">3</span>, <span class="n">3</span>, <span class="n">3</span>, <span class="n">4</span>, <span class="n">4</span>, <span class="n">5</span>], title: <span class="s">&quot;Histogram&quot;</span>)</code></pre>
 <h3><a id="3-d-surface-plot" class="anchor" href="#3-d-surface-plot">
   <svg class="octicon-link" aria-hidden="true">
@@ -317,8 +316,8 @@ plot.show</code></pre>
   </svg>
 </a>Supported Features</h3>
 <ul>
-<li>2D Plots: line, scatter, bar, histogram, stem, step, hexbin, polar</li>
-<li>3D Plots: surface, contour, scatter3d</li>
+<li>2D Plots: line, scatter, barplot, histogram, stem, stairs, hexbin, polar</li>
+<li>3D Plots: plot3, surface, contour, scatter3</li>
 <li>Output: PNG, HTML, JSON export</li>
 <li>API: High-level functions and object-oriented interface</li>
 </ul>
