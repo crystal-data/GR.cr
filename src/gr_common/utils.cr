@@ -24,5 +24,16 @@ module GRCommon
       yield(ptr)
       ptr.value
     end
+    # :nodoc:
+    # Validate that all arrays have the same length.
+    def ensure_same_length(*arrays)
+      return 0 if arrays.empty?
+
+      size = arrays.first.size
+      arrays.each do |array|
+        raise ArgumentError.new("size mismatch") unless array.size == size
+      end
+      size
+    end
   end
 end
