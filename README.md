@@ -67,7 +67,7 @@ y = [1.0, 4.0, 9.0, 16.0, 25.0]
 GRM.plot(x, y, title: "My Plot")
 
 # Object-oriented API
-plot = GRM.plot
+plot = GRM::Plot.new
   .data(x, y)
   .color("red")
   .title("My Plot")
@@ -105,7 +105,7 @@ z = [
   [3.0, 12.0, 27.0]
 ]
 
-plot = GRM.plot
+plot = GRM::Plot.new
   .data2d(x, y, z)
   .surface
   .title("3D Surface")
