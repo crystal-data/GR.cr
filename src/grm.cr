@@ -7,44 +7,67 @@ require "./grm/figure"
 module GRM
   extend self
 
+  ERROR_MUTEX = Mutex.new
+
+  class Error < GRCommon::GRError
+  end
+
+  def check_error!(context : String? = nil)
+    code = LibGRM.get_error_code.to_i32
+    return if code == 0
+
+    enum_value = LibGRM::ErrorT.from_value?(code)
+    code_name = enum_value ? enum_value.to_s : code.to_s
+    prefix = context ? "GRM error (#{context})" : "GRM error"
+    raise Error.new("#{prefix}: #{code_name}")
+  end
+
+  def with_error_check(context : String? = nil, &)
+    ERROR_MUTEX.synchronize do
+      result = yield
+      check_error!(context)
+      result
+    end
+  end
+
   def args_new
-    LibGRM.args_new
+    with_error_check("args_new") { LibGRM.args_new }
   end
 
   def args_push(*args)
-    LibGRM.args_push(*args)
+    with_error_check("args_push") { LibGRM.args_push(*args) }
   end
 
   def clear
-    LibGRM.clear
+    with_error_check("clear") { LibGRM.clear }
   end
 
   def args_delete(*args)
-    LibGRM.args_delete(*args)
+    with_error_check("args_delete") { LibGRM.args_delete(*args) }
   end
 
   def render
-    LibGRM.render
+    with_error_check("render") { LibGRM.render }
   end
 
   def export(*args)
-    LibGRM.export(*args)
+    with_error_check("export") { LibGRM.export(*args) }
   end
 
   def dump_html(*args)
-    LibGRM.dump_html(*args)
+    with_error_check("dump_html") { LibGRM.dump_html(*args) }
   end
 
   def dump_json_str
-    LibGRM.dump_json_str
+    with_error_check("dump_json_str") { LibGRM.dump_json_str }
   end
 
   def switch(*args)
-    LibGRM.switch(*args)
+    with_error_check("switch") { LibGRM.switch(*args) }
   end
 
   def max_plot_id
-    LibGRM.max_plot_id
+    with_error_check("max_plot_id") { LibGRM.max_plot_id }
   end
 
   def self.with_args(&block : LibGRM::ArgsT -> Void)
@@ -63,7 +86,7 @@ module GRM
     getter? deleted
 
     def initialize
-      @ptr = LibGRM.args_new
+      @ptr = GRM.with_error_check("args_new") { LibGRM.args_new }
       @deleted = false
       @references = [] of Reference
     end
@@ -86,7 +109,7 @@ module GRM
     def delete
       return if @deleted
       @deleted = true
-      LibGRM.args_delete(@ptr)
+      GRM.with_error_check("args_delete") { LibGRM.args_delete(@ptr) }
       @references.clear
     end
 
@@ -95,16 +118,16 @@ module GRM
     end
 
     def clear
-      LibGRM.args_clear(@ptr)
+      GRM.with_error_check("args_clear") { LibGRM.args_clear(@ptr) }
       @references.clear
     end
 
     def remove(key : String)
-      LibGRM.args_remove(@ptr, key)
+      GRM.with_error_check("args_remove") { LibGRM.args_remove(@ptr, key) }
     end
 
     def contains?(key : String) : Bool
-      LibGRM.args_contains(@ptr, key) == 1
+      GRM.with_error_check("args_contains") { LibGRM.args_contains(@ptr, key) } == 1
     end
 
     def []=(key : String, value)
@@ -112,20 +135,20 @@ module GRM
     end
 
     def push(key : String, value : String)
-      LibGRM.args_push(@ptr, key, "s", value)
+      GRM.with_error_check("args_push") { LibGRM.args_push(@ptr, key, "s", value) }
       keep(value)
     end
 
     def push(key : String, value : Int32)
-      LibGRM.args_push(@ptr, key, "i", value)
+      GRM.with_error_check("args_push") { LibGRM.args_push(@ptr, key, "i", value) }
     end
 
     def push(key : String, value : Int64)
-      LibGRM.args_push(@ptr, key, "i", value.to_i32)
+      GRM.with_error_check("args_push") { LibGRM.args_push(@ptr, key, "i", value.to_i32) }
     end
 
     def push(key : String, value : Float64)
-      LibGRM.args_push(@ptr, key, "d", value)
+      GRM.with_error_check("args_push") { LibGRM.args_push(@ptr, key, "d", value) }
     end
 
     def push(key : String, value : Args)
@@ -133,14 +156,14 @@ module GRM
         raise ArgumentError.new("Argument container is already consumed or deleted")
       end
       value.mark_deleted!
-      LibGRM.args_push(@ptr, key, "a", value.ptr)
+      GRM.with_error_check("args_push") { LibGRM.args_push(@ptr, key, "a", value.ptr) }
       keep(value)
     end
 
     def push(key : String, values : Array(String))
       raise ArgumentError.new("Array value for key '#{key}' cannot be empty") if values.empty?
       ptrs = values.map { |v| v.to_unsafe.as(LibC::Char*) }
-      LibGRM.args_push(@ptr, key, "nS", ptrs.size, ptrs.to_unsafe)
+      GRM.with_error_check("args_push") { LibGRM.args_push(@ptr, key, "nS", ptrs.size, ptrs.to_unsafe) }
       keep(values)
       keep(ptrs)
     end
@@ -148,21 +171,21 @@ module GRM
     def push(key : String, values : Array(Int32))
       raise ArgumentError.new("Array value for key '#{key}' cannot be empty") if values.empty?
       data = values.map(&.to_i32)
-      LibGRM.args_push(@ptr, key, "nI", data.size, data.to_unsafe)
+      GRM.with_error_check("args_push") { LibGRM.args_push(@ptr, key, "nI", data.size, data.to_unsafe) }
       keep(data)
     end
 
     def push(key : String, values : Array(Int64))
       raise ArgumentError.new("Array value for key '#{key}' cannot be empty") if values.empty?
       data = values.map(&.to_i32)
-      LibGRM.args_push(@ptr, key, "nI", data.size, data.to_unsafe)
+      GRM.with_error_check("args_push") { LibGRM.args_push(@ptr, key, "nI", data.size, data.to_unsafe) }
       keep(data)
     end
 
     def push(key : String, values : Array(Float64))
       raise ArgumentError.new("Array value for key '#{key}' cannot be empty") if values.empty?
       data = values.map(&.to_f64)
-      LibGRM.args_push(@ptr, key, "nD", data.size, data.to_unsafe)
+      GRM.with_error_check("args_push") { LibGRM.args_push(@ptr, key, "nD", data.size, data.to_unsafe) }
       keep(data)
     end
 
@@ -175,7 +198,7 @@ module GRM
       end
       values.each(&.mark_deleted!)
       ptrs = values.map(&.ptr)
-      LibGRM.args_push(@ptr, key, "nA", ptrs.size, ptrs.to_unsafe)
+      GRM.with_error_check("args_push") { LibGRM.args_push(@ptr, key, "nA", ptrs.size, ptrs.to_unsafe) }
       keep(values)
       keep(ptrs)
     end
@@ -226,31 +249,31 @@ module GRM
   end
 
   def merge(args : Args)
-    LibGRM.merge(args.ptr)
+    with_error_check("merge") { LibGRM.merge(args.ptr) }
   end
 
   def merge_hold(args : Args)
-    LibGRM.merge_hold(args.ptr)
+    with_error_check("merge_hold") { LibGRM.merge_hold(args.ptr) }
   end
 
   def merge_named(args : Args, identificator : String)
-    LibGRM.merge_named(args.ptr, identificator)
+    with_error_check("merge_named") { LibGRM.merge_named(args.ptr, identificator) }
   end
 
   def merge_extended(args : Args, hold : Int32 = 0)
-    LibGRM.merge_extended(args.ptr, hold, Pointer(LibC::Char).null)
+    with_error_check("merge_extended") { LibGRM.merge_extended(args.ptr, hold, Pointer(LibC::Char).null) }
   end
 
   def merge_extended(args : Args, hold : Int32, identificator : String)
-    LibGRM.merge_extended(args.ptr, hold, identificator)
+    with_error_check("merge_extended") { LibGRM.merge_extended(args.ptr, hold, identificator) }
   end
 
   def plot(args : Args)
-    LibGRM.plot(args.ptr)
+    with_error_check("plot") { LibGRM.plot(args.ptr) }
   end
 
   def plot(args : LibGRM::ArgsT)
-    LibGRM.plot(args)
+    with_error_check("plot") { LibGRM.plot(args) }
   end
 
   def plot(x : Array(Number), y : Array(Number), z : Array(Number)? = nil,

@@ -22,29 +22,29 @@ module GRM
     getter color : String?
 
     def initialize
-      @args = LibGRM.args_new
+      @args = GRM.with_error_check("args_new") { LibGRM.args_new }
     end
 
     # Method to build clean args without polluting internal state
     def build_series_args : LibGRM::ArgsT
-      temp_args = LibGRM.args_new
+      temp_args = GRM.with_error_check("args_new") { LibGRM.args_new }
 
       # Add data
       if @x_data
-        LibGRM.args_push(temp_args, "x", "nD", @x_data.not_nil!.size, @x_data.not_nil!)
+        args_push(temp_args, "x", "nD", @x_data.not_nil!.size, @x_data.not_nil!)
       end
       if @y_data && !@y_data.not_nil!.empty?
-        LibGRM.args_push(temp_args, "y", "nD", @y_data.not_nil!.size, @y_data.not_nil!)
+        args_push(temp_args, "y", "nD", @y_data.not_nil!.size, @y_data.not_nil!)
       end
       if @z_data
-        LibGRM.args_push(temp_args, "z", "nD", @z_data.not_nil!.size, @z_data.not_nil!)
+        args_push(temp_args, "z", "nD", @z_data.not_nil!.size, @z_data.not_nil!)
 
         # Add dimension information for 2D plots (surface/contour)
         if @kind == "surface" || @kind == "contour"
           # Ensure m and n are set for 2D kinds to prevent crashes
           raise ArgumentError.new("2D kinds (#{@kind}) require m and n to be set") unless @m && @n
-          LibGRM.args_push(temp_args, "m", "i", @m.as(Int32))
-          LibGRM.args_push(temp_args, "n", "i", @n.as(Int32))
+          args_push(temp_args, "m", "i", @m.as(Int32))
+          args_push(temp_args, "n", "i", @n.as(Int32))
         end
       end
 
@@ -56,9 +56,9 @@ module GRM
       # Add series-specific properties (NOT figure-level properties)
       # Use "line" as default kind if not specified
       kind_to_use = @kind || "line"
-      LibGRM.args_push(temp_args, "kind", "s", kind_to_use)
-      LibGRM.args_push(temp_args, "color", "s", @color.as(String)) if @color
-      LibGRM.args_push(temp_args, "nbins", "i", @nbins.as(Int32)) if @nbins
+      args_push(temp_args, "kind", "s", kind_to_use)
+      args_push(temp_args, "color", "s", @color.as(String)) if @color
+      args_push(temp_args, "nbins", "i", @nbins.as(Int32)) if @nbins
 
       temp_args
     end
@@ -80,13 +80,13 @@ module GRM
       @z_data = z ? z.map(&.to_f64) : nil
 
       # Also update the legacy args for backward compatibility
-      LibGRM.args_push(@args, "x", "nD", @x_data.not_nil!.size, @x_data.not_nil!)
+      args_push(@args, "x", "nD", @x_data.not_nil!.size, @x_data.not_nil!)
       unless y.empty?
-        LibGRM.args_push(@args, "y", "nD", @y_data.not_nil!.size, @y_data.not_nil!)
+        args_push(@args, "y", "nD", @y_data.not_nil!.size, @y_data.not_nil!)
       end
 
       if @z_data
-        LibGRM.args_push(@args, "z", "nD", @z_data.not_nil!.size, @z_data.not_nil!)
+        args_push(@args, "z", "nD", @z_data.not_nil!.size, @z_data.not_nil!)
       end
 
       self
@@ -110,11 +110,11 @@ module GRM
       raise ArgumentError.new("y length must equal n (#{@y_data.not_nil!.size} != #{n})") unless @y_data.not_nil!.size == n
 
       # Legacy args for standalone usage
-      LibGRM.args_push(@args, "x", "nD", @x_data.not_nil!.size, @x_data.not_nil!)
-      LibGRM.args_push(@args, "y", "nD", @y_data.not_nil!.size, @y_data.not_nil!)
-      LibGRM.args_push(@args, "z", "nD", @z_data.not_nil!.size, @z_data.not_nil!)
-      LibGRM.args_push(@args, "m", "i", m)
-      LibGRM.args_push(@args, "n", "i", n)
+      args_push(@args, "x", "nD", @x_data.not_nil!.size, @x_data.not_nil!)
+      args_push(@args, "y", "nD", @y_data.not_nil!.size, @y_data.not_nil!)
+      args_push(@args, "z", "nD", @z_data.not_nil!.size, @z_data.not_nil!)
+      args_push(@args, "m", "i", m)
+      args_push(@args, "n", "i", n)
 
       self
     end
@@ -145,7 +145,7 @@ module GRM
     def histogram(bins : Int32 = 50)
       @kind = "hist"
       @nbins = bins
-      LibGRM.args_push(@args, "nbins", "i", bins)
+      args_push(@args, "nbins", "i", bins)
       self
     end
 
@@ -225,17 +225,17 @@ module GRM
 
     # Apply only series-specific settings (for Figure usage)
     private def apply_series_settings_only(args : LibGRM::ArgsT)
-      LibGRM.args_push(args, "kind", "s", @kind.as(String)) if @kind
-      LibGRM.args_push(args, "color", "s", @color.as(String)) if @color
-      LibGRM.args_push(args, "nbins", "i", @nbins.as(Int32)) if @nbins
+      args_push(args, "kind", "s", @kind.as(String)) if @kind
+      args_push(args, "color", "s", @color.as(String)) if @color
+      args_push(args, "nbins", "i", @nbins.as(Int32)) if @nbins
     end
 
     # Apply figure-level labels (for standalone Plot usage only)
     private def apply_standalone_labels(args : LibGRM::ArgsT)
-      LibGRM.args_push(args, "title", "s", @title.as(String)) if @title
-      LibGRM.args_push(args, "xlabel", "s", @xlabel.as(String)) if @xlabel
-      LibGRM.args_push(args, "ylabel", "s", @ylabel.as(String)) if @ylabel
-      LibGRM.args_push(args, "zlabel", "s", @zlabel.as(String)) if @zlabel
+      args_push(args, "title", "s", @title.as(String)) if @title
+      args_push(args, "xlabel", "s", @xlabel.as(String)) if @xlabel
+      args_push(args, "ylabel", "s", @ylabel.as(String)) if @ylabel
+      args_push(args, "zlabel", "s", @zlabel.as(String)) if @zlabel
     end
 
     # Method to apply all settings for standalone Plot usage
@@ -254,15 +254,15 @@ module GRM
       # Add standalone (figure-level) labels
       apply_standalone_labels(temp_args)
 
-      LibGRM.clear # WARNING: Clears global GRM state
-      LibGRM.plot(temp_args)
+      GRM.with_error_check("clear") { LibGRM.clear } # WARNING: Clears global GRM state
+      GRM.with_error_check("plot") { LibGRM.plot(temp_args) }
 
-      LibGRM.args_delete(temp_args)
+      GRM.with_error_check("args_delete") { LibGRM.args_delete(temp_args) }
       self
     end
 
     def render
-      LibGRM.render
+      GRM.with_error_check("render") { LibGRM.render }
       self
     end
 
@@ -270,31 +270,35 @@ module GRM
       temp_args = build_series_args
       apply_standalone_labels(temp_args)
 
-      LibGRM.plot(temp_args)
-      LibGRM.export(path)
+      GRM.with_error_check("plot") { LibGRM.plot(temp_args) }
+      GRM.with_error_check("export") { LibGRM.export(path) }
 
-      LibGRM.args_delete(temp_args)
+      GRM.with_error_check("args_delete") { LibGRM.args_delete(temp_args) }
       self
     end
 
     def to_html(plot_id : String? = nil) : String
       show
       html_ptr = if plot_id
-                   LibGRM.dump_html(plot_id)
+                   GRM.with_error_check("dump_html") { LibGRM.dump_html(plot_id) }
                  else
-                   LibGRM.dump_html(nil)
+                   GRM.with_error_check("dump_html") { LibGRM.dump_html(nil) }
                  end
       String.new(html_ptr)
     end
 
     def to_json : String
-      json_ptr = LibGRM.dump_json_str
+      json_ptr = GRM.with_error_check("dump_json_str") { LibGRM.dump_json_str }
       String.new(json_ptr)
     end
 
     # Cleanup
     def finalize
-      LibGRM.args_delete(@args)
+      GRM.with_error_check("args_delete") { LibGRM.args_delete(@args) }
+    end
+
+    private def args_push(args, key, format, *values)
+      GRM.with_error_check("args_push") { LibGRM.args_push(args, key, format, *values) }
     end
   end
 end

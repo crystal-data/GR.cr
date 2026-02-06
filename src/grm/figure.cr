@@ -50,8 +50,8 @@ module GRM
 
       # Handle re-rendering: clear existing figure if already created
       if @created
-        LibGRM.switch(@plot_id)
-        LibGRM.clear
+        GRM.with_error_check("switch") { LibGRM.switch(@plot_id) }
+        GRM.with_error_check("clear") { LibGRM.clear }
       end
 
       last_index = @plots.size - 1
@@ -63,19 +63,19 @@ module GRM
         temp_args = plot.build_series_args
 
         # Add plot_id to the clean args
-        LibGRM.args_push(temp_args, "plot_id", "i", @plot_id)
+        GRM.with_error_check("args_push") { LibGRM.args_push(temp_args, "plot_id", "i", @plot_id) }
 
         # Include figure-level properties in the last series (no additional fig_args merge)
         if i == last_index
-          LibGRM.args_push(temp_args, "title", "s", @title.as(String)) if @title
-          LibGRM.args_push(temp_args, "xlabel", "s", @xlabel.as(String)) if @xlabel
-          LibGRM.args_push(temp_args, "ylabel", "s", @ylabel.as(String)) if @ylabel
+          GRM.with_error_check("args_push") { LibGRM.args_push(temp_args, "title", "s", @title.as(String)) } if @title
+          GRM.with_error_check("args_push") { LibGRM.args_push(temp_args, "xlabel", "s", @xlabel.as(String)) } if @xlabel
+          GRM.with_error_check("args_push") { LibGRM.args_push(temp_args, "ylabel", "s", @ylabel.as(String)) } if @ylabel
         end
 
         # Try merging each series individually instead of using merge_hold
-        LibGRM.merge(temp_args)
+        GRM.with_error_check("merge") { LibGRM.merge(temp_args) }
 
-        LibGRM.args_delete(temp_args)
+        GRM.with_error_check("args_delete") { LibGRM.args_delete(temp_args) }
       end
 
       @created = true
@@ -90,8 +90,8 @@ module GRM
       show if !@created || @dirty
 
       # At this point, @created is true (figure exists in GRM)
-      LibGRM.switch(@plot_id) # Safe to switch to existing figure
-      LibGRM.export(path)
+      GRM.with_error_check("switch") { LibGRM.switch(@plot_id) } # Safe to switch to existing figure
+      GRM.with_error_check("export") { LibGRM.export(path) }
       self
     end
 
@@ -122,8 +122,8 @@ module GRM
       show if !@created || @dirty
 
       # At this point, @created is true (figure exists in GRM)
-      LibGRM.switch(@plot_id) # Safe to switch to existing figure
-      html_ptr = id ? LibGRM.dump_html(id) : LibGRM.dump_html(nil)
+      GRM.with_error_check("switch") { LibGRM.switch(@plot_id) } # Safe to switch to existing figure
+      html_ptr = id ? GRM.with_error_check("dump_html") { LibGRM.dump_html(id) } : GRM.with_error_check("dump_html") { LibGRM.dump_html(nil) }
       String.new(html_ptr)
     end
 
@@ -134,16 +134,16 @@ module GRM
       show if !@created || @dirty
 
       # At this point, @created is true (figure exists in GRM)
-      LibGRM.switch(@plot_id) # Safe to switch to existing figure
-      json_ptr = LibGRM.dump_json_str
+      GRM.with_error_check("switch") { LibGRM.switch(@plot_id) } # Safe to switch to existing figure
+      json_ptr = GRM.with_error_check("dump_json_str") { LibGRM.dump_json_str }
       String.new(json_ptr)
     end
 
     def clear
       # Clear the figure if it was created
       if @created
-        LibGRM.switch(@plot_id)
-        LibGRM.clear
+        GRM.with_error_check("switch") { LibGRM.switch(@plot_id) }
+        GRM.with_error_check("clear") { LibGRM.clear }
       end
 
       @plots.clear
