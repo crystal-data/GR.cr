@@ -82,8 +82,8 @@ module GRM
   class Args
     alias Reference = Args | String | Array(String) | Array(Int32) | Array(Int64) | Array(Float64) | Array(LibC::Char*) | Array(Args)
 
-    getter ptr
-    getter? deleted
+    getter ptr : LibGRM::ArgsT
+    getter? deleted : Bool
 
     def initialize
       @ptr = GRM.with_error_check("args_new") { LibGRM.args_new }
