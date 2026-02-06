@@ -184,14 +184,14 @@
   </h2>
   
     
-      <a href="https://github.com/crystal-data/GR.cr/blob/ab45b4bd2d13a8929335d2c6627ec4df45560bd7/src/gr3.cr#L5" target="_blank">
+      <a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L5" target="_blank">
         gr3.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/crystal-data/GR.cr/blob/ab45b4bd2d13a8929335d2c6627ec4df45560bd7/src/gr3/libgr3.cr#L1" target="_blank">
+      <a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3/libgr3.cr#L1" target="_blank">
         gr3/libgr3.cr
       </a>
     
@@ -220,82 +220,187 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#cameralookat%28%2Aargs%29-instance-method" class="signature"><strong>#cameralookat</strong>(*args)</a>
+        <a href="#cameralookat%28camera_x%2Ccamera_y%2Ccamera_z%2Ccenter_x%2Ccenter_y%2Ccenter_z%2Cup_x%2Cup_y%2Cup_z%29-instance-method" class="signature"><strong>#cameralookat</strong>(camera_x, camera_y, camera_z, center_x, center_y, center_z, up_x, up_y, up_z)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#clear%28%2Aargs%29-instance-method" class="signature"><strong>#clear</strong>(*args)</a>
+        <a href="#clear-instance-method" class="signature"><strong>#clear</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#deletemesh%28%2Aargs%29-instance-method" class="signature"><strong>#deletemesh</strong>(*args)</a>
+        <a href="#createheightmapmesh%28heightmap%2Cnum_columns%2Cnum_rows%29-instance-method" class="signature"><strong>#createheightmapmesh</strong>(heightmap, num_columns, num_rows)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#drawimage%28%2Aargs%29-instance-method" class="signature"><strong>#drawimage</strong>(*args)</a>
+        <a href="#createindexedmesh%28number_of_vertices%2Cvertices%2Cnormals%2Ccolors%2Cnumber_of_indices%2Cindices%29-instance-method" class="signature"><strong>#createindexedmesh</strong>(number_of_vertices, vertices, normals, colors, number_of_indices, indices)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#drawsurface%28%2Aargs%29-instance-method" class="signature"><strong>#drawsurface</strong>(*args)</a>
+        <a href="#createmesh%28n%2Cvertices%2Cnormals%2Ccolors%29-instance-method" class="signature"><strong>#createmesh</strong>(n, vertices, normals, colors)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#getprojectiontype%28%2Aargs%29-instance-method" class="signature"><strong>#getprojectiontype</strong>(*args)</a>
+        <a href="#createmesh_nocopy%28n%2Cvertices%2Cnormals%2Ccolors%29-instance-method" class="signature"><strong>#createmesh_nocopy</strong>(n, vertices, normals, colors)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#setbackgroundcolor%28%2Aargs%29-instance-method" class="signature"><strong>#setbackgroundcolor</strong>(*args)</a>
+        <a href="#deletemesh%28mesh%29-instance-method" class="signature"><strong>#deletemesh</strong>(mesh)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#setcameraprojectionparameters%28%2Aargs%29-instance-method" class="signature"><strong>#setcameraprojectionparameters</strong>(*args)</a>
+        <a href="#drawconemesh%28n%2Cpositions%2Cdirections%2Ccolors%2Cradii%2Clengths%29-instance-method" class="signature"><strong>#drawconemesh</strong>(n, positions, directions, colors, radii, lengths)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#setlightdirection%28%2Aargs%29-instance-method" class="signature"><strong>#setlightdirection</strong>(*args)</a>
+        <a href="#drawcubemesh%28n%2Cpositions%2Cdirections%2Cups%2Ccolors%2Cscales%29-instance-method" class="signature"><strong>#drawcubemesh</strong>(n, positions, directions, ups, colors, scales)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#setobjectid%28%2Aargs%29-instance-method" class="signature"><strong>#setobjectid</strong>(*args)</a>
+        <a href="#drawcylindermesh%28n%2Cpositions%2Cdirections%2Ccolors%2Cradii%2Clengths%29-instance-method" class="signature"><strong>#drawcylindermesh</strong>(n, positions, directions, colors, radii, lengths)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#setorthographicprojection%28%2Aargs%29-instance-method" class="signature"><strong>#setorthographicprojection</strong>(*args)</a>
+        <a href="#drawheightmap%28heightmap%2Cnum_columns%2Cnum_rows%2Cpositions%2Cscales%29-instance-method" class="signature"><strong>#drawheightmap</strong>(heightmap, num_columns, num_rows, positions, scales)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#setprojectiontype%28%2Aargs%29-instance-method" class="signature"><strong>#setprojectiontype</strong>(*args)</a>
+        <a href="#drawimage%28xmin%2Cxmax%2Cymin%2Cymax%2Cwidth%2Cheight%2Cdrawable_type%29-instance-method" class="signature"><strong>#drawimage</strong>(xmin, xmax, ymin, ymax, width, height, drawable_type)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#setquality%28%2Aargs%29-instance-method" class="signature"><strong>#setquality</strong>(*args)</a>
+        <a href="#drawmesh%28mesh%2Cn%2Cpositions%2Cdirections%2Cups%2Ccolors%2Cscales%29-instance-method" class="signature"><strong>#drawmesh</strong>(mesh, n, positions, directions, ups, colors, scales)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#terminate%28%2Aargs%29-instance-method" class="signature"><strong>#terminate</strong>(*args)</a>
+        <a href="#drawspheremesh%28n%2Cpositions%2Ccolors%2Cradii%29-instance-method" class="signature"><strong>#drawspheremesh</strong>(n, positions, colors, radii)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#usecurrentframebuffer%28%2Aargs%29-instance-method" class="signature"><strong>#usecurrentframebuffer</strong>(*args)</a>
+        <a href="#drawsurface%28mesh%29-instance-method" class="signature"><strong>#drawsurface</strong>(mesh)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#useframebuffer%28%2Aargs%29-instance-method" class="signature"><strong>#useframebuffer</strong>(*args)</a>
+        <a href="#export%28filename%2Cwidth%2Cheight%29-instance-method" class="signature"><strong>#export</strong>(filename, width, height)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#free%28pointer%29-instance-method" class="signature"><strong>#free</strong>(pointer)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#getcameraprojectionparameters%28vfov%2Cznear%2Czfar%29-instance-method" class="signature"><strong>#getcameraprojectionparameters</strong>(vfov, znear, zfar)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#geterror%28clear%2Cline%2Cfile%29-instance-method" class="signature"><strong>#geterror</strong>(clear, line, file)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#geterrorstring%28error%29-instance-method" class="signature"><strong>#geterrorstring</strong>(error)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#getimage%28width%2Cheight%2Cuse_alpha%2Cpixels%29-instance-method" class="signature"><strong>#getimage</strong>(width, height, use_alpha, pixels)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#getprojectiontype-instance-method" class="signature"><strong>#getprojectiontype</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#getrenderpathstring-instance-method" class="signature"><strong>#getrenderpathstring</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#getviewmatrix%28m%29-instance-method" class="signature"><strong>#getviewmatrix</strong>(m)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#init%28attrib_list%3Dnil%29-instance-method" class="signature"><strong>#init</strong>(attrib_list = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#selectid%28x%2Cy%2Cwidth%2Cheight%2Cselection_id%29-instance-method" class="signature"><strong>#selectid</strong>(x, y, width, height, selection_id)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setbackgroundcolor%28red%2Cgreen%2Cblue%2Calpha%29-instance-method" class="signature"><strong>#setbackgroundcolor</strong>(red, green, blue, alpha)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setcameraprojectionparameters%28vertical_field_of_view%2Cznear%2Czfar%29-instance-method" class="signature"><strong>#setcameraprojectionparameters</strong>(vertical_field_of_view, znear, zfar)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setlightdirection%28x%2Cy%2Cz%29-instance-method" class="signature"><strong>#setlightdirection</strong>(x, y, z)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setobjectid%28id%29-instance-method" class="signature"><strong>#setobjectid</strong>(id)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setprojectiontype%28type%29-instance-method" class="signature"><strong>#setprojectiontype</strong>(type)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setquality%28quality%29-instance-method" class="signature"><strong>#setquality</strong>(quality)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setviewmatrix%28m%29-instance-method" class="signature"><strong>#setviewmatrix</strong>(m)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#terminate-instance-method" class="signature"><strong>#terminate</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#triangulate%28data%2Cisolevel%2Cdim_x%2Cdim_y%2Cdim_z%2Cstride_x%2Cstride_y%2Cstride_z%2Cstep_x%2Cstep_y%2Cstep_z%2Coffset_x%2Coffset_y%2Coffset_z%2Ctriangles_p%29-instance-method" class="signature"><strong>#triangulate</strong>(data, isolevel, dim_x, dim_y, dim_z, stride_x, stride_y, stride_z, step_x, step_y, step_z, offset_x, offset_y, offset_z, triangles_p)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#usecurrentframebuffer-instance-method" class="signature"><strong>#usecurrentframebuffer</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#useframebuffer%28framebuffer%29-instance-method" class="signature"><strong>#useframebuffer</strong>(framebuffer)</a>
         
       </li>
     
@@ -360,258 +465,594 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="cameralookat(*args)-instance-method">
+    <div class="entry-detail" id="cameralookat(camera_x,camera_y,camera_z,center_x,center_y,center_z,up_x,up_y,up_z)-instance-method">
       <div class="signature">
         
-        def <strong>cameralookat</strong>(*args)
+        def <strong>cameralookat</strong>(camera_x, camera_y, camera_z, center_x, center_y, center_z, up_x, up_y, up_z)
 
-        <a class="method-permalink" href="#cameralookat%28%2Aargs%29-instance-method">#</a>
+        <a class="method-permalink" href="#cameralookat%28camera_x%2Ccamera_y%2Ccamera_z%2Ccenter_x%2Ccenter_y%2Ccenter_z%2Cup_x%2Cup_y%2Cup_z%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/ab45b4bd2d13a8929335d2c6627ec4df45560bd7/src/gr3.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L101" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="clear(*args)-instance-method">
+    <div class="entry-detail" id="clear-instance-method">
       <div class="signature">
         
-        def <strong>clear</strong>(*args)
+        def <strong>clear</strong>
 
-        <a class="method-permalink" href="#clear%28%2Aargs%29-instance-method">#</a>
+        <a class="method-permalink" href="#clear-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/ab45b4bd2d13a8929335d2c6627ec4df45560bd7/src/gr3.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L37" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="deletemesh(*args)-instance-method">
+    <div class="entry-detail" id="createheightmapmesh(heightmap,num_columns,num_rows)-instance-method">
       <div class="signature">
         
-        def <strong>deletemesh</strong>(*args)
+        def <strong>createheightmapmesh</strong>(heightmap, num_columns, num_rows)
 
-        <a class="method-permalink" href="#deletemesh%28%2Aargs%29-instance-method">#</a>
+        <a class="method-permalink" href="#createheightmapmesh%28heightmap%2Cnum_columns%2Cnum_rows%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/ab45b4bd2d13a8929335d2c6627ec4df45560bd7/src/gr3.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L155" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="drawimage(*args)-instance-method">
+    <div class="entry-detail" id="createindexedmesh(number_of_vertices,vertices,normals,colors,number_of_indices,indices)-instance-method">
       <div class="signature">
         
-        def <strong>drawimage</strong>(*args)
+        def <strong>createindexedmesh</strong>(number_of_vertices, vertices, normals, colors, number_of_indices, indices)
 
-        <a class="method-permalink" href="#drawimage%28%2Aargs%29-instance-method">#</a>
+        <a class="method-permalink" href="#createindexedmesh%28number_of_vertices%2Cvertices%2Cnormals%2Ccolors%2Cnumber_of_indices%2Cindices%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/ab45b4bd2d13a8929335d2c6627ec4df45560bd7/src/gr3.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L69" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="drawsurface(*args)-instance-method">
+    <div class="entry-detail" id="createmesh(n,vertices,normals,colors)-instance-method">
       <div class="signature">
         
-        def <strong>drawsurface</strong>(*args)
+        def <strong>createmesh</strong>(n, vertices, normals, colors)
 
-        <a class="method-permalink" href="#drawsurface%28%2Aargs%29-instance-method">#</a>
+        <a class="method-permalink" href="#createmesh%28n%2Cvertices%2Cnormals%2Ccolors%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/ab45b4bd2d13a8929335d2c6627ec4df45560bd7/src/gr3.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L63" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="getprojectiontype(*args)-instance-method">
+    <div class="entry-detail" id="createmesh_nocopy(n,vertices,normals,colors)-instance-method">
       <div class="signature">
         
-        def <strong>getprojectiontype</strong>(*args)
+        def <strong>createmesh_nocopy</strong>(n, vertices, normals, colors)
 
-        <a class="method-permalink" href="#getprojectiontype%28%2Aargs%29-instance-method">#</a>
+        <a class="method-permalink" href="#createmesh_nocopy%28n%2Cvertices%2Cnormals%2Ccolors%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/ab45b4bd2d13a8929335d2c6627ec4df45560bd7/src/gr3.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L57" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="setbackgroundcolor(*args)-instance-method">
+    <div class="entry-detail" id="deletemesh(mesh)-instance-method">
       <div class="signature">
         
-        def <strong>setbackgroundcolor</strong>(*args)
+        def <strong>deletemesh</strong>(mesh)
 
-        <a class="method-permalink" href="#setbackgroundcolor%28%2Aargs%29-instance-method">#</a>
+        <a class="method-permalink" href="#deletemesh%28mesh%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/ab45b4bd2d13a8929335d2c6627ec4df45560bd7/src/gr3.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L81" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="setcameraprojectionparameters(*args)-instance-method">
+    <div class="entry-detail" id="drawconemesh(n,positions,directions,colors,radii,lengths)-instance-method">
       <div class="signature">
         
-        def <strong>setcameraprojectionparameters</strong>(*args)
+        def <strong>drawconemesh</strong>(n, positions, directions, colors, radii, lengths)
 
-        <a class="method-permalink" href="#setcameraprojectionparameters%28%2Aargs%29-instance-method">#</a>
+        <a class="method-permalink" href="#drawconemesh%28n%2Cpositions%2Cdirections%2Ccolors%2Cradii%2Clengths%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/ab45b4bd2d13a8929335d2c6627ec4df45560bd7/src/gr3.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L85" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="setlightdirection(*args)-instance-method">
+    <div class="entry-detail" id="drawcubemesh(n,positions,directions,ups,colors,scales)-instance-method">
       <div class="signature">
         
-        def <strong>setlightdirection</strong>(*args)
+        def <strong>drawcubemesh</strong>(n, positions, directions, ups, colors, scales)
 
-        <a class="method-permalink" href="#setlightdirection%28%2Aargs%29-instance-method">#</a>
+        <a class="method-permalink" href="#drawcubemesh%28n%2Cpositions%2Cdirections%2Cups%2Ccolors%2Cscales%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/ab45b4bd2d13a8929335d2c6627ec4df45560bd7/src/gr3.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L97" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="setobjectid(*args)-instance-method">
+    <div class="entry-detail" id="drawcylindermesh(n,positions,directions,colors,radii,lengths)-instance-method">
       <div class="signature">
         
-        def <strong>setobjectid</strong>(*args)
+        def <strong>drawcylindermesh</strong>(n, positions, directions, colors, radii, lengths)
 
-        <a class="method-permalink" href="#setobjectid%28%2Aargs%29-instance-method">#</a>
+        <a class="method-permalink" href="#drawcylindermesh%28n%2Cpositions%2Cdirections%2Ccolors%2Cradii%2Clengths%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/ab45b4bd2d13a8929335d2c6627ec4df45560bd7/src/gr3.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L89" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="setorthographicprojection(*args)-instance-method">
+    <div class="entry-detail" id="drawheightmap(heightmap,num_columns,num_rows,positions,scales)-instance-method">
       <div class="signature">
         
-        def <strong>setorthographicprojection</strong>(*args)
+        def <strong>drawheightmap</strong>(heightmap, num_columns, num_rows, positions, scales)
 
-        <a class="method-permalink" href="#setorthographicprojection%28%2Aargs%29-instance-method">#</a>
+        <a class="method-permalink" href="#drawheightmap%28heightmap%2Cnum_columns%2Cnum_rows%2Cpositions%2Cscales%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/ab45b4bd2d13a8929335d2c6627ec4df45560bd7/src/gr3.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L159" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="setprojectiontype(*args)-instance-method">
+    <div class="entry-detail" id="drawimage(xmin,xmax,ymin,ymax,width,height,drawable_type)-instance-method">
       <div class="signature">
         
-        def <strong>setprojectiontype</strong>(*args)
+        def <strong>drawimage</strong>(xmin, xmax, ymin, ymax, width, height, drawable_type)
 
-        <a class="method-permalink" href="#setprojectiontype%28%2Aargs%29-instance-method">#</a>
+        <a class="method-permalink" href="#drawimage%28xmin%2Cxmax%2Cymin%2Cymax%2Cwidth%2Cheight%2Cdrawable_type%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/ab45b4bd2d13a8929335d2c6627ec4df45560bd7/src/gr3.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L53" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="setquality(*args)-instance-method">
+    <div class="entry-detail" id="drawmesh(mesh,n,positions,directions,ups,colors,scales)-instance-method">
       <div class="signature">
         
-        def <strong>setquality</strong>(*args)
+        def <strong>drawmesh</strong>(mesh, n, positions, directions, ups, colors, scales)
 
-        <a class="method-permalink" href="#setquality%28%2Aargs%29-instance-method">#</a>
+        <a class="method-permalink" href="#drawmesh%28mesh%2Cn%2Cpositions%2Cdirections%2Cups%2Ccolors%2Cscales%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/ab45b4bd2d13a8929335d2c6627ec4df45560bd7/src/gr3.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L77" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="terminate(*args)-instance-method">
+    <div class="entry-detail" id="drawspheremesh(n,positions,colors,radii)-instance-method">
       <div class="signature">
         
-        def <strong>terminate</strong>(*args)
+        def <strong>drawspheremesh</strong>(n, positions, colors, radii)
 
-        <a class="method-permalink" href="#terminate%28%2Aargs%29-instance-method">#</a>
+        <a class="method-permalink" href="#drawspheremesh%28n%2Cpositions%2Ccolors%2Cradii%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/ab45b4bd2d13a8929335d2c6627ec4df45560bd7/src/gr3.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L93" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="usecurrentframebuffer(*args)-instance-method">
+    <div class="entry-detail" id="drawsurface(mesh)-instance-method">
       <div class="signature">
         
-        def <strong>usecurrentframebuffer</strong>(*args)
+        def <strong>drawsurface</strong>(mesh)
 
-        <a class="method-permalink" href="#usecurrentframebuffer%28%2Aargs%29-instance-method">#</a>
+        <a class="method-permalink" href="#drawsurface%28mesh%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/ab45b4bd2d13a8929335d2c6627ec4df45560bd7/src/gr3.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L163" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="useframebuffer(*args)-instance-method">
+    <div class="entry-detail" id="export(filename,width,height)-instance-method">
       <div class="signature">
         
-        def <strong>useframebuffer</strong>(*args)
+        def <strong>export</strong>(filename, width, height)
 
-        <a class="method-permalink" href="#useframebuffer%28%2Aargs%29-instance-method">#</a>
+        <a class="method-permalink" href="#export%28filename%2Cwidth%2Cheight%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/ab45b4bd2d13a8929335d2c6627ec4df45560bd7/src/gr3.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L127" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="free(pointer)-instance-method">
+      <div class="signature">
+        
+        def <strong>free</strong>(pointer)
+
+        <a class="method-permalink" href="#free%28pointer%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L21" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="getcameraprojectionparameters(vfov,znear,zfar)-instance-method">
+      <div class="signature">
+        
+        def <strong>getcameraprojectionparameters</strong>(vfov, znear, zfar)
+
+        <a class="method-permalink" href="#getcameraprojectionparameters%28vfov%2Cznear%2Czfar%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L111" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="geterror(clear,line,file)-instance-method">
+      <div class="signature">
+        
+        def <strong>geterror</strong>(clear, line, file)
+
+        <a class="method-permalink" href="#geterror%28clear%2Cline%2Cfile%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L25" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="geterrorstring(error)-instance-method">
+      <div class="signature">
+        
+        def <strong>geterrorstring</strong>(error)
+
+        <a class="method-permalink" href="#geterrorstring%28error%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L29" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="getimage(width,height,use_alpha,pixels)-instance-method">
+      <div class="signature">
+        
+        def <strong>getimage</strong>(width, height, use_alpha, pixels)
+
+        <a class="method-permalink" href="#getimage%28width%2Cheight%2Cuse_alpha%2Cpixels%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L49" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="getprojectiontype-instance-method">
+      <div class="signature">
+        
+        def <strong>getprojectiontype</strong>
+
+        <a class="method-permalink" href="#getprojectiontype-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L139" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="getrenderpathstring-instance-method">
+      <div class="signature">
+        
+        def <strong>getrenderpathstring</strong>
+
+        <a class="method-permalink" href="#getrenderpathstring-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L33" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="getviewmatrix(m)-instance-method">
+      <div class="signature">
+        
+        def <strong>getviewmatrix</strong>(m)
+
+        <a class="method-permalink" href="#getviewmatrix%28m%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L147" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="init(attrib_list=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>init</strong>(attrib_list = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#init%28attrib_list%3Dnil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="selectid(x,y,width,height,selection_id)-instance-method">
+      <div class="signature">
+        
+        def <strong>selectid</strong>(x, y, width, height, selection_id)
+
+        <a class="method-permalink" href="#selectid%28x%2Cy%2Cwidth%2Cheight%2Cselection_id%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L135" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setbackgroundcolor(red,green,blue,alpha)-instance-method">
+      <div class="signature">
+        
+        def <strong>setbackgroundcolor</strong>(red, green, blue, alpha)
+
+        <a class="method-permalink" href="#setbackgroundcolor%28red%2Cgreen%2Cblue%2Calpha%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L119" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setcameraprojectionparameters(vertical_field_of_view,znear,zfar)-instance-method">
+      <div class="signature">
+        
+        def <strong>setcameraprojectionparameters</strong>(vertical_field_of_view, znear, zfar)
+
+        <a class="method-permalink" href="#setcameraprojectionparameters%28vertical_field_of_view%2Cznear%2Czfar%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L107" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setlightdirection(x,y,z)-instance-method">
+      <div class="signature">
+        
+        def <strong>setlightdirection</strong>(x, y, z)
+
+        <a class="method-permalink" href="#setlightdirection%28x%2Cy%2Cz%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L115" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setobjectid(id)-instance-method">
+      <div class="signature">
+        
+        def <strong>setobjectid</strong>(id)
+
+        <a class="method-permalink" href="#setobjectid%28id%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L131" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setprojectiontype(type)-instance-method">
+      <div class="signature">
+        
+        def <strong>setprojectiontype</strong>(type)
+
+        <a class="method-permalink" href="#setprojectiontype%28type%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L143" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setquality(quality)-instance-method">
+      <div class="signature">
+        
+        def <strong>setquality</strong>(quality)
+
+        <a class="method-permalink" href="#setquality%28quality%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L123" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setviewmatrix(m)-instance-method">
+      <div class="signature">
+        
+        def <strong>setviewmatrix</strong>(m)
+
+        <a class="method-permalink" href="#setviewmatrix%28m%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L151" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="terminate-instance-method">
+      <div class="signature">
+        
+        def <strong>terminate</strong>
+
+        <a class="method-permalink" href="#terminate-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="triangulate(data,isolevel,dim_x,dim_y,dim_z,stride_x,stride_y,stride_z,step_x,step_y,step_z,offset_x,offset_y,offset_z,triangles_p)-instance-method">
+      <div class="signature">
+        
+        def <strong>triangulate</strong>(data, isolevel, dim_x, dim_y, dim_z, stride_x, stride_y, stride_z, step_x, step_y, step_z, offset_x, offset_y, offset_z, triangles_p)
+
+        <a class="method-permalink" href="#triangulate%28data%2Cisolevel%2Cdim_x%2Cdim_y%2Cdim_z%2Cstride_x%2Cstride_y%2Cstride_z%2Cstep_x%2Cstep_y%2Cstep_z%2Coffset_x%2Coffset_y%2Coffset_z%2Ctriangles_p%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L167" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="usecurrentframebuffer-instance-method">
+      <div class="signature">
+        
+        def <strong>usecurrentframebuffer</strong>
+
+        <a class="method-permalink" href="#usecurrentframebuffer-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L41" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="useframebuffer(framebuffer)-instance-method">
+      <div class="signature">
+        
+        def <strong>useframebuffer</strong>(framebuffer)
+
+        <a class="method-permalink" href="#useframebuffer%28framebuffer%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/d07526ad8b3a38767d1e30cf6d518061d993893c/src/gr3.cr#L45" target="_blank">View source</a>]
         
       </div>
     </div>
