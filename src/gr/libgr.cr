@@ -42,12 +42,14 @@ module GR
     struct CpuBasedVolume2PassT
       dmin : LibC::Double
       dmax : LibC::Double
+      action : LibC::Int
       priv : CpubasedvolumePassPrivT*
     end
 
     struct Hexbin2PassT
       nc : LibC::Int
-      nntmax : LibC::Int
+      cntmax : LibC::Int
+      action : LibC::Int
       priv : HexbinPassPrivT*
     end
 
@@ -255,14 +257,16 @@ module GR
     # Selection
     fun beginselection = gr_beginselection(index : LibC::Int, type : LibC::Int)
     fun endselection = gr_endselection
-    fun setbboxcallback = gr_setbboxcallback(type : LibC::Int, callback : (LibC::Int, LibC::Double, LibC::Double, LibC::Double, LibC::Double -> Void))
+    fun setbboxcallback = gr_setbboxcallback(type : LibC::Int, bbox_cb : (LibC::Int, LibC::Double, LibC::Double, LibC::Double, LibC::Double -> Void), hit_cb : (LibC::UInt, LibC::UInt, LibC::UInt* -> Void))
     fun cancelbboxcallback = gr_cancelbboxcallback
+    fun beginpartial = gr_beginpartial(type : LibC::Int, callback : (LibC::Int, LibC::UInt, LibC::UInt, LibC::UInt, LibC::UInt, LibC::UInt* -> Void))
+    fun endpartial = gr_endpartial(type : LibC::Int)
     fun moveselection = gr_moveselection(x : LibC::Double, y : LibC::Double)
     fun resizeselection = gr_resizeselection(type : LibC::Int, x : LibC::Double, y : LibC::Double)
     fun inqbbox = gr_inqbbox(xmin : LibC::Double*, xmax : LibC::Double*, ymin : LibC::Double*, ymax : LibC::Double*)
 
     # Background
-    fun setbackground = gr_setbackground
+    fun setbackground = gr_setbackground(red : LibC::Double, green : LibC::Double, blue : LibC::Double, alpha : LibC::Double)
     fun clearbackground = gr_clearbackground
 
     # System information
@@ -320,6 +324,7 @@ module GR
     # Clipping
     fun selectclipxform = gr_selectclipxform(transform : LibC::Int)
     fun inqclipxform = gr_inqclipxform(transform : LibC::Int*)
+    fun inqclip = gr_inqclip(indicator : LibC::Int*, rectangle : LibC::Double*)
 
     # 3D projection
     fun setprojectiontype = gr_setprojectiontype(type : LibC::Int)
