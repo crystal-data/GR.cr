@@ -7,21 +7,46 @@ module GRM
   lib LibGRM
     # Type definitions
     type ArgsT = Void*
-    type ArgsIteratorT = Void*
-    type ArgsValueIteratorT = Void*
-    type ArgsPtrT = Void*
-    type EventCallbackT = Void*
+    type ArgsPtrT = ArgsT
+
+    struct ArgT
+      key : LibC::Char*
+      value_ptr : Void*
+      value_format : LibC::Char*
+      priv : Void*
+    end
+
+    struct ArgsIteratorT
+      next : (ArgsIteratorT* -> ArgT*)
+      arg : ArgT*
+      priv : Void*
+    end
+
+    struct ArgsValueIteratorT
+      next : (ArgsValueIteratorT* -> Void*)
+      value_ptr : Void*
+      format : LibC::Char
+      is_array : LibC::Int
+      array_length : LibC::SizeT
+      priv : Void*
+    end
 
     # File type for compatibility - treated as opaque pointer
     type File = Void*
 
+    # Layout types
+    type GridT = Void*
+    type ElementT = Void*
+
     # Event system types
     enum EventTypeT
-      GrmEventNewPlot     = 0
-      GrmEventUpdatePlot  = 1
-      GrmEventSize        = 2
-      GrmEventMergeEnd    = 3
-      X_GrmEventTypeCount = 4
+      GrmEventNewPlot        = 0
+      GrmEventUpdatePlot     = 1
+      GrmEventSize           = 2
+      GrmEventMergeEnd       = 3
+      GrmEventRequest        = 4
+      GrmEventIntegralUpdate = 5
+      X_GrmEventTypeCount    = 6
     end
 
     union EventT
@@ -29,6 +54,8 @@ module GRM
       size_event : SizeEventT
       update_plot_event : UpdatePlotEventT
       merge_end_event : MergeEndEventT
+      request_event : RequestEventT
+      integral_update_event : IntegralUpdateEventT
     end
 
     struct NewPlotEventT
@@ -53,21 +80,107 @@ module GRM
       identificator : LibC::Char*
     end
 
+    struct RequestEventT
+      type : EventTypeT
+      request_string : LibC::Char*
+    end
+
+    struct IntegralUpdateEventT
+      type : EventTypeT
+      int_lim_low : LibC::Double
+      int_lim_high : LibC::Double
+    end
+
+    type EventCallbackT = (EventT* -> Void)
+
     struct TooltipInfoT
       x : LibC::Double
       y : LibC::Double
       x_px : LibC::Int
       y_px : LibC::Int
-      xlabel : LibC::Char*
-      ylabel : LibC::Char*
+      x_label : LibC::Char*
+      y_label : LibC::Char*
       label : LibC::Char*
     end
 
-    # Additional tooltip type for accumulated tooltips
-    type AccumulatedTooltipInfoT = Void*
+    struct AccumulatedTooltipInfoT
+      n : LibC::Int
+      x : LibC::Double
+      y : LibC::Double*
+      x_px : LibC::Int
+      y_px : LibC::Int
+      x_label : LibC::Char*
+      y_labels : LibC::Char**
+    end
+
+    enum ErrorT
+      GrmErrorNone                                =  0
+      GrmErrorUnspecified                         =  1
+      GrmErrorInternal                            =  2
+      GrmErrorMalloc                              =  3
+      GrmErrorUnsupportedOperation                =  4
+      GrmErrorUnsupportedDatatype                 =  5
+      GrmErrorInvalidArgument                     =  6
+      GrmErrorArgsInvalidKey                      =  7
+      GrmErrorArgsIncreasingNonArrayValue         =  8
+      GrmErrorArgsIncreasingMultiDimensionalArray =  9
+      GrmErrorParseNull                           = 10
+      GrmErrorParseBool                           = 11
+      GrmErrorParseInt                            = 12
+      GrmErrorParseDouble                         = 13
+      GrmErrorParseString                         = 14
+      GrmErrorParseArray                          = 15
+      GrmErrorParseObject                         = 16
+      GrmErrorParseUnknownDatatype                = 17
+      GrmErrorParseInvalidDelimiter               = 18
+      GrmErrorParseIncompleteString               = 19
+      GrmErrorParseMissingObjectContainer         = 20
+      GrmErrorParseXmlNoSchemaFile                = 21
+      GrmErrorParseXmlInvalidSchema               = 22
+      GrmErrorParseXmlFailedSchemaValidation      = 23
+      GrmErrorParseXmlParsing                     = 24
+      GrmErrorNetworkWinsockInit                  = 25
+      GrmErrorNetworkSocketCreation               = 26
+      GrmErrorNetworkSocketBind                   = 27
+      GrmErrorNetworkSocketListen                 = 28
+      GrmErrorNetworkConnectionAccept             = 29
+      GrmErrorNetworkHostnameResolution           = 30
+      GrmErrorNetworkConnect                      = 31
+      GrmErrorNetworkRecv                         = 32
+      GrmErrorNetworkRecvUnsupported              = 33
+      GrmErrorNetworkRecvConnectionShutdown       = 34
+      GrmErrorNetworkSend                         = 35
+      GrmErrorNetworkSendUnsupported              = 36
+      GrmErrorNetworkSocketClose                  = 37
+      GrmErrorNetworkWinsockCleanup               = 38
+      GrmErrorCustomRecv                          = 39
+      GrmErrorCustomSend                          = 40
+      GrmErrorPlotColormap                        = 41
+      GrmErrorPlotNormalization                   = 42
+      GrmErrorPlotUnknownKey                      = 43
+      GrmErrorPlotUnknownAlgorithm                = 44
+      GrmErrorPlotMissingAlgorithm                = 45
+      GrmErrorPlotUnknownKind                     = 46
+      GrmErrorPlotMissingData                     = 47
+      GrmErrorPlotComponentLengthMismatch         = 48
+      GrmErrorPlotMissingDimensions               = 49
+      GrmErrorPlotMissingLabels                   = 50
+      GrmErrorPlotInvalidId                       = 51
+      GrmErrorPlotOutOfRange                      = 52
+      GrmErrorPlotIncompatibleArguments           = 53
+      GrmErrorPlotInvalidRequest                  = 54
+      GrmErrorBase64BlockTooShort                 = 55
+      GrmErrorBase64InvalidCharacter              = 56
+      GrmErrorLayoutInvalidIndex                  = 57
+      GrmErrorLayoutContradictingAttributes       = 58
+      GrmErrorLayoutInvalidArgumentRange          = 59
+      GrmErrorLayoutComponentLengthMismatch       = 60
+      GrmErrorTmpDirCreation                      = 61
+      GrmErrorNotImplemented                      = 62
+    end
 
     # https://github.com/sciapp/gr/blob/master/lib/grm/include/grm/args.h
-    fun arg_value_iter = grm_arg_value_iter(arg : ArgsT) : ArgsValueIteratorT*
+    fun arg_value_iter = grm_arg_value_iter(arg : ArgT*) : ArgsValueIteratorT*
     fun args_new = grm_args_new : ArgsT
     fun args_delete = grm_args_delete(args : ArgsT)
     fun args_push = grm_args_push(args : ArgsT, key : LibC::Char*, value_format : LibC::Char*, ...) : LibC::Int
@@ -79,6 +192,13 @@ module GRM
     fun args_remove = grm_args_remove(args : ArgsT, key : LibC::Char*)
     fun args_iter = grm_args_iter(args : ArgsT) : ArgsIteratorT*
     fun length = grm_length(value : LibC::Double, unit : LibC::Char*) : ArgsPtrT
+
+    # https://github.com/sciapp/gr/blob/master/lib/grm/include/grm/base64.h
+    fun base64_decode = grm_base64_decode(dst : LibC::Char*, src : LibC::Char*, dst_len : LibC::SizeT*, was_successful : LibC::Int*) : LibC::Char*
+    fun base64_encode = grm_base64_encode(dst : LibC::Char*, src : LibC::Char*, src_len : LibC::SizeT, was_successful : LibC::Int*) : LibC::Char*
+
+    # https://github.com/sciapp/gr/blob/master/lib/grm/include/grm/util.h
+    fun get_stdout = grm_get_stdout : File*
 
     # https://github.com/sciapp/gr/blob/master/lib/grm/include/grm/dump.h
     fun dump = grm_dump(args : ArgsT, f : File*)
@@ -100,6 +220,30 @@ module GRM
     fun get_tooltips_x = grm_get_tooltips_x(mouse_x : LibC::Int, mouse_y : LibC::Int, array_length : LibC::UInt*) : TooltipInfoT**
     fun get_accumulated_tooltip_x = grm_get_accumulated_tooltip_x(mouse_x : LibC::Int, mouse_y : LibC::Int) : AccumulatedTooltipInfoT*
     fun get_hover_mode = grm_get_hover_mode(mouse_x : LibC::Int, mouse_y : LibC::Int, disable_movable_xform : LibC::Int) : LibC::Int
+
+    # https://github.com/sciapp/gr/blob/master/lib/grm/include/grm/layout.h
+    fun grid_new = grm_grid_new(nrows : LibC::Int, ncols : LibC::Int, a_grid : GridT*) : ErrorT
+    fun grid_print = grm_grid_print(grid : GridT)
+    fun grid_set_element = grm_grid_set_element(row : LibC::Int, col : LibC::Int, a_element : ElementT, a_grid : GridT) : ErrorT
+    fun grid_set_element_args = grm_grid_set_element_args(row : LibC::Int, col : LibC::Int, subplot_args : ArgsT, a_grid : GridT) : ErrorT
+    fun grid_set_element_slice = grm_grid_set_element_slice(row_start : LibC::Int, row_stop : LibC::Int, col_start : LibC::Int, col_stop : LibC::Int, a_element : ElementT, a_grid : GridT) : ErrorT
+    fun grid_set_element_args_slice = grm_grid_set_element_args_slice(row_start : LibC::Int, row_stop : LibC::Int, col_start : LibC::Int, col_stop : LibC::Int, subplot_args : ArgsT, a_grid : GridT) : ErrorT
+    fun grid_get_element = grm_grid_get_element(row : LibC::Int, col : LibC::Int, a_grid : GridT, a_element : ElementT*) : ErrorT
+    fun grid_ensure_cell_is_grid = grm_grid_ensure_cell_is_grid(row : LibC::Int, col : LibC::Int, a_grid : GridT) : ErrorT
+    fun grid_ensure_cells_are_grid = grm_grid_ensure_cells_are_grid(row_start : LibC::Int, row_stop : LibC::Int, col_start : LibC::Int, col_stop : LibC::Int, a_grid : GridT) : ErrorT
+    fun grid_finalize = grm_grid_finalize(a_grid : GridT)
+    fun grid_delete = grm_grid_delete(grid : GridT)
+    fun trim = grm_trim(a_grid : GridT)
+
+    fun element_new = grm_element_new(a_element : ElementT*) : ErrorT
+    fun element_set_abs_height = grm_element_set_abs_height(a_element : ElementT, height : LibC::Double) : ErrorT
+    fun element_set_relative_height = grm_element_set_relative_height(a_element : ElementT, height : LibC::Double) : ErrorT
+    fun element_set_abs_width = grm_element_set_abs_width(a_element : ElementT, width : LibC::Double) : ErrorT
+    fun element_set_relative_width = grm_element_set_relative_width(a_element : ElementT, width : LibC::Double) : ErrorT
+    fun element_set_aspect_ratio = grm_element_set_aspect_ratio(a_element : ElementT, ar : LibC::Double) : ErrorT
+    fun element_set_fit_parents_height = grm_element_set_fit_parents_height(a_element : ElementT, fit_parents_height : LibC::Int)
+    fun element_set_fit_parents_width = grm_element_set_fit_parents_width(a_element : ElementT, fit_parents_width : LibC::Int)
+    fun element_get_subplot = grm_element_get_subplot(a_element : ElementT, subplot : LibC::Double**)
 
     # https://github.com/sciapp/gr/blob/master/lib/grm/include/grm/net.h
     fun open = grm_open(is_receiver : LibC::Int, name : LibC::Char*, id : LibC::UInt, custom_recv : (LibC::Char*, LibC::UInt -> LibC::Char*), custom_send : (LibC::Char*, LibC::UInt, LibC::Char* -> LibC::Int)) : Void*
@@ -123,21 +267,14 @@ module GRM
     fun plot = grm_plot(args : ArgsT) : LibC::Int
     fun render = grm_render : LibC::Int
     fun process_tree = grm_process_tree : LibC::Int
-    fun export = grm_export(file_path : LibC::Char*) : LibC::Int
+    fun export = grm_export(file_path : LibC::Char*, export_xml : LibC::Int) : LibC::Int
     fun switch = grm_switch(id : LibC::UInt) : LibC::Int
     fun load_graphics_tree = grm_load_graphics_tree(file : File*) : LibC::Int
     fun validate = grm_validate : LibC::Int
+    fun get_error_code = grm_get_error_code : LibC::Int
 
-    # The following functions use C++ types that cannot be parsed by Crystal FFI
-    # fun get_document_root = grm_get_document_root : Void* # std::shared_ptr<GRM::Element>
-    # fun get_render = grm_get_render : Void* # std::shared_ptr<GRM::Render>
-    # fun iterate_grid = grm_iterate_grid(grid : Void*, parent_dom_element : Void*, plot_id : LibC::Int) : LibC::Int
-    # fun plot_helper = grm_plot_helper(grid_element : Void*, slice : Void*, parent_dom_element : Void*, plot_id : LibC::Int) : LibC::Int
-    # fun get_subplot_from_ndc_point_using_dom = grm_get_subplot_from_ndc_point_using_dom(x : LibC::Double, y : LibC::Double) : Void*
-    # fun get_subplot_from_ndc_points_using_dom = grm_get_subplot_from_ndc_points_using_dom(n : LibC::UInt, x : LibC::Double*, y : LibC::Double*) : Void*
-    # fun set_attribute_on_all_subplots = grm_set_attribute_on_all_subplots(attribute : LibC::Char*, value : LibC::Int)
-    # fun get_focus_and_factor_from_dom = grm_get_focus_and_factor_from_dom(x1 : LibC::Int, y1 : LibC::Int, x2 : LibC::Int, y2 : LibC::Int, keep_aspect_ratio : LibC::Int, factor_x : LibC::Double*, factor_y : LibC::Double*, focus_x : LibC::Double*, focus_y : LibC::Double*, subplot_element : Void*) : LibC::Int
-    # fun get_context_data = grm_get_context_data : Void* # std::map<std::string, std::list<std::string>>
-    # fun load_graphics_tree_schema = grm_load_graphics_tree_schema(with_private_attributes : Bool) : Void* # std::shared_ptr<GRM::Document>
+    # https://github.com/sciapp/gr/blob/master/lib/grm/include/grm/import.h
+    fun interactive_plot_from_file = grm_interactive_plot_from_file(args : ArgsT, argc : LibC::Int, argv : LibC::Char**) : LibC::Int
+    fun plot_from_file = grm_plot_from_file(argc : LibC::Int, argv : LibC::Char**) : LibC::Int
   end
 end
