@@ -235,28 +235,28 @@
   </h2>
   
     
-      <a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L7" target="_blank">
+      <a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L7" target="_blank">
         grm.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm/figure.cr#L4" target="_blank">
+      <a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm/figure.cr#L4" target="_blank">
         grm/figure.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm/libgrm.cr#L1" target="_blank">
+      <a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm/libgrm.cr#L1" target="_blank">
         grm/libgrm.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm/plot.cr#L3" target="_blank">
+      <a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm/plot.cr#L3" target="_blank">
         grm/plot.cr
       </a>
     
@@ -328,6 +328,8 @@
       <li class="entry-summary">
         <a href="#args_new-instance-method" class="signature"><strong>#args_new</strong></a>
         
+          <div class="summary"><p>Low-level LibGRM wrappers</p></div>
+        
       </li>
     
       <li class="entry-summary">
@@ -336,7 +338,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#bar%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#bar</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
+        <a href="#barplot%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#barplot</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -352,6 +354,11 @@
     
       <li class="entry-summary">
         <a href="#contour%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Array%28Number%29%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#contour</strong>(x : Array(Number), y : Array(Number), z : Array(Array(Number)), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#contourf%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Array%28Number%29%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#contourf</strong>(x : Array(Number), y : Array(Number), z : Array(Array(Number)), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -376,7 +383,12 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#hexbin%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#hexbin</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>)</a>
+        <a href="#heatmap%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Array%28Number%29%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#heatmap</strong>(x : Array(Number), y : Array(Number), z : Array(Array(Number)), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hexbin%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#hexbin</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -386,7 +398,12 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#line%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#line</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
+        <a href="#imshow%28z%3AArray%28Array%28Number%29%29%2Ctitle%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#imshow</strong>(z : Array(Array(Number)), title : String | Nil = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#isosurface%28c%3AArray%28Array%28Array%28Number%29%29%29%2Cisovalue%3ANumber%7CNil%3Dnil%2Ctitle%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#isosurface</strong>(c : Array(Array(Array(Number))), isovalue : Number | Nil = <span class="n">nil</span>, title : String | Nil = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -423,10 +440,14 @@
       <li class="entry-summary">
         <a href="#plot%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Number%29%7CNil%3Dnil%2Ckind%3AString%3D%22line%22%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Czlabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#plot</strong>(x : Array(Number), y : Array(Number), z : Array(Number) | Nil = <span class="n">nil</span>, kind : String = <span class="s">&quot;line&quot;</span>, title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, zlabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
         
+          <div class="summary"><p>High-level convenience helpers (Plot-based)</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#plot%28args%3AArgs%29-instance-method" class="signature"><strong>#plot</strong>(args : Args)</a>
+        
+          <div class="summary"><p>Low-level plot entrypoints</p></div>
         
       </li>
     
@@ -436,7 +457,17 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#plot3%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Czlabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#plot3</strong>(x : Array(Number), y : Array(Number), z : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, zlabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#polar%28theta%3AArray%28Number%29%2Cr%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#polar</strong>(theta : Array(Number), r : Array(Number), title : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#polarhistogram%28theta%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#polarhistogram</strong>(theta : Array(Number), title : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -451,17 +482,22 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#scatter3d%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Czlabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#scatter3d</strong>(x : Array(Number), y : Array(Number), z : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, zlabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
+        <a href="#scatter3%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Czlabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#scatter3</strong>(x : Array(Number), y : Array(Number), z : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, zlabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shade%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Array%28Number%29%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#shade</strong>(x : Array(Number), y : Array(Number), z : Array(Array(Number)), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#stairs%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#stairs</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
         
       </li>
     
       <li class="entry-summary">
         <a href="#stem%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#stem</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#step%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#step</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -472,6 +508,11 @@
     
       <li class="entry-summary">
         <a href="#switch%28%2Aargs%29-instance-method" class="signature"><strong>#switch</strong>(*args)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#volume%28c%3AArray%28Array%28Array%28Number%29%29%29%2Calgorithm%3AString%7CNil%3Dnil%2Ctitle%3AString%7CNil%3Dnil%29-instance-method" class="signature"><strong>#volume</strong>(c : Array(Array(Array(Number))), algorithm : String | Nil = <span class="n">nil</span>, title : String | Nil = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -511,7 +552,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L77" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L78" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -541,7 +582,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L45" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L46" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -554,10 +595,15 @@
         <a class="method-permalink" href="#args_new-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Low-level LibGRM wrappers</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -573,23 +619,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L37" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L38" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="bar(x:Array(Number),y:Array(Number),title:String|Nil=nil,xlabel:String|Nil=nil,ylabel:String|Nil=nil,color:String|Nil=nil)-instance-method">
+    <div class="entry-detail" id="barplot(x:Array(Number),y:Array(Number),title:String|Nil=nil,xlabel:String|Nil=nil,ylabel:String|Nil=nil,color:String|Nil=nil)-instance-method">
       <div class="signature">
         
-        def <strong>bar</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)
+        def <strong>barplot</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#bar%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method">#</a>
+        <a class="method-permalink" href="#barplot%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L348" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L337" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -605,7 +651,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -621,7 +667,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L41" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -637,7 +683,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L441" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L475" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="contourf(x:Array(Number),y:Array(Number),z:Array(Array(Number)),title:String|Nil=nil,xlabel:String|Nil=nil,ylabel:String|Nil=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>contourf</strong>(x : Array(Number), y : Array(Number), z : Array(Array(Number)), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#contourf%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Array%28Number%29%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L462" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -653,7 +715,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L61" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L62" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -669,7 +731,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L65" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L66" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -685,7 +747,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L57" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L58" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -701,23 +763,39 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L53" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L54" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="hexbin(x:Array(Number),y:Array(Number),title:String|Nil=nil,xlabel:String|Nil=nil,ylabel:String|Nil=nil)-instance-method">
+    <div class="entry-detail" id="heatmap(x:Array(Number),y:Array(Number),z:Array(Array(Number)),title:String|Nil=nil,xlabel:String|Nil=nil,ylabel:String|Nil=nil)-instance-method">
       <div class="signature">
         
-        def <strong>hexbin</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>)
+        def <strong>heatmap</strong>(x : Array(Number), y : Array(Number), z : Array(Array(Number)), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#hexbin%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%29-instance-method">#</a>
+        <a class="method-permalink" href="#heatmap%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Array%28Number%29%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L454" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L510" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hexbin(x:Array(Number),y:Array(Number),title:String|Nil=nil,xlabel:String|Nil=nil,ylabel:String|Nil=nil,color:String|Nil=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>hexbin</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#hexbin%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L382" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -733,23 +811,39 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L363" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L397" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="line(x:Array(Number),y:Array(Number),title:String|Nil=nil,xlabel:String|Nil=nil,ylabel:String|Nil=nil,color:String|Nil=nil)-instance-method">
+    <div class="entry-detail" id="imshow(z:Array(Array(Number)),title:String|Nil=nil)-instance-method">
       <div class="signature">
         
-        def <strong>line</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)
+        def <strong>imshow</strong>(z : Array(Array(Number)), title : String | Nil = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#line%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method">#</a>
+        <a class="method-permalink" href="#imshow%28z%3AArray%28Array%28Number%29%29%2Ctitle%3AString%7CNil%3Dnil%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L318" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L523" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="isosurface(c:Array(Array(Array(Number))),isovalue:Number|Nil=nil,title:String|Nil=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>isosurface</strong>(c : Array(Array(Array(Number))), isovalue : Number | Nil = <span class="n">nil</span>, title : String | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#isosurface%28c%3AArray%28Array%28Array%28Number%29%29%29%2Cisovalue%3ANumber%7CNil%3Dnil%2Ctitle%3AString%7CNil%3Dnil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L532" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -765,7 +859,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L73" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L74" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -781,7 +875,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L255" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L257" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -797,7 +891,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L271" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L273" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -813,7 +907,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L267" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L269" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -829,7 +923,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L259" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L261" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -845,7 +939,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L263" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L265" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -858,10 +952,15 @@
         <a class="method-permalink" href="#plot%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Number%29%7CNil%3Dnil%2Ckind%3AString%3D%22line%22%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Czlabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>High-level convenience helpers (Plot-based)</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L283" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L287" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -874,10 +973,15 @@
         <a class="method-permalink" href="#plot%28args%3AArgs%29-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Low-level plot entrypoints</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L275" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L278" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -893,7 +997,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L279" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L282" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="plot3(x:Array(Number),y:Array(Number),z:Array(Number),title:String|Nil=nil,xlabel:String|Nil=nil,ylabel:String|Nil=nil,zlabel:String|Nil=nil,color:String|Nil=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>plot3</strong>(x : Array(Number), y : Array(Number), z : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, zlabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#plot3%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Czlabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L413" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -909,7 +1029,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L467" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L499" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="polarhistogram(theta:Array(Number),title:String|Nil=nil,color:String|Nil=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>polarhistogram</strong>(theta : Array(Number), title : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#polarhistogram%28theta%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L488" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -925,7 +1061,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L49" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L50" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -941,23 +1077,55 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L333" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L322" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="scatter3d(x:Array(Number),y:Array(Number),z:Array(Number),title:String|Nil=nil,xlabel:String|Nil=nil,ylabel:String|Nil=nil,zlabel:String|Nil=nil,color:String|Nil=nil)-instance-method">
+    <div class="entry-detail" id="scatter3(x:Array(Number),y:Array(Number),z:Array(Number),title:String|Nil=nil,xlabel:String|Nil=nil,ylabel:String|Nil=nil,zlabel:String|Nil=nil,color:String|Nil=nil)-instance-method">
       <div class="signature">
         
-        def <strong>scatter3d</strong>(x : Array(Number), y : Array(Number), z : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, zlabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)
+        def <strong>scatter3</strong>(x : Array(Number), y : Array(Number), z : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, zlabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#scatter3d%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Czlabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method">#</a>
+        <a class="method-permalink" href="#scatter3%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Czlabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L409" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L430" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shade(x:Array(Number),y:Array(Number),z:Array(Array(Number)),title:String|Nil=nil,xlabel:String|Nil=nil,ylabel:String|Nil=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>shade</strong>(x : Array(Number), y : Array(Number), z : Array(Array(Number)), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#shade%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Cz%3AArray%28Array%28Number%29%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L543" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="stairs(x:Array(Number),y:Array(Number),title:String|Nil=nil,xlabel:String|Nil=nil,ylabel:String|Nil=nil,color:String|Nil=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>stairs</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#stairs%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L352" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -973,23 +1141,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L379" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="step(x:Array(Number),y:Array(Number),title:String|Nil=nil,xlabel:String|Nil=nil,ylabel:String|Nil=nil,color:String|Nil=nil)-instance-method">
-      <div class="signature">
-        
-        def <strong>step</strong>(x : Array(Number), y : Array(Number), title : String | Nil = <span class="n">nil</span>, xlabel : String | Nil = <span class="n">nil</span>, ylabel : String | Nil = <span class="n">nil</span>, color : String | Nil = <span class="n">nil</span>)
-
-        <a class="method-permalink" href="#step%28x%3AArray%28Number%29%2Cy%3AArray%28Number%29%2Ctitle%3AString%7CNil%3Dnil%2Cxlabel%3AString%7CNil%3Dnil%2Cylabel%3AString%7CNil%3Dnil%2Ccolor%3AString%7CNil%3Dnil%29-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L394" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L367" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1005,7 +1157,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L426" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L447" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1021,7 +1173,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L69" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L70" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="volume(c:Array(Array(Array(Number))),algorithm:String|Nil=nil,title:String|Nil=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>volume</strong>(c : Array(Array(Array(Number))), algorithm : String | Nil = <span class="n">nil</span>, title : String | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#volume%28c%3AArray%28Array%28Array%28Number%29%29%29%2Calgorithm%3AString%7CNil%3Dnil%2Ctitle%3AString%7CNil%3Dnil%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L556" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1037,7 +1205,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/crystal-data/GR.cr/blob/4f8322b13900cda4e0e0c1bb42975cb627334f32/src/grm.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/crystal-data/GR.cr/blob/f85b216c50ba057876194158092576da08c10e19/src/grm.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
