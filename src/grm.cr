@@ -57,6 +57,8 @@ module GRM
   end
 
   class Args
+    alias Reference = Args | String | Array(String) | Array(Int32) | Array(Int64) | Array(Float64) | Array(LibC::Char*) | Array(Args)
+
     getter ptr
     getter? deleted
 
@@ -85,6 +87,7 @@ module GRM
       return if @deleted
       @deleted = true
       LibGRM.args_delete(@ptr)
+      @references.clear
     end
 
     def finalize
@@ -110,7 +113,7 @@ module GRM
 
     def push(key : String, value : String)
       LibGRM.args_push(@ptr, key, "s", value)
-      @references << value
+      keep(value)
     end
 
     def push(key : String, value : Int32)
@@ -131,35 +134,36 @@ module GRM
       end
       value.mark_deleted!
       LibGRM.args_push(@ptr, key, "a", value.ptr)
+      keep(value)
     end
 
     def push(key : String, values : Array(String))
       raise ArgumentError.new("Array value for key '#{key}' cannot be empty") if values.empty?
       ptrs = values.map { |v| v.to_unsafe.as(LibC::Char*) }
       LibGRM.args_push(@ptr, key, "nS", ptrs.size, ptrs.to_unsafe)
-      @references << values
-      @references << ptrs
+      keep(values)
+      keep(ptrs)
     end
 
     def push(key : String, values : Array(Int32))
       raise ArgumentError.new("Array value for key '#{key}' cannot be empty") if values.empty?
       data = values.map(&.to_i32)
       LibGRM.args_push(@ptr, key, "nI", data.size, data.to_unsafe)
-      @references << data
+      keep(data)
     end
 
     def push(key : String, values : Array(Int64))
       raise ArgumentError.new("Array value for key '#{key}' cannot be empty") if values.empty?
       data = values.map(&.to_i32)
       LibGRM.args_push(@ptr, key, "nI", data.size, data.to_unsafe)
-      @references << data
+      keep(data)
     end
 
     def push(key : String, values : Array(Float64))
       raise ArgumentError.new("Array value for key '#{key}' cannot be empty") if values.empty?
       data = values.map(&.to_f64)
       LibGRM.args_push(@ptr, key, "nD", data.size, data.to_unsafe)
-      @references << data
+      keep(data)
     end
 
     def push(key : String, values : Array(Args))
@@ -172,8 +176,8 @@ module GRM
       values.each(&.mark_deleted!)
       ptrs = values.map(&.ptr)
       LibGRM.args_push(@ptr, key, "nA", ptrs.size, ptrs.to_unsafe)
-      @references << values
-      @references << ptrs
+      keep(values)
+      keep(ptrs)
     end
 
     def push(key : String, values : Array(Array(Int32)))
@@ -190,6 +194,10 @@ module GRM
 
     private def mark_deleted!
       @deleted = true
+    end
+
+    private def keep(value : Reference)
+      @references << value
     end
 
     private def flatten_matrix_int(values : Array(Array(Int32)), key : String)
@@ -239,6 +247,10 @@ module GRM
 
   def plot(args : Args)
     LibGRM.plot(args.ptr)
+  end
+
+  def plot(args : LibGRM::ArgsT)
+    LibGRM.plot(args)
   end
 
   def plot(x : Array(Number), y : Array(Number), z : Array(Number)? = nil,
