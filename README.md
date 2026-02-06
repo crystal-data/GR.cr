@@ -64,12 +64,11 @@ x = [1.0, 2.0, 3.0, 4.0, 5.0]
 y = [1.0, 4.0, 9.0, 16.0, 25.0]
 
 # High-level API
-GRM.line(x, y, title: "My Plot")
+GRM.plot(x, y, title: "My Plot")
 
 # Object-oriented API
 plot = GRM.plot
   .data(x, y)
-  .line
   .color("red")
   .title("My Plot")
   .xlabel("X")
@@ -87,9 +86,9 @@ require "grm"
 x = [1, 2, 3, 4, 5]
 y = [2, 4, 6, 8, 10]
 
-GRM.line(x, y, title: "Line Plot")
+GRM.plot(x, y, title: "Line Plot")
 GRM.scatter(x, y, title: "Scatter Plot")
-GRM.bar(x, y, title: "Bar Chart")
+GRM.barplot(x, y, title: "Bar Chart")
 GRM.histogram([1, 2, 2, 3, 3, 3, 4, 4, 5], title: "Histogram")
 ```
 
@@ -116,8 +115,8 @@ plot.show
 
 ### Supported Features
 
-- 2D Plots: line, scatter, bar, histogram, stem, step, hexbin, polar
-- 3D Plots: surface, contour, scatter3d
+- 2D Plots: line, scatter, barplot, histogram, stem, stairs, hexbin, polar
+- 3D Plots: plot3, surface, contour, scatter3
 - Output: PNG, HTML, JSON export
 - API: High-level functions and object-oriented interface
 
