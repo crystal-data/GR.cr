@@ -50,6 +50,10 @@ module GRM
     with_error_check("render") { LibGRM.render }
   end
 
+  def finalize
+    with_error_check("finalize") { LibGRM.finalize }
+  end
+
   def export(*args)
     with_error_check("export") { LibGRM.export(*args) }
   end

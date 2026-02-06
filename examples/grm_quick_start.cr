@@ -23,5 +23,8 @@ plot_types.each do |type|
   args.push("kind", type)
   args.push("title", type)
   GRM.plot(args)
-  sleep 2.seconds
+  printf "Press any key to continue...\n"
+  gets
 end
+
+GRM.finalize
