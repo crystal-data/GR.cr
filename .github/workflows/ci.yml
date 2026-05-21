@@ -2,7 +2,7 @@ name: test
 on: [push, pull_request]
 jobs:
   build:
-    name: ${{ matrix.os }} Crystal ${{ matrix.crystal }}
+    name: ${{ matrix.os }} Crystal latest
     runs-on: ${{ matrix.os }}-latest
     strategy:
       fail-fast: false
@@ -16,10 +16,15 @@ jobs:
       - name: Install Ubuntu packages (ubuntu)
         if: ${{ matrix.os == 'ubuntu' }}
         run: |
-          sudo apt update -y
-          sudo apt upgrade -y
-          wget https://download.opensuse.org/repositories/science:/gr-framework/xUbuntu_24.04/amd64/gr_0.73.22-1_amd64.deb
-          sudo apt-get install -y ./gr_0.73.22-1_amd64.deb
+          . /etc/os-release
+          repo="xUbuntu_${VERSION_ID}"
+          keyring=/usr/share/keyrings/science_gr-framework.gpg
+          sudo apt-get update
+          sudo apt-get install -y ca-certificates curl gpg
+          curl -fsSL "https://download.opensuse.org/repositories/science:/gr-framework/${repo}/Release.key" | gpg --dearmor | sudo tee "${keyring}" > /dev/null
+          echo "deb [signed-by=${keyring}] https://download.opensuse.org/repositories/science:/gr-framework/${repo}/ /" | sudo tee /etc/apt/sources.list.d/science_gr-framework.list
+          sudo apt-get update
+          sudo apt-get install -y gr
       - name: Set up Homebrew (macos)
         if: ${{ matrix.os == 'macos' }}
         run: |
