@@ -2,6 +2,7 @@
 
 [![Join the chat at https://gitter.im/crystal-data/bottle](https://badges.gitter.im/crystal-data/bottle.svg)](https://gitter.im/crystal-data/bottle?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![.github/workflows/ci.yml](https://github.com/crystal-data/GR.cr/actions/workflows/ci.yml/badge.svg)](https://github.com/crystal-data/GR.cr/actions/workflows/ci.yml)
+[![Lines of Code](https://img.shields.io/endpoint?url=https%3A%2F%2Ftokei.kojix2.net%2Fbadge%2Fgithub%2Fcrystal-data%2FGR.cr%2Flines)](https://tokei.kojix2.net/github/crystal-data/GR.cr)
 
 <a href="https://github.com/red-data-tools/GR.rb"><img alt="GR.rb" src="https://user-images.githubusercontent.com/5798442/124949370-76312280-e04c-11eb-8e1e-e3a092284584.png" width="366" height="300" align="right"></a>
 
