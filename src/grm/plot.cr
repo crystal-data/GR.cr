@@ -51,16 +51,24 @@ module GRM
         push_c_grid(args, 2)
       when "isosurface"
         push_c_grid(args, 3)
-        args_push(args, "isovalue", "d", @isovalue.not_nil!) if @isovalue
+        if isovalue = @isovalue
+          args_push(args, "isovalue", "d", isovalue)
+        end
       when "volume"
         push_c_grid(args, 3)
-        args_push(args, "algorithm", "s", @algorithm.not_nil!) if @algorithm
+        if algorithm = @algorithm
+          args_push(args, "algorithm", "s", algorithm)
+        end
       else
         raise ArgumentError.new("unsupported kind: #{kind}")
       end
 
-      args_push(args, "color", "s", @color.not_nil!) if @color
-      args_push(args, "nbins", "i", @nbins.not_nil!) if @nbins
+      if color = @color
+        args_push(args, "color", "s", color)
+      end
+      if nbins = @nbins
+        args_push(args, "nbins", "i", nbins)
+      end
 
       args
     end
@@ -68,10 +76,18 @@ module GRM
     # Build args for standalone plotting (series + labels)
     private def build_args : LibGRM::ArgsT
       args = build_series_args
-      args_push(args, "title", "s", @title.not_nil!) if @title
-      args_push(args, "xlabel", "s", @xlabel.not_nil!) if @xlabel
-      args_push(args, "ylabel", "s", @ylabel.not_nil!) if @ylabel
-      args_push(args, "zlabel", "s", @zlabel.not_nil!) if @zlabel
+      if title = @title
+        args_push(args, "title", "s", title)
+      end
+      if xlabel = @xlabel
+        args_push(args, "xlabel", "s", xlabel)
+      end
+      if ylabel = @ylabel
+        args_push(args, "ylabel", "s", ylabel)
+      end
+      if zlabel = @zlabel
+        args_push(args, "zlabel", "s", zlabel)
+      end
       args
     end
 
@@ -353,48 +369,65 @@ module GRM
 
     private def require_c_grid!(dims : Int32)
       raise ArgumentError.new("c grid data is required") unless @c_data && @c_dims
-      raise ArgumentError.new("c_dims must have length #{dims}") unless @c_dims.not_nil!.size == dims
+      c_dims = @c_dims
+      raise ArgumentError.new("c grid data is required") unless c_dims
+      raise ArgumentError.new("c_dims must have length #{dims}") unless c_dims.size == dims
     end
 
     private def push_x(args)
       require_x!
-      args_push(args, "x", "nD", @x_data.not_nil!.size, @x_data.not_nil!)
+      x_data = @x_data
+      raise ArgumentError.new("x data is required") unless x_data
+      args_push(args, "x", "nD", x_data.size, x_data)
     end
 
     private def push_xy(args)
       require_xy!
-      args_push(args, "x", "nD", @x_data.not_nil!.size, @x_data.not_nil!)
-      args_push(args, "y", "nD", @y_data.not_nil!.size, @y_data.not_nil!)
+      x_data = @x_data
+      y_data = @y_data
+      raise ArgumentError.new("x and y data are required") unless x_data && y_data
+      args_push(args, "x", "nD", x_data.size, x_data)
+      args_push(args, "y", "nD", y_data.size, y_data)
     end
 
     private def push_xyz(args)
       require_xyz!
-      args_push(args, "x", "nD", @x_data.not_nil!.size, @x_data.not_nil!)
-      args_push(args, "y", "nD", @y_data.not_nil!.size, @y_data.not_nil!)
-      args_push(args, "z", "nD", @z_data.not_nil!.size, @z_data.not_nil!)
+      x_data = @x_data
+      y_data = @y_data
+      z_data = @z_data
+      raise ArgumentError.new("x, y, and z data are required") unless x_data && y_data && z_data
+      args_push(args, "x", "nD", x_data.size, x_data)
+      args_push(args, "y", "nD", y_data.size, y_data)
+      args_push(args, "z", "nD", z_data.size, z_data)
     end
 
     private def push_z_grid(args, include_dims : Bool)
       require_z_grid!
-      args_push(args, "z", "nD", @z_data.not_nil!.size, @z_data.not_nil!)
+      z_data = @z_data
+      z_dims = @z_dims
+      raise ArgumentError.new("z grid data is required") unless z_data && z_dims
+      args_push(args, "z", "nD", z_data.size, z_data)
       if include_dims
-        args_push(args, "z_dims", "ii", @z_dims.not_nil![0], @z_dims.not_nil![1])
+        args_push(args, "z_dims", "ii", z_dims[0], z_dims[1])
       end
-      if @x_data
-        args_push(args, "x", "nD", @x_data.not_nil!.size, @x_data.not_nil!)
+      if x_data = @x_data
+        args_push(args, "x", "nD", x_data.size, x_data)
       end
-      if @y_data
-        args_push(args, "y", "nD", @y_data.not_nil!.size, @y_data.not_nil!)
+      if y_data = @y_data
+        args_push(args, "y", "nD", y_data.size, y_data)
       end
     end
 
     private def push_c_grid(args, dims : Int32)
       require_c_grid!(dims)
-      args_push(args, "c", "nD", @c_data.not_nil!.size, @c_data.not_nil!)
+      c_data = @c_data
+      c_dims = @c_dims
+      raise ArgumentError.new("c grid data is required") unless c_data && c_dims
+      args_push(args, "c", "nD", c_data.size, c_data)
       if dims == 2
-        args_push(args, "c_dims", "ii", @c_dims.not_nil![0], @c_dims.not_nil![1])
+        args_push(args, "c_dims", "ii", c_dims[0], c_dims[1])
       else
-        args_push(args, "c_dims", "nI", 3, @c_dims.not_nil!)
+        args_push(args, "c_dims", "nI", 3, c_dims)
       end
     end
 

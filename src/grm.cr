@@ -75,7 +75,7 @@ module GRM
     with_error_check("max_plot_id") { LibGRM.max_plot_id }
   end
 
-  def self.with_args(&block : LibGRM::ArgsT -> Void)
+  def self.with_args(& : LibGRM::ArgsT -> Void)
     args = args_new
     begin
       yield(args)

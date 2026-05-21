@@ -30,7 +30,7 @@ module GRM
       @plot_id = plot_id
     end
 
-    def add_plot(&block : Plot -> Plot)
+    def add_plot(& : Plot -> Plot)
       plot = Plot.new
       configured_plot = yield(plot)
       @plots << configured_plot

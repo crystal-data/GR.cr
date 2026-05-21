@@ -25,7 +25,7 @@ module GRCommon
     def to_cchar(s)
       cp = Pointer(UInt8).malloc(s.size + 1)
       i = 0
-      s.each_byte { |c| cp[i] = c; i += 1 }
+      s.each_byte { |byte| cp[i] = byte; i += 1 }
       cp[s.size] = 0
       cp
     end
